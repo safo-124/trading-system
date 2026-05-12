@@ -42,6 +42,18 @@ cd backend
 uv sync
 ```
 
+Run database migrations:
+
+```bash
+uv run alembic upgrade head
+```
+
+Ingest market data for a ticker list:
+
+```bash
+uv run python -m app.scripts.ingest --tickers JNJ,KO,PG,MMM,WMT
+```
+
 When application code is added, run the FastAPI backend with uvicorn:
 
 ```bash
