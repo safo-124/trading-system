@@ -69,6 +69,29 @@ curl -X POST http://localhost:8000/api/pipeline/run
 
 Swagger UI is available at `http://localhost:8000/docs`.
 
+## Python Research Environment
+
+Create and activate the project virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+On Windows:
+
+```powershell
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Register the virtual environment as a Jupyter kernel:
+
+```bash
+python -m ipykernel install --user --name trading-system --display-name "Python (trading-system)"
+```
+
 ## Set Up Frontend
 
 Install frontend dependencies:
