@@ -50,3 +50,37 @@ class PredictionSchema(ORMModel):
     cut_probability: Decimal | None = None
     composite_score: Decimal | None = None
     recommendation: str | None = None
+
+
+class StockListResponse(BaseModel):
+    stocks: list[StockSchema]
+
+
+class StockDetailResponse(BaseModel):
+    stock: StockSchema
+    latest_fundamentals: FundamentalSchema | None = None
+
+
+class DividendHistoryResponse(BaseModel):
+    ticker: str
+    dividends: list[DividendHistorySchema]
+
+
+class RankedPickResponse(BaseModel):
+    rank: int
+    ticker: str
+    model_version: str
+    predicted_at: datetime
+    cut_probability: Decimal
+    composite_score: Decimal
+    recommendation: str
+
+
+class PipelineRunResponse(BaseModel):
+    model_version: str
+    predicted_at: datetime
+    picks: list[RankedPickResponse]
+
+
+class LatestPredictionsResponse(BaseModel):
+    predictions: list[RankedPickResponse]

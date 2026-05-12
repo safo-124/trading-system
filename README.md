@@ -54,10 +54,17 @@ Ingest market data for a ticker list:
 uv run python -m app.scripts.ingest --tickers JNJ,KO,PG,MMM,WMT
 ```
 
-When application code is added, run the FastAPI backend with uvicorn:
+Run the FastAPI backend with uvicorn:
 
 ```bash
 uv run uvicorn app.main:app --reload
 ```
 
-No application code has been added yet.
+Useful local API checks:
+
+```bash
+curl http://localhost:8000/api/stocks
+curl -X POST http://localhost:8000/api/pipeline/run
+```
+
+Swagger UI is available at `http://localhost:8000/docs`.
