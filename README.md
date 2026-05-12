@@ -68,3 +68,26 @@ curl -X POST http://localhost:8000/api/pipeline/run
 ```
 
 Swagger UI is available at `http://localhost:8000/docs`.
+
+## Set Up Frontend
+
+Install frontend dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+Regenerate API types whenever the FastAPI schema changes:
+
+```bash
+npm run gen:api
+```
+
+Run the Next.js app:
+
+```bash
+npm run dev
+```
+
+The frontend runs at `http://localhost:3000` and uses `NEXT_PUBLIC_API_URL`, defaulting to `http://localhost:8000`.
