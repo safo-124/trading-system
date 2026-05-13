@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Trading System",
-  description: "Dividend safety dashboard and screening pipeline.",
+  description: "Dividend screener and swing strategy dashboard.",
 };
 
 export default function RootLayout({

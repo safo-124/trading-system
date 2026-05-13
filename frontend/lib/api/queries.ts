@@ -1,36 +1,45 @@
 "use client";
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import {
-  getLatestPredictions,
-  type LatestPredictionsResponse,
-  type PipelineRunResponse,
-  runPipeline,
+  type BacktestSummaryResponse,
+  type DividendPicksResponse,
+  getBacktestSummary,
+  getDividendPicks,
+  getSwingLatestPredictions,
+  type SwingPredictionsResponse,
 } from "@/lib/api/client";
 
 export const queryKeys = {
-  latestPredictions: ["predictions", "latest"] as const,
+  dividendPicks: ["dividend", "picks"] as const,
+  swingLatestPredictions: (nPerSide: number) => ["swing", "predictions", nPerSide] as const,
+  backtestSummary: ["swing", "backtest"] as const,
 };
 
-export function useLatestPredictionsQuery(initialData?: LatestPredictionsResponse) {
+export function useDividendPicksQuery(initialData?: DividendPicksResponse) {
   return useQuery({
-    queryKey: queryKeys.latestPredictions,
-    queryFn: getLatestPredictions,
+    queryKey: queryKeys.dividendPicks,
+    queryFn: getDividendPicks,
     initialData,
   });
 }
 
-export function useRunPipelineMutation() {
-  const queryClient = useQueryClient();
+export function useSwingLatestPredictionsQuery(
+  nPerSide: number,
+  initialData?: SwingPredictionsResponse,
+) {
+  return useQuery({
+    queryKey: queryKeys.swingLatestPredictions(nPerSide),
+    queryFn: () => getSwingLatestPredictions(nPerSide),
+    initialData,
+  });
+}
 
-  return useMutation({
-    mutationFn: runPipeline,
-    onSuccess: (data: PipelineRunResponse) => {
-      queryClient.setQueryData<LatestPredictionsResponse>(queryKeys.latestPredictions, {
-        predictions: data.picks,
-      });
-      queryClient.invalidateQueries({ queryKey: queryKeys.latestPredictions });
-    },
+export function useBacktestSummaryQuery(initialData?: BacktestSummaryResponse) {
+  return useQuery({
+    queryKey: queryKeys.backtestSummary,
+    queryFn: getBacktestSummary,
+    initialData,
   });
 }

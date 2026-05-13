@@ -1,10 +1,11 @@
-import { Activity, BarChart3, LineChart, Workflow } from "lucide-react";
+import { Activity, BarChart3, Landmark, LineChart, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 const navItems = [
   { href: "/" as const, label: "Dashboard", icon: Activity },
-  { href: "/stocks" as const, label: "Stocks", icon: BarChart3 },
-  { href: "/pipeline" as const, label: "Pipeline", icon: Workflow },
+  { href: "/dividend" as const, label: "Dividend", icon: ShieldCheck },
+  { href: "/swing" as const, label: "Swing", icon: Landmark },
+  { href: "/backtest" as const, label: "Backtest", icon: BarChart3 },
 ];
 
 export function Sidebar() {
@@ -16,7 +17,7 @@ export function Sidebar() {
         </div>
         <div>
           <div className="font-semibold text-sm">Trading System</div>
-          <div className="font-mono text-muted-foreground text-xs">dividend safety</div>
+          <div className="font-mono text-muted-foreground text-xs">research dashboard</div>
         </div>
       </div>
 

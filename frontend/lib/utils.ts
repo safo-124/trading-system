@@ -86,3 +86,30 @@ export function formatDate(value: string | null | undefined): string {
     year: "numeric",
   }).format(date);
 }
+
+export function formatSignedPercent(value: NumberLike, maximumFractionDigits = 2): string {
+  const parsed = toNumber(value);
+  if (parsed === null) {
+    return "—";
+  }
+
+  const formatted = formatNumber(Math.abs(parsed), {
+    style: "percent",
+    maximumFractionDigits,
+    minimumFractionDigits: Math.min(2, maximumFractionDigits),
+  });
+
+  return `${parsed >= 0 ? "+" : "-"}${formatted}`;
+}
+
+export function formatBps(value: NumberLike): string {
+  const parsed = toNumber(value);
+  if (parsed === null) {
+    return "—";
+  }
+
+  return `${formatNumber(parsed * 10_000, {
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2,
+  })} bps`;
+}

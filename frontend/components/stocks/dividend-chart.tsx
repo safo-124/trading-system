@@ -9,10 +9,14 @@ import {
   type Time,
 } from "lightweight-charts";
 import { useEffect, useRef } from "react";
-import type { Dividend } from "@/lib/api/client";
 import { toNumber } from "@/lib/utils";
 
-export function DividendChart({ dividends }: { dividends: Dividend[] }) {
+type DividendPayment = {
+  ex_date: string;
+  amount: number | string;
+};
+
+export function DividendChart({ dividends }: { dividends: DividendPayment[] }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

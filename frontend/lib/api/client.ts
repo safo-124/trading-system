@@ -1,29 +1,15 @@
 import createClient from "openapi-fetch";
 import { z } from "zod";
 import type { components, paths } from "@/lib/api/schema";
-import { type NumberLike, toNumber } from "@/lib/utils";
 
-export type Stock = components["schemas"]["StockSchema"];
-export type Fundamental = components["schemas"]["FundamentalSchema"];
-export type Dividend = components["schemas"]["DividendHistorySchema"];
-export type RankedPick = components["schemas"]["RankedPickResponse"];
-export type StockListResponse = components["schemas"]["StockListResponse"];
-export type StockDetailResponse = components["schemas"]["StockDetailResponse"];
-export type DividendHistoryResponse = components["schemas"]["DividendHistoryResponse"];
-export type PipelineRunResponse = components["schemas"]["PipelineRunResponse"];
-export type LatestPredictionsResponse = components["schemas"]["LatestPredictionsResponse"];
-
-export type StockTableRow = {
-  ticker: string;
-  name: string | null;
-  sector: string | null;
-  marketCap: number | null;
-  dividendYield: NumberLike;
-  payoutRatio: NumberLike;
-  cutProbability: NumberLike;
-  compositeScore: NumberLike;
-  recommendation: string | null;
-};
+export type HealthResponse = components["schemas"]["HealthResponse"];
+export type DividendPick = components["schemas"]["DividendPick"];
+export type DividendPicksResponse = components["schemas"]["DividendPicksResponse"];
+export type SwingPrediction = components["schemas"]["SwingPrediction"];
+export type SwingPredictionsResponse = components["schemas"]["SwingPredictionsResponse"];
+export type BacktestDayRecord = components["schemas"]["BacktestDayRecord"];
+export type BacktestSummary = components["schemas"]["BacktestSummary"];
+export type BacktestSummaryResponse = components["schemas"]["BacktestSummaryResponse"];
 
 type ApiResult<T> = {
   data?: T;
@@ -44,70 +30,69 @@ export const apiClient = createClient<paths>({
   baseUrl: apiBaseUrl,
 });
 
-const numberLikeSchema = z.union([z.number(), z.string()]);
-const nullableNumberLikeSchema = numberLikeSchema.nullable();
+const healthResponseSchema = z.object({
+  status: z.string(),
+  api_version: z.string(),
+  data_files: z.record(z.string(), z.boolean()),
+}) satisfies z.ZodType<HealthResponse>;
 
-const stockSchema = z.object({
+const dividendPickSchema = z.object({
   ticker: z.string(),
-  name: z.string().nullable(),
-  sector: z.string().nullable(),
-  market_cap: z.number().nullable(),
-  last_updated: z.string().nullable(),
-}) satisfies z.ZodType<Stock>;
+  yield: z.number(),
+  payout_ratio: z.number(),
+  div_cagr_5y: z.number(),
+  consec_increases: z.number(),
+  fcf_coverage: z.number(),
+  safety_score: z.number(),
+  composite_score: z.number(),
+}) satisfies z.ZodType<DividendPick>;
 
-const fundamentalSchema = z.object({
-  id: z.number().nullable(),
-  ticker: z.string(),
-  as_of_date: z.string(),
-  yield: nullableNumberLikeSchema,
-  payout_ratio: nullableNumberLikeSchema,
-  fcf: nullableNumberLikeSchema,
-  debt_to_equity: nullableNumberLikeSchema,
-  roe: nullableNumberLikeSchema,
-  profit_margin: nullableNumberLikeSchema,
-}) satisfies z.ZodType<Fundamental>;
+const dividendPicksResponseSchema = z.object({
+  generated_at: z.string().nullable().optional(),
+  n_picks: z.number(),
+  picks: z.array(dividendPickSchema),
+}) satisfies z.ZodType<DividendPicksResponse>;
 
-const dividendSchema = z.object({
-  id: z.number().nullable(),
-  ticker: z.string(),
-  ex_date: z.string(),
-  amount: numberLikeSchema,
-  currency: z.string(),
-}) satisfies z.ZodType<Dividend>;
+const swingPredictionSchema = z.object({
+  timestamp: z.string(),
+  symbol: z.string(),
+  pred: z.number(),
+  fwd_ret_5d: z.number().nullable().optional(),
+}) satisfies z.ZodType<SwingPrediction>;
 
-const rankedPickSchema = z.object({
-  rank: z.number(),
-  ticker: z.string(),
-  model_version: z.string(),
-  predicted_at: z.string(),
-  cut_probability: numberLikeSchema,
-  composite_score: numberLikeSchema,
-  recommendation: z.string(),
-}) satisfies z.ZodType<RankedPick>;
+const swingPredictionsResponseSchema = z.object({
+  as_of: z.string(),
+  n_stocks: z.number(),
+  long_picks: z.array(swingPredictionSchema),
+  short_picks: z.array(swingPredictionSchema),
+}) satisfies z.ZodType<SwingPredictionsResponse>;
 
-const stockListResponseSchema = z.object({
-  stocks: z.array(stockSchema),
-}) satisfies z.ZodType<StockListResponse>;
+const backtestDayRecordSchema = z.object({
+  timestamp: z.string(),
+  daily_ret_gross: z.number(),
+  daily_ret_net: z.number(),
+  long_ret: z.number(),
+  short_ret: z.number(),
+}) satisfies z.ZodType<BacktestDayRecord>;
 
-const stockDetailResponseSchema = z.object({
-  stock: stockSchema,
-  latest_fundamentals: fundamentalSchema.nullable(),
-}) satisfies z.ZodType<StockDetailResponse>;
+const backtestSummarySchema = z.object({
+  n_days: z.number(),
+  start_date: z.string(),
+  end_date: z.string(),
+  ann_return_gross: z.number(),
+  ann_return_net: z.number(),
+  ann_vol: z.number(),
+  sharpe_gross: z.number(),
+  sharpe_net: z.number(),
+  max_drawdown_net: z.number(),
+  hit_rate_net: z.number(),
+  total_return_net: z.number(),
+}) satisfies z.ZodType<BacktestSummary>;
 
-const dividendHistoryResponseSchema = z.object({
-  ticker: z.string(),
-  dividends: z.array(dividendSchema),
-}) satisfies z.ZodType<DividendHistoryResponse>;
-
-const pipelineRunResponseSchema = z.object({
-  model_version: z.string(),
-  predicted_at: z.string(),
-  picks: z.array(rankedPickSchema),
-}) satisfies z.ZodType<PipelineRunResponse>;
-
-const latestPredictionsResponseSchema = z.object({
-  predictions: z.array(rankedPickSchema),
-}) satisfies z.ZodType<LatestPredictionsResponse>;
+const backtestSummaryResponseSchema = z.object({
+  summary: backtestSummarySchema,
+  last_30_days: z.array(backtestDayRecordSchema),
+}) satisfies z.ZodType<BacktestSummaryResponse>;
 
 const liveFetch = createNextFetch({ cache: "no-store" });
 
@@ -127,89 +112,37 @@ async function readApiResponse<T>(result: ApiResult<T>, schema: z.ZodType<T>): P
   return schema.parse(result.data);
 }
 
-export async function getStocks(): Promise<StockListResponse> {
-  const result = await apiClient.GET("/api/stocks", {
+export async function getHealth(): Promise<HealthResponse> {
+  const result = await apiClient.GET("/", {
     fetch: liveFetch,
   });
-  return readApiResponse(result, stockListResponseSchema);
+  return readApiResponse(result, healthResponseSchema);
 }
 
-export async function getStockDetail(ticker: string): Promise<StockDetailResponse> {
-  const result = await apiClient.GET("/api/stocks/{ticker}", {
-    params: { path: { ticker } },
+export async function getDividendPicks(): Promise<DividendPicksResponse> {
+  const result = await apiClient.GET("/dividend/picks", {
     fetch: liveFetch,
   });
-  return readApiResponse(result, stockDetailResponseSchema);
+  return readApiResponse(result, dividendPicksResponseSchema);
 }
 
-export async function getDividendHistory(ticker: string): Promise<DividendHistoryResponse> {
-  const result = await apiClient.GET("/api/stocks/{ticker}/dividends", {
-    params: { path: { ticker } },
+export async function getSwingLatestPredictions(nPerSide = 20): Promise<SwingPredictionsResponse> {
+  const result = await apiClient.GET("/swing/predictions/latest", {
+    params: { query: { n_per_side: nPerSide } },
     fetch: liveFetch,
   });
-  return readApiResponse(result, dividendHistoryResponseSchema);
+  return readApiResponse(result, swingPredictionsResponseSchema);
 }
 
-export async function getLatestPredictions(): Promise<LatestPredictionsResponse> {
-  const result = await apiClient.GET("/api/predictions/latest", {
+export async function getBacktestSummary(): Promise<BacktestSummaryResponse> {
+  const result = await apiClient.GET("/swing/backtest", {
     fetch: liveFetch,
   });
-  return readApiResponse(result, latestPredictionsResponseSchema);
+  return readApiResponse(result, backtestSummaryResponseSchema);
 }
 
-export async function runPipeline(): Promise<PipelineRunResponse> {
-  const result = await apiClient.POST("/api/pipeline/run");
-  return readApiResponse(result, pipelineRunResponseSchema);
-}
-
-export async function getStockTableRows(): Promise<StockTableRow[]> {
-  const [stockList, latestPredictions] = await Promise.all([getStocks(), getLatestPredictions()]);
-  const predictionByTicker = new Map(
-    latestPredictions.predictions.map((prediction) => [prediction.ticker, prediction]),
-  );
-
-  const details = await Promise.all(
-    stockList.stocks.map(async (stock) => {
-      try {
-        return await getStockDetail(stock.ticker);
-      } catch {
-        return { stock, latest_fundamentals: null } satisfies StockDetailResponse;
-      }
-    }),
-  );
-
-  return details.map((detail) => {
-    const prediction = predictionByTicker.get(detail.stock.ticker);
-
-    return {
-      ticker: detail.stock.ticker,
-      name: detail.stock.name,
-      sector: detail.stock.sector,
-      marketCap: detail.stock.market_cap,
-      dividendYield: detail.latest_fundamentals?.yield ?? null,
-      payoutRatio: detail.latest_fundamentals?.payout_ratio ?? null,
-      cutProbability: prediction?.cut_probability ?? null,
-      compositeScore: prediction?.composite_score ?? null,
-      recommendation: prediction?.recommendation ?? null,
-    };
-  });
-}
-
-export function getPickForTicker(
-  predictions: LatestPredictionsResponse,
-  ticker: string,
-): RankedPick | null {
-  return (
-    predictions.predictions.find(
-      (prediction) => prediction.ticker.toUpperCase() === ticker.toUpperCase(),
-    ) ?? null
-  );
-}
-
-export function sortPicksByScore(picks: RankedPick[]): RankedPick[] {
-  return [...picks].sort((left, right) => {
-    const rightScore = toNumber(right.composite_score) ?? 0;
-    const leftScore = toNumber(left.composite_score) ?? 0;
-    return rightScore - leftScore || left.ticker.localeCompare(right.ticker);
-  });
+export function topDividendPicks(picks: DividendPick[], count: number): DividendPick[] {
+  return [...picks]
+    .sort((left, right) => right.composite_score - left.composite_score)
+    .slice(0, count);
 }
