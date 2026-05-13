@@ -1,0 +1,43 @@
+Loading predictions from C:\Users\nanas\Downloads\stocks\trading-system\data_eu\predictions.parquet
+  shape: (804353, 5)
+  date range: 2016-01-04 to 2025-12-31
+
+Strategy: top/bottom 20 by prediction
+  Hold period: 5 days
+  Cost: 3 bps per leg one-way
+
+Computing portfolio returns...
+  Filtered 33 rows with implausible returns (0.00% of total)
+  Trading days: 2566
+  Avg daily gross return: 1.20 bps
+  Avg daily cost:         2.40 bps
+  Avg daily net return:   -1.20 bps
+
+======================================================================
+PERFORMANCE METRICS
+======================================================================
+
+Loading FEZ benchmark...
+          label  n_days ann_return ann_vol sharpe  max_dd hit_rate total_return
+      L/S Gross    2566     +3.03%   3.33%  +0.91 -13.43%   53.43%       +35.3%
+L/S Net (3 bps)    2566     -3.02%   3.33%  -0.91 -30.83%   47.23%       -26.9%
+            FEZ    2565    +12.03%  20.94%  +0.57 -39.27%   54.58%      +171.7%
+
+======================================================================
+YEAR-BY-YEAR (Net of costs)
+======================================================================
+     ls_net_return fez_return  excess
+year                                 
+2016        +1.98%     +0.67%  +1.31%
+2017        -2.61%    +24.36% -26.97%
+2018        -7.12%    -18.22% +11.10%
+2019        -1.68%    +31.83% -33.51%
+2020        -7.92%     +8.65% -16.56%
+2021        -3.77%    +11.25% -15.02%
+2022        +3.42%    -12.47% +15.89%
+2023        -4.47%    +27.11% -31.57%
+2024        -7.38%     +6.65% -14.03%
+2025        -0.60%    +40.38% -40.97%
+
+  Daily returns saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\backtest_results.csv
+  Equity curve plot saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\backtest_equity.png

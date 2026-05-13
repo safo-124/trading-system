@@ -1,0 +1,40 @@
+C:\Users\nanas\Downloads\stocks\trading-system\swing_africa\predict_live.py:43: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  end = datetime.utcnow().date()
+Universe: 10 tickers
+
+Fetching live bars:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching live bars:  10%|#         | 1/10 [00:00<00:05,  1.75it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ABI.JO"}}}
+$ABI.JO: possibly delisted; no timezone found
+
+Fetching live bars:  20%|##        | 2/10 [00:02<00:08,  1.09s/it]
+Fetching live bars:  30%|###       | 3/10 [00:02<00:04,  1.51it/s]
+Fetching live bars:  40%|####      | 4/10 [00:02<00:02,  2.06it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AIP.JO"}}}
+$AIP.JO: possibly delisted; no timezone found
+
+Fetching live bars:  50%|#####     | 5/10 [00:03<00:03,  1.30it/s]$AMS.JO: possibly delisted; no timezone found
+
+Fetching live bars:  60%|######    | 6/10 [00:04<00:02,  1.57it/s]
+Fetching live bars:  70%|#######   | 7/10 [00:04<00:01,  2.07it/s]
+Fetching live bars:  80%|########  | 8/10 [00:04<00:00,  2.56it/s]
+Fetching live bars:  90%|######### | 9/10 [00:04<00:00,  3.17it/s]
+Fetching live bars: 100%|##########| 10/10 [00:04<00:00,  3.86it/s]
+Fetching live bars: 100%|##########| 10/10 [00:04<00:00,  2.14it/s]
+Fetched: 7 symbols, 2,716 rows
+Computing features...
+As-of date: 2026-05-12 (feature-complete)
+
+============================================================
+LIVE PREDICTIONS � as of 2026-05-12
+============================================================
+
+LONG PICKS (3):
+  ABG.JO  pred=+0.5571  close=$22923.00
+  APN.JO  pred=+0.5207  close=$14096.00
+  ATT.JO  pred=+0.5114  close=$1671.00
+
+SHORT PICKS (3):
+  AGL.JO  pred=+0.4694  close=$87950.00
+  ARI.JO  pred=+0.4947  close=$22919.00
+  ANG.JO  pred=+0.5070  close=$168613.00
+
+  Saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_africa\live_predictions.json

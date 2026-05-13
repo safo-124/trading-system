@@ -157,3 +157,272 @@ def clear_caches() -> None:
     """Call after underlying files are regenerated."""
     _load_predictions_cached.cache_clear()
     _load_backtest_cached.cache_clear()
+
+
+# ---------- Live swing prediction ----------
+
+import time as _time
+
+_LIVE_CACHE: dict = {"timestamp": None, "payload": None}
+_LIVE_CACHE_TTL_SEC = 900  # 15 minutes
+
+
+def get_live_predictions(n_per_side: int = 20, force_refresh: bool = False) -> dict:
+    """Run live prediction or return cached result (15-min TTL)."""
+    from datetime import date as _date
+    from swing.predict_live import predict_latest
+    
+    now = _time.time()
+    cached_at = _LIVE_CACHE["timestamp"]
+    
+    if (
+        not force_refresh
+        and cached_at is not None
+        and (now - cached_at) < _LIVE_CACHE_TTL_SEC
+        and _LIVE_CACHE["payload"] is not None
+    ):
+        return _LIVE_CACHE["payload"]
+    
+    result = predict_latest(universe_size=None, n_per_side=n_per_side)
+    # Convert ISO date strings to date objects for Pydantic
+    result["as_of"] = _date.fromisoformat(result["as_of"])
+    result["universe_size"] = result.get("n_stocks_predicted", 0)
+    for picks_key in ("long_picks", "short_picks"):
+        for p in result[picks_key]:
+            p["timestamp"] = _date.fromisoformat(p["timestamp"])
+    
+    _LIVE_CACHE["timestamp"] = now
+    _LIVE_CACHE["payload"] = result
+    return result
+
+
+# ---------- EU swing services ----------
+
+from pathlib import Path as _Path
+
+_EU_DATA_DIR = _Path(__file__).resolve().parent.parent / "data_eu"
+_EU_PREDICTIONS_PATH = _EU_DATA_DIR / "predictions.parquet"
+_EU_BACKTEST_PATH = _EU_DATA_DIR / "backtest_results.csv"
+
+
+@lru_cache(maxsize=1)
+def _load_eu_predictions_cached() -> pd.DataFrame:
+    if not _EU_PREDICTIONS_PATH.exists():
+        return pd.DataFrame()
+    df = pd.read_parquet(_EU_PREDICTIONS_PATH)
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    return df
+
+
+@lru_cache(maxsize=1)
+def _load_eu_backtest_cached() -> pd.DataFrame:
+    if not _EU_BACKTEST_PATH.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(_EU_BACKTEST_PATH)
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    return df
+
+
+def swing_eu_latest_predictions(n_per_side: int = 20) -> dict:
+    df = _load_eu_predictions_cached()
+    if df.empty:
+        return {"as_of": None, "n_stocks": 0, "long_picks": [], "short_picks": []}
+    
+    last_day = df["timestamp"].max()
+    day_df = df[df["timestamp"] == last_day].copy()
+    
+    long_df = day_df.nlargest(n_per_side, "pred")
+    short_df = day_df.nsmallest(n_per_side, "pred")
+    
+    def to_records(d):
+        rows = []
+        for _, row in d.iterrows():
+            rows.append({
+                "timestamp": row["timestamp"].date(),
+                "symbol": row["symbol"],
+                "pred": float(row["pred"]),
+                "fwd_ret_5d": float(row["fwd_ret_5d"]) if pd.notna(row["fwd_ret_5d"]) else None,
+            })
+        return rows
+    
+    return {
+        "as_of": last_day.date(),
+        "n_stocks": len(day_df),
+        "long_picks": to_records(long_df),
+        "short_picks": to_records(short_df),
+    }
+
+
+def swing_eu_backtest_summary_payload() -> dict | None:
+    df = _load_eu_backtest_cached()
+    if df.empty:
+        return None
+    
+    gross = df["daily_ret_gross"].dropna()
+    net = df["daily_ret_net"].dropna()
+    
+    def _ann_ret(r): return float(r.mean() * 252)
+    def _ann_vol(r): return float(r.std() * np.sqrt(252))
+    def _sharpe(r):
+        v = _ann_vol(r)
+        return float(_ann_ret(r) / v) if v > 0 else 0.0
+    def _max_dd(r):
+        nav = (1 + r).cumprod()
+        peak = nav.cummax()
+        return float(((nav - peak) / peak).min())
+    
+    return {
+        "summary": {
+            "n_days": len(df),
+            "start_date": df["timestamp"].min().date(),
+            "end_date": df["timestamp"].max().date(),
+            "ann_return_gross": _ann_ret(gross),
+            "ann_return_net": _ann_ret(net),
+            "ann_vol": _ann_vol(net),
+            "sharpe_gross": _sharpe(gross),
+            "sharpe_net": _sharpe(net),
+            "max_drawdown_net": _max_dd(net),
+            "hit_rate_net": float((net > 0).mean()),
+            "total_return_net": float((1 + net).cumprod().iloc[-1] - 1),
+        }
+    }
+
+
+# Live EU prediction with caching (15-min TTL)
+_EU_LIVE_CACHE: dict = {"timestamp": None, "payload": None}
+
+
+def get_eu_live_predictions(n_per_side: int = 20, force_refresh: bool = False) -> dict:
+    from datetime import date as _date
+    from swing_eu.predict_live import predict_latest as eu_predict_latest
+    
+    now = _time.time()
+    cached_at = _EU_LIVE_CACHE["timestamp"]
+    
+    if (
+        not force_refresh
+        and cached_at is not None
+        and (now - cached_at) < _LIVE_CACHE_TTL_SEC
+        and _EU_LIVE_CACHE["payload"] is not None
+    ):
+        return _EU_LIVE_CACHE["payload"]
+    
+    result = eu_predict_latest(universe_size=None, n_per_side=n_per_side)
+    result["as_of"] = _date.fromisoformat(result["as_of"])
+    result["universe_size"] = result.get("n_stocks_predicted", 0)
+    for picks_key in ("long_picks", "short_picks"):
+        for p in result[picks_key]:
+            p["timestamp"] = _date.fromisoformat(p["timestamp"])
+    
+    _EU_LIVE_CACHE["timestamp"] = now
+    _EU_LIVE_CACHE["payload"] = result
+    return result
+
+
+# ---------- Africa swing services ----------
+
+_AFRICA_DATA_DIR = _Path(__file__).resolve().parent.parent / "data_africa"
+_AFRICA_PREDICTIONS_PATH = _AFRICA_DATA_DIR / "predictions.parquet"
+_AFRICA_BACKTEST_PATH = _AFRICA_DATA_DIR / "backtest_results.csv"
+
+
+@lru_cache(maxsize=1)
+def _load_africa_predictions_cached() -> pd.DataFrame:
+    if not _AFRICA_PREDICTIONS_PATH.exists():
+        return pd.DataFrame()
+    df = pd.read_parquet(_AFRICA_PREDICTIONS_PATH)
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    return df
+
+
+@lru_cache(maxsize=1)
+def _load_africa_backtest_cached() -> pd.DataFrame:
+    if not _AFRICA_BACKTEST_PATH.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(_AFRICA_BACKTEST_PATH)
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    return df
+
+
+def swing_africa_latest_predictions(n_per_side: int = 5) -> dict:
+    df = _load_africa_predictions_cached()
+    if df.empty:
+        return {"as_of": None, "n_stocks": 0, "long_picks": [], "short_picks": []}
+    last_day = df["timestamp"].max()
+    day_df = df[df["timestamp"] == last_day].copy()
+    long_df = day_df.nlargest(n_per_side, "pred")
+    short_df = day_df.nsmallest(n_per_side, "pred")
+    def to_records(d):
+        return [
+            {
+                "timestamp": row["timestamp"].date(),
+                "symbol": row["symbol"],
+                "pred": float(row["pred"]),
+                "fwd_ret_5d": float(row["fwd_ret_5d"]) if pd.notna(row["fwd_ret_5d"]) else None,
+            }
+            for _, row in d.iterrows()
+        ]
+    return {
+        "as_of": last_day.date(),
+        "n_stocks": len(day_df),
+        "long_picks": to_records(long_df),
+        "short_picks": to_records(short_df),
+    }
+
+
+def swing_africa_backtest_summary_payload() -> dict | None:
+    df = _load_africa_backtest_cached()
+    if df.empty:
+        return None
+    gross = df["daily_ret_gross"].dropna()
+    net = df["daily_ret_net"].dropna()
+    def _ann_ret(r): return float(r.mean() * 252)
+    def _ann_vol(r): return float(r.std() * np.sqrt(252))
+    def _sharpe(r):
+        v = _ann_vol(r)
+        return float(_ann_ret(r) / v) if v > 0 else 0.0
+    def _max_dd(r):
+        nav = (1 + r).cumprod()
+        peak = nav.cummax()
+        return float(((nav - peak) / peak).min())
+    return {
+        "summary": {
+            "n_days": len(df),
+            "start_date": df["timestamp"].min().date(),
+            "end_date": df["timestamp"].max().date(),
+            "ann_return_gross": _ann_ret(gross),
+            "ann_return_net": _ann_ret(net),
+            "ann_vol": _ann_vol(net),
+            "sharpe_gross": _sharpe(gross),
+            "sharpe_net": _sharpe(net),
+            "max_drawdown_net": _max_dd(net),
+            "hit_rate_net": float((net > 0).mean()),
+            "total_return_net": float((1 + net).cumprod().iloc[-1] - 1),
+        }
+    }
+
+
+_AFRICA_LIVE_CACHE: dict = {"timestamp": None, "payload": None}
+
+
+def get_africa_live_predictions(n_per_side: int = 5, force_refresh: bool = False) -> dict:
+    from datetime import date as _date
+    from swing_africa.predict_live import predict_latest as africa_predict_latest
+    now = _time.time()
+    cached_at = _AFRICA_LIVE_CACHE["timestamp"]
+    if (
+        not force_refresh
+        and cached_at is not None
+        and (now - cached_at) < _LIVE_CACHE_TTL_SEC
+        and _AFRICA_LIVE_CACHE["payload"] is not None
+    ):
+        return _AFRICA_LIVE_CACHE["payload"]
+    result = africa_predict_latest(universe_size=None, n_per_side=n_per_side)
+    result["as_of"] = _date.fromisoformat(result["as_of"])
+    result["universe_size"] = result.get("n_stocks_predicted", 0)
+    for picks_key in ("long_picks", "short_picks"):
+        for p in result[picks_key]:
+            p["timestamp"] = _date.fromisoformat(p["timestamp"])
+    _AFRICA_LIVE_CACHE["timestamp"] = now
+    _AFRICA_LIVE_CACHE["payload"] = result
+    return result

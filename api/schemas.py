@@ -75,3 +75,119 @@ class BacktestSummary(BaseModel):
 class BacktestSummaryResponse(BaseModel):
     summary: BacktestSummary
     last_30_days: list[BacktestDayRecord]
+
+
+class LivePick(BaseModel):
+    timestamp: date
+    symbol: str
+    pred: float
+    close: float
+
+
+class LivePredictionResponse(BaseModel):
+    as_of: date
+    n_stocks_predicted: int
+    model_trained_at: Optional[str] = None
+    universe_size: int
+    long_picks: list[LivePick]
+    short_picks: list[LivePick]
+
+
+# ---------- European swing strategy ----------
+
+class SwingEUPrediction(BaseModel):
+    timestamp: date
+    symbol: str
+    pred: float
+    fwd_ret_5d: Optional[float] = None
+
+
+class SwingEUPredictionsResponse(BaseModel):
+    as_of: date
+    n_stocks: int
+    long_picks: list[SwingEUPrediction]
+    short_picks: list[SwingEUPrediction]
+
+
+class SwingEUBacktestSummary(BaseModel):
+    n_days: int
+    start_date: date
+    end_date: date
+    ann_return_gross: float
+    ann_return_net: float
+    ann_vol: float
+    sharpe_gross: float
+    sharpe_net: float
+    max_drawdown_net: float
+    hit_rate_net: float
+    total_return_net: float
+
+
+class SwingEUBacktestResponse(BaseModel):
+    summary: SwingEUBacktestSummary
+
+
+class SwingEULivePick(BaseModel):
+    timestamp: date
+    symbol: str
+    pred: float
+    close: float
+
+
+class SwingEULivePredictionResponse(BaseModel):
+    as_of: date
+    n_stocks_predicted: int
+    model_trained_at: Optional[str] = None
+    universe_size: int
+    long_picks: list[SwingEULivePick]
+    short_picks: list[SwingEULivePick]
+
+
+# ---------- African swing strategy ----------
+
+class SwingAfricaPrediction(BaseModel):
+    timestamp: date
+    symbol: str
+    pred: float
+    fwd_ret_5d: Optional[float] = None
+
+
+class SwingAfricaPredictionsResponse(BaseModel):
+    as_of: date
+    n_stocks: int
+    long_picks: list[SwingAfricaPrediction]
+    short_picks: list[SwingAfricaPrediction]
+
+
+class SwingAfricaBacktestSummary(BaseModel):
+    n_days: int
+    start_date: date
+    end_date: date
+    ann_return_gross: float
+    ann_return_net: float
+    ann_vol: float
+    sharpe_gross: float
+    sharpe_net: float
+    max_drawdown_net: float
+    hit_rate_net: float
+    total_return_net: float
+
+
+class SwingAfricaBacktestResponse(BaseModel):
+    summary: SwingAfricaBacktestSummary
+
+
+class SwingAfricaLivePick(BaseModel):
+    timestamp: date
+    symbol: str
+    pred: float
+    close: float
+
+
+class SwingAfricaLivePredictionResponse(BaseModel):
+    as_of: date
+    n_stocks_predicted: int
+    model_trained_at: Optional[str] = None
+    universe_size: int
+    long_picks: list[SwingAfricaLivePick]
+    short_picks: list[SwingAfricaLivePick]

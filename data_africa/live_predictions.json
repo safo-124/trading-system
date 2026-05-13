@@ -1,0 +1,45 @@
+{
+  "as_of": "2026-05-12",
+  "n_stocks_predicted": 7,
+  "model_trained_at": "2026-05-13T09:05:54.533363Z",
+  "long_picks": [
+    {
+      "timestamp": "2026-05-12",
+      "symbol": "ABG.JO",
+      "pred": 0.5571045767732147,
+      "close": 22923.0
+    },
+    {
+      "timestamp": "2026-05-12",
+      "symbol": "APN.JO",
+      "pred": 0.520677411062001,
+      "close": 14096.0
+    },
+    {
+      "timestamp": "2026-05-12",
+      "symbol": "ATT.JO",
+      "pred": 0.5113638008464847,
+      "close": 1671.0
+    }
+  ],
+  "short_picks": [
+    {
+      "timestamp": "2026-05-12",
+      "symbol": "AGL.JO",
+      "pred": 0.4693826030134455,
+      "close": 87950.0
+    },
+    {
+      "timestamp": "2026-05-12",
+      "symbol": "ARI.JO",
+      "pred": 0.4947384300421139,
+      "close": 22919.0
+    },
+    {
+      "timestamp": "2026-05-12",
+      "symbol": "ANG.JO",
+      "pred": 0.5070239976769182,
+      "close": 168613.0
+    }
+  ]
+}

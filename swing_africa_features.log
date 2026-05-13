@@ -1,0 +1,107 @@
+Loading bars from C:\Users\nanas\Downloads\stocks\trading-system\data_africa\bars_daily
+
+Loading bars:   0%|          | 0/63 [00:00<?, ?it/s]
+Loading bars:   6%|6         | 4/63 [00:00<00:01, 39.27it/s]
+Loading bars:  19%|#9        | 12/63 [00:00<00:00, 57.18it/s]
+Loading bars:  32%|###1      | 20/63 [00:00<00:00, 65.34it/s]
+Loading bars:  44%|####4     | 28/63 [00:00<00:00, 65.75it/s]
+Loading bars:  57%|#####7    | 36/63 [00:00<00:00, 70.40it/s]
+Loading bars:  70%|######9   | 44/63 [00:00<00:00, 65.20it/s]
+Loading bars:  81%|########  | 51/63 [00:00<00:00, 62.62it/s]
+Loading bars:  92%|#########2| 58/63 [00:00<00:00, 63.24it/s]
+Loading bars: 100%|##########| 63/63 [00:00<00:00, 63.94it/s]
+  Loaded: 219,527 rows, 63 symbols
+  Date range: 2012-01-02 to 2026-05-13
+
+Computing features...
+
+Per-symbol features:   0%|          | 0/63 [00:00<?, ?it/s]
+Per-symbol features:   2%|1         | 1/63 [00:00<00:52,  1.18it/s]
+Per-symbol features:   3%|3         | 2/63 [00:01<00:49,  1.23it/s]
+Per-symbol features:   5%|4         | 3/63 [00:02<00:47,  1.28it/s]
+Per-symbol features:   6%|6         | 4/63 [00:03<00:48,  1.23it/s]
+Per-symbol features:   8%|7         | 5/63 [00:04<00:46,  1.24it/s]
+Per-symbol features:  10%|9         | 6/63 [00:04<00:45,  1.26it/s]
+Per-symbol features:  11%|#1        | 7/63 [00:05<00:41,  1.34it/s]
+Per-symbol features:  13%|#2        | 8/63 [00:06<00:40,  1.35it/s]
+Per-symbol features:  14%|#4        | 9/63 [00:06<00:36,  1.48it/s]
+Per-symbol features:  16%|#5        | 10/63 [00:07<00:36,  1.45it/s]
+Per-symbol features:  17%|#7        | 11/63 [00:08<00:38,  1.37it/s]
+Per-symbol features:  19%|#9        | 12/63 [00:09<00:37,  1.36it/s]
+Per-symbol features:  21%|##        | 13/63 [00:09<00:36,  1.36it/s]
+Per-symbol features:  22%|##2       | 14/63 [00:10<00:36,  1.36it/s]
+Per-symbol features:  24%|##3       | 15/63 [00:11<00:35,  1.36it/s]
+Per-symbol features:  25%|##5       | 16/63 [00:11<00:34,  1.36it/s]
+Per-symbol features:  27%|##6       | 17/63 [00:12<00:34,  1.34it/s]
+Per-symbol features:  29%|##8       | 18/63 [00:13<00:33,  1.34it/s]
+Per-symbol features:  30%|###       | 19/63 [00:14<00:32,  1.34it/s]
+Per-symbol features:  32%|###1      | 20/63 [00:14<00:31,  1.35it/s]
+Per-symbol features:  33%|###3      | 21/63 [00:15<00:30,  1.36it/s]
+Per-symbol features:  35%|###4      | 22/63 [00:16<00:29,  1.38it/s]
+Per-symbol features:  37%|###6      | 23/63 [00:17<00:30,  1.31it/s]
+Per-symbol features:  38%|###8      | 24/63 [00:17<00:29,  1.32it/s]
+Per-symbol features:  40%|###9      | 25/63 [00:18<00:28,  1.33it/s]
+Per-symbol features:  41%|####1     | 26/63 [00:19<00:27,  1.34it/s]
+Per-symbol features:  43%|####2     | 27/63 [00:20<00:26,  1.35it/s]
+Per-symbol features:  44%|####4     | 28/63 [00:20<00:25,  1.35it/s]
+Per-symbol features:  46%|####6     | 29/63 [00:21<00:25,  1.34it/s]
+Per-symbol features:  48%|####7     | 30/63 [00:22<00:24,  1.35it/s]
+Per-symbol features:  49%|####9     | 31/63 [00:23<00:23,  1.35it/s]
+Per-symbol features:  51%|#####     | 32/63 [00:23<00:22,  1.36it/s]
+Per-symbol features:  52%|#####2    | 33/63 [00:24<00:22,  1.35it/s]
+Per-symbol features:  54%|#####3    | 34/63 [00:25<00:22,  1.29it/s]
+Per-symbol features:  56%|#####5    | 35/63 [00:26<00:21,  1.28it/s]
+Per-symbol features:  57%|#####7    | 36/63 [00:27<00:20,  1.29it/s]
+Per-symbol features:  59%|#####8    | 37/63 [00:27<00:20,  1.29it/s]
+Per-symbol features:  60%|######    | 38/63 [00:28<00:16,  1.50it/s]
+Per-symbol features:  62%|######1   | 39/63 [00:28<00:16,  1.43it/s]
+Per-symbol features:  63%|######3   | 40/63 [00:29<00:16,  1.41it/s]
+Per-symbol features:  65%|######5   | 41/63 [00:30<00:15,  1.40it/s]
+Per-symbol features:  67%|######6   | 42/63 [00:31<00:15,  1.38it/s]
+Per-symbol features:  68%|######8   | 43/63 [00:31<00:12,  1.65it/s]
+Per-symbol features:  70%|######9   | 44/63 [00:31<00:10,  1.85it/s]
+Per-symbol features:  71%|#######1  | 45/63 [00:32<00:10,  1.67it/s]
+Per-symbol features:  73%|#######3  | 46/63 [00:33<00:10,  1.56it/s]
+Per-symbol features:  75%|#######4  | 47/63 [00:34<00:10,  1.49it/s]
+Per-symbol features:  76%|#######6  | 48/63 [00:34<00:10,  1.46it/s]
+Per-symbol features:  78%|#######7  | 49/63 [00:35<00:09,  1.55it/s]
+Per-symbol features:  79%|#######9  | 50/63 [00:36<00:08,  1.49it/s]
+Per-symbol features:  81%|########  | 51/63 [00:36<00:08,  1.44it/s]
+Per-symbol features:  83%|########2 | 52/63 [00:37<00:07,  1.41it/s]
+Per-symbol features:  84%|########4 | 53/63 [00:38<00:07,  1.39it/s]
+Per-symbol features:  86%|########5 | 54/63 [00:39<00:06,  1.39it/s]
+Per-symbol features:  87%|########7 | 55/63 [00:39<00:05,  1.38it/s]
+Per-symbol features:  89%|########8 | 56/63 [00:40<00:04,  1.63it/s]
+Per-symbol features:  90%|######### | 57/63 [00:40<00:03,  1.53it/s]
+Per-symbol features:  92%|#########2| 58/63 [00:41<00:03,  1.47it/s]
+Per-symbol features:  94%|#########3| 59/63 [00:42<00:02,  1.43it/s]
+Per-symbol features:  95%|#########5| 60/63 [00:43<00:02,  1.41it/s]
+Per-symbol features:  97%|#########6| 61/63 [00:43<00:01,  1.40it/s]
+Per-symbol features:  98%|#########8| 62/63 [00:44<00:00,  1.39it/s]
+Per-symbol features: 100%|##########| 63/63 [00:45<00:00,  1.38it/s]
+Per-symbol features: 100%|##########| 63/63 [00:45<00:00,  1.39it/s]
+
+  Output shape: (219527, 31)
+  Columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume', 'symbol', 'ret_1d', 'logret_1d', 'ret_5d', 'logret_5d', 'ret_20d', 'logret_20d', 'ret_60d', 'logret_60d', 'ret_120d', 'logret_120d', 'vol_20d', 'vol_60d', 'dollar_volume', 'dollar_volume_20d_mean', 'volume_zscore_20d', 'kalman_logprice', 'kalman_deviation', 'vol_regime_z', 'spectral_low_freq_ratio', 'ret_5d_xs_rank', 'ret_20d_xs_rank', 'ret_60d_xs_rank', 'ret_120d_xs_rank', 'vol_20d_xs_rank']
+
+  Saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_africa\features.parquet (46.0 MB)
+
+--- SAMPLE: last 3 rows of AAPL ---
+Empty DataFrame
+Columns: [timestamp, close, ret_20d, ret_60d, vol_20d, kalman_deviation, vol_regime_z, spectral_low_freq_ratio, ret_20d_xs_rank, ret_60d_xs_rank]
+Index: []
+
+--- NULL RATES (top 10 worst) ---
+vol_regime_z               0.077772
+ret_120d                   0.034438
+ret_120d_xs_rank           0.034438
+logret_120d                0.034438
+ret_60d                    0.017219
+logret_60d                 0.017219
+spectral_low_freq_ratio    0.017219
+ret_60d_xs_rank            0.017219
+vol_60d                    0.017219
+vol_20d                    0.005740
+
+  (High null rates at the top are expected: long-horizon features
+   need 120+ days of history; DSP features need 252+ days.)

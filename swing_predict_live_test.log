@@ -1,0 +1,60 @@
+[info] Universe source: wikipedia (503 tickers)
+C:\Users\nanas\Downloads\stocks\trading-system\swing\predict_live.py:43: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  end = datetime.utcnow().date()
+Universe: 30 tickers
+
+Fetching live bars:   0%|          | 0/30 [00:00<?, ?it/s]
+Fetching live bars:   3%|3         | 1/30 [00:00<00:26,  1.10it/s]
+Fetching live bars:   7%|6         | 2/30 [00:01<00:13,  2.08it/s]
+Fetching live bars:  10%|#         | 3/30 [00:01<00:08,  3.10it/s]
+Fetching live bars:  13%|#3        | 4/30 [00:01<00:06,  4.18it/s]
+Fetching live bars:  17%|#6        | 5/30 [00:01<00:05,  4.81it/s]
+Fetching live bars:  20%|##        | 6/30 [00:01<00:04,  5.55it/s]
+Fetching live bars:  23%|##3       | 7/30 [00:01<00:03,  5.90it/s]
+Fetching live bars:  27%|##6       | 8/30 [00:01<00:04,  5.32it/s]
+Fetching live bars:  30%|###       | 9/30 [00:02<00:03,  5.56it/s]
+Fetching live bars:  33%|###3      | 10/30 [00:02<00:03,  5.64it/s]
+Fetching live bars:  37%|###6      | 11/30 [00:02<00:03,  5.48it/s]
+Fetching live bars:  40%|####      | 12/30 [00:02<00:02,  6.08it/s]
+Fetching live bars:  43%|####3     | 13/30 [00:02<00:02,  5.83it/s]
+Fetching live bars:  47%|####6     | 14/30 [00:03<00:02,  5.39it/s]
+Fetching live bars:  50%|#####     | 15/30 [00:03<00:02,  5.66it/s]
+Fetching live bars:  53%|#####3    | 16/30 [00:03<00:02,  5.68it/s]
+Fetching live bars:  57%|#####6    | 17/30 [00:03<00:02,  5.76it/s]
+Fetching live bars:  60%|######    | 18/30 [00:03<00:01,  6.20it/s]
+Fetching live bars:  63%|######3   | 19/30 [00:03<00:01,  6.45it/s]
+Fetching live bars:  67%|######6   | 20/30 [00:03<00:01,  7.19it/s]
+Fetching live bars:  70%|#######   | 21/30 [00:04<00:01,  6.36it/s]
+Fetching live bars:  73%|#######3  | 22/30 [00:04<00:01,  7.04it/s]
+Fetching live bars:  77%|#######6  | 23/30 [00:04<00:01,  6.67it/s]
+Fetching live bars:  80%|########  | 24/30 [00:04<00:00,  6.84it/s]
+Fetching live bars:  83%|########3 | 25/30 [00:04<00:00,  6.93it/s]
+Fetching live bars:  87%|########6 | 26/30 [00:04<00:00,  7.05it/s]
+Fetching live bars:  90%|######### | 27/30 [00:04<00:00,  7.59it/s]
+Fetching live bars:  93%|#########3| 28/30 [00:05<00:00,  6.68it/s]
+Fetching live bars:  97%|#########6| 29/30 [00:05<00:00,  6.94it/s]
+Fetching live bars: 100%|##########| 30/30 [00:05<00:00,  6.89it/s]
+Fetching live bars: 100%|##########| 30/30 [00:05<00:00,  5.57it/s]
+Fetched: 30 symbols, 11,700 rows
+Computing features...
+As-of date: 2026-05-12 (feature-complete)
+
+============================================================
+LIVE PREDICTIONS � as of 2026-05-12
+============================================================
+
+LONG PICKS (5):
+  ACN     pred=+0.5387  close=$169.77
+  ABT     pred=+0.5365  close=$84.35
+  ALLE    pred=+0.5313  close=$131.30
+  ALGN    pred=+0.5193  close=$165.79
+  AKAM    pred=+0.5149  close=$149.56
+
+SHORT PICKS (5):
+  ADSK    pred=+0.4806  close=$234.87
+  ADI     pred=+0.4815  close=$419.65
+  AEE     pred=+0.4818  close=$109.49
+  AJG     pred=+0.4901  close=$197.40
+  AMD     pred=+0.4906  close=$448.29
+
+  Saved to: C:\Users\nanas\Downloads\stocks\trading-system\data\live_predictions.json

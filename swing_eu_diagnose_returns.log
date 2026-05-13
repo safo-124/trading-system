@@ -1,0 +1,54 @@
+Total rows: 804,353
+Total symbols: 331
+
+fwd_ret_5d distribution:
+count    804353.000000
+mean          0.008287
+std           2.448900
+min          -0.792412
+0.1%         -0.248851
+1%           -0.121723
+50%           0.002679
+99%           0.122541
+99.9%         0.248285
+max        1073.850373
+
+Rows with fwd_ret_5d outside [-50%, +200%]: 33
+
+Symbols affected (top 20 by frequency):
+symbol
+DIA.MC     10
+VIV.PA      5
+VK.PA       4
+WLN.PA      4
+MCG.L       3
+HOLN.SW     3
+DOCM.SW     2
+JD.L        1
+ENT.L       1
+
+Top 10 most extreme returns:
+ timestamp  symbol     pred  fwd_ret_5d
+2025-01-31  DIA.MC 0.516607 1073.850373
+2025-01-30  DIA.MC 0.523111  998.401255
+2025-01-28  DIA.MC 0.489080  960.956542
+2025-01-27  DIA.MC 0.481932  944.054948
+2025-01-29  DIA.MC 0.496178  926.071814
+2018-11-13   VK.PA 0.466036   -0.503584
+2025-06-11 HOLN.SW 0.509102   -0.504508
+2025-06-10 HOLN.SW 0.512229   -0.504959
+2018-11-12   VK.PA 0.480486   -0.508042
+2019-11-25  DIA.MC 0.455529   -0.509965
+
+Bottom 10 most extreme returns:
+ timestamp  symbol     pred  fwd_ret_5d
+2024-12-06  VIV.PA 0.509391   -0.792412
+2024-12-05  VIV.PA 0.510409   -0.782331
+2024-12-04  VIV.PA 0.513346   -0.777739
+2024-12-03  VIV.PA 0.512379   -0.776004
+2024-12-02  VIV.PA 0.513125   -0.773489
+2020-03-11   MCG.L 0.515961   -0.733648
+2020-03-10   MCG.L 0.490668   -0.625571
+2020-03-12   MCG.L 0.614126   -0.619565
+2023-10-18  WLN.PA 0.531334   -0.607339
+2025-05-02 DOCM.SW 0.443824   -0.591214

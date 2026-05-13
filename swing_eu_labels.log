@@ -1,0 +1,28 @@
+Loading features from C:\Users\nanas\Downloads\stocks\trading-system\data_eu\features.parquet
+  shape: (1137910, 31)
+
+Adding forward returns...
+
+Forward returns:   0%|          | 0/331 [00:00<?, ?it/s]
+Forward returns:   0%|          | 1/331 [00:00<01:05,  5.02it/s]
+Forward returns:  14%|#3        | 46/331 [00:00<00:01, 190.62it/s]
+Forward returns:  26%|##5       | 85/331 [00:00<00:00, 263.81it/s]
+Forward returns:  37%|###7      | 123/331 [00:00<00:00, 303.75it/s]
+Forward returns:  48%|####8     | 160/331 [00:00<00:00, 324.82it/s]
+Forward returns:  61%|######    | 201/331 [00:00<00:00, 350.25it/s]
+Forward returns:  73%|#######3  | 243/331 [00:00<00:00, 370.92it/s]
+Forward returns:  87%|########6 | 287/331 [00:00<00:00, 391.19it/s]
+Forward returns:  99%|#########9| 328/331 [00:01<00:00, 384.81it/s]
+Forward returns: 100%|##########| 331/331 [00:01<00:00, 323.91it/s]
+
+Adding cross-sectional rank labels...
+
+Dropped 1,655 rows with missing forward returns
+Final shape: (1136255, 35)
+
+  Saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\training_set.parquet (244.3 MB)
+
+--- LABEL SANITY ---
+fwd_ret_5d_xs_rank min/max: 0.0030 / 1.0000
+  mean: 0.5016 (should be ~0.5)
+  median: 0.5016

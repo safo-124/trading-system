@@ -1,0 +1,40 @@
+{
+  "trained_at": "2026-05-13T08:23:32.254391Z",
+  "features": [
+    "ret_5d",
+    "ret_20d",
+    "ret_60d",
+    "ret_120d",
+    "logret_5d",
+    "logret_20d",
+    "kalman_deviation",
+    "ret_120d_xs_rank",
+    "vol_regime_z",
+    "volume_zscore_20d"
+  ],
+  "target": "fwd_ret_5d_xs_rank",
+  "training_rows": 1044807,
+  "training_start": "2013-01-15",
+  "training_end": "2026-05-06",
+  "model_params": {
+    "n_estimators": 300,
+    "learning_rate": 0.03,
+    "max_depth": 6,
+    "num_leaves": 31,
+    "min_child_samples": 200,
+    "reg_alpha": 0.1,
+    "reg_lambda": 0.1
+  },
+  "feature_importance": {
+    "ret_5d": 741,
+    "ret_20d": 1113,
+    "ret_60d": 1300,
+    "ret_120d": 1389,
+    "logret_5d": 0,
+    "logret_20d": 0,
+    "kalman_deviation": 860,
+    "ret_120d_xs_rank": 1350,
+    "vol_regime_z": 1575,
+    "volume_zscore_20d": 663
+  }
+}

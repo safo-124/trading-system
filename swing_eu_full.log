@@ -1,0 +1,649 @@
+[info] EU universe source: wikipedia_stoxx600 (483 tickers)
+Ingesting 483 European tickers from yfinance
+Date range: 2012-01-01 to today
+Output: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\bars_daily
+
+Ingesting EU:   0%|          | 0/483 [00:00<?, ?it/s]  [skip 1COV.DE: only 1 rows, need >=500]
+
+Ingesting EU:   0%|          | 1/483 [00:00<05:52,  1.37it/s]
+Ingesting EU:   0%|          | 2/483 [00:01<04:01,  1.99it/s]
+Ingesting EU:   1%|          | 3/483 [00:01<03:58,  2.01it/s]
+Ingesting EU:   1%|          | 4/483 [00:02<03:51,  2.07it/s]
+Ingesting EU:   1%|1         | 5/483 [00:02<03:31,  2.26it/s]
+Ingesting EU:   1%|1         | 6/483 [00:02<03:44,  2.13it/s]
+Ingesting EU:   1%|1         | 7/483 [00:03<03:57,  2.00it/s]
+Ingesting EU:   2%|1         | 8/483 [00:03<03:41,  2.14it/s]
+Ingesting EU:   2%|1         | 9/483 [00:04<03:36,  2.19it/s]
+Ingesting EU:   2%|2         | 10/483 [00:04<03:26,  2.29it/s]
+Ingesting EU:   2%|2         | 11/483 [00:05<03:18,  2.37it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADH.OL"}}}
+$ADH.OL: possibly delisted; no timezone found
+
+Ingesting EU:   2%|2         | 12/483 [00:06<05:09,  1.52it/s]
+Ingesting EU:   3%|2         | 13/483 [00:06<04:54,  1.60it/s]
+Ingesting EU:   3%|2         | 14/483 [00:07<04:27,  1.75it/s]
+Ingesting EU:   3%|3         | 15/483 [00:07<03:49,  2.04it/s]
+Ingesting EU:   3%|3         | 16/483 [00:07<03:32,  2.20it/s]
+Ingesting EU:   4%|3         | 17/483 [00:08<03:26,  2.26it/s]
+Ingesting EU:   4%|3         | 18/483 [00:08<03:17,  2.36it/s]
+Ingesting EU:   4%|3         | 19/483 [00:09<03:29,  2.21it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AHT.L"}}}
+$AHT.L: possibly delisted; no timezone found
+
+Ingesting EU:   4%|4         | 20/483 [00:10<05:30,  1.40it/s]
+Ingesting EU:   4%|4         | 21/483 [00:11<04:49,  1.59it/s]$AIRP.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:   5%|4         | 22/483 [00:11<03:58,  1.94it/s]
+Ingesting EU:   5%|4         | 23/483 [00:11<04:12,  1.82it/s]
+Ingesting EU:   5%|4         | 24/483 [00:12<04:05,  1.87it/s]$AKERBP.OL: possibly delisted; no timezone found
+
+Ingesting EU:   5%|5         | 25/483 [00:13<04:23,  1.74it/s]
+Ingesting EU:   5%|5         | 26/483 [00:13<03:58,  1.91it/s]
+Ingesting EU:   6%|5         | 27/483 [00:13<03:33,  2.13it/s]
+Ingesting EU:   6%|5         | 28/483 [00:14<03:17,  2.31it/s]$ALLFG.MC: possibly delisted; no timezone found
+
+Ingesting EU:   6%|6         | 29/483 [00:14<03:26,  2.20it/s]
+Ingesting EU:   6%|6         | 30/483 [00:15<03:17,  2.29it/s]
+Ingesting EU:   6%|6         | 31/483 [00:15<03:27,  2.17it/s]$AMBU B.CO: possibly delisted; no timezone found
+
+Ingesting EU:   7%|6         | 32/483 [00:16<03:27,  2.17it/s]
+Ingesting EU:   7%|6         | 33/483 [00:16<03:25,  2.18it/s]$AMS.VI: possibly delisted; no timezone found
+
+Ingesting EU:   7%|7         | 34/483 [00:17<03:39,  2.04it/s]
+Ingesting EU:   7%|7         | 35/483 [00:17<03:46,  1.98it/s]
+Ingesting EU:   7%|7         | 36/483 [00:18<03:36,  2.07it/s]
+Ingesting EU:   8%|7         | 37/483 [00:18<03:49,  1.95it/s]$ARGX.AS: possibly delisted; no timezone found
+
+Ingesting EU:   8%|7         | 38/483 [00:19<03:52,  1.91it/s]$ARND.DE: possibly delisted; no timezone found
+
+Ingesting EU:   8%|8         | 39/483 [00:19<03:43,  1.99it/s]$ASMI.AS: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:   8%|8         | 40/483 [00:19<03:19,  2.22it/s]
+Ingesting EU:   8%|8         | 41/483 [00:20<03:20,  2.20it/s]$ASSA B.ST: possibly delisted; no timezone found
+
+Ingesting EU:   9%|8         | 42/483 [00:21<03:38,  2.02it/s]$ATCOA.ST: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:   9%|8         | 43/483 [00:21<03:12,  2.28it/s]$ATOS.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:   9%|9         | 44/483 [00:21<02:55,  2.50it/s]
+Ingesting EU:   9%|9         | 45/483 [00:22<03:12,  2.28it/s]
+Ingesting EU:  10%|9         | 46/483 [00:22<03:38,  2.00it/s]
+Ingesting EU:  10%|9         | 47/483 [00:23<03:31,  2.07it/s]
+Ingesting EU:  10%|9         | 48/483 [00:23<03:41,  1.97it/s]$BA.: possibly delisted; no timezone found
+
+Ingesting EU:  10%|#         | 49/483 [00:24<03:45,  1.93it/s]
+Ingesting EU:  10%|#         | 50/483 [00:24<04:01,  1.80it/s]
+Ingesting EU:  11%|#         | 51/483 [00:25<04:07,  1.74it/s]$BALD B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  11%|#         | 52/483 [00:26<03:52,  1.86it/s]$BALN.SW: possibly delisted; no timezone found
+
+Ingesting EU:  11%|#         | 53/483 [00:26<03:42,  1.93it/s]
+Ingesting EU:  11%|#1        | 54/483 [00:27<03:57,  1.81it/s]
+Ingesting EU:  11%|#1        | 55/483 [00:27<03:48,  1.87it/s]
+Ingesting EU:  12%|#1        | 56/483 [00:28<04:01,  1.77it/s]
+Ingesting EU:  12%|#1        | 57/483 [00:28<03:51,  1.84it/s]
+Ingesting EU:  12%|#2        | 58/483 [00:29<03:59,  1.77it/s]
+Ingesting EU:  12%|#2        | 59/483 [00:29<03:55,  1.80it/s]
+Ingesting EU:  12%|#2        | 60/483 [00:30<03:58,  1.78it/s]$BDEV.L: possibly delisted; no timezone found
+
+Ingesting EU:  13%|#2        | 61/483 [00:31<03:50,  1.83it/s]$BEB.SW: possibly delisted; no timezone found
+
+Ingesting EU:  13%|#2        | 62/483 [00:31<03:55,  1.78it/s]
+Ingesting EU:  13%|#3        | 63/483 [00:32<03:58,  1.76it/s]
+Ingesting EU:  13%|#3        | 64/483 [00:32<03:57,  1.76it/s]
+Ingesting EU:  13%|#3        | 65/483 [00:33<03:56,  1.77it/s]
+Ingesting EU:  14%|#3        | 66/483 [00:33<03:55,  1.77it/s]
+Ingesting EU:  14%|#3        | 67/483 [00:34<03:47,  1.83it/s]
+Ingesting EU:  14%|#4        | 68/483 [00:34<03:49,  1.81it/s]$BNPP.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  14%|#4        | 69/483 [00:35<03:32,  1.95it/s]
+Ingesting EU:  14%|#4        | 70/483 [00:35<03:41,  1.87it/s]
+Ingesting EU:  15%|#4        | 71/483 [00:36<03:51,  1.78it/s]
+Ingesting EU:  15%|#4        | 72/483 [00:37<03:57,  1.73it/s]
+Ingesting EU:  15%|#5        | 73/483 [00:37<03:49,  1.79it/s]
+Ingesting EU:  15%|#5        | 74/483 [00:38<03:49,  1.78it/s]$BOUY.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  16%|#5        | 75/483 [00:38<03:18,  2.06it/s]
+Ingesting EU:  16%|#5        | 76/483 [00:39<03:34,  1.90it/s]
+Ingesting EU:  16%|#5        | 77/483 [00:39<03:32,  1.91it/s]
+Ingesting EU:  16%|#6        | 78/483 [00:40<03:30,  1.93it/s]$BRNW.MI: possibly delisted; no timezone found
+
+Ingesting EU:  16%|#6        | 79/483 [00:40<03:28,  1.94it/s]$BT.A: possibly delisted; no timezone found
+
+Ingesting EU:  17%|#6        | 80/483 [00:41<03:21,  2.00it/s]
+Ingesting EU:  17%|#6        | 81/483 [00:41<03:24,  1.97it/s]
+Ingesting EU:  17%|#6        | 82/483 [00:42<03:26,  1.95it/s]
+Ingesting EU:  17%|#7        | 83/483 [00:42<03:36,  1.85it/s]$CAGR.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  17%|#7        | 84/483 [00:43<03:08,  2.12it/s]$CAPP.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  18%|#7        | 85/483 [00:43<02:48,  2.36it/s]$CARR.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  18%|#7        | 86/483 [00:43<02:35,  2.56it/s]$CASP.ST: possibly delisted; no timezone found
+
+Ingesting EU:  18%|#8        | 87/483 [00:44<02:49,  2.34it/s]
+Ingesting EU:  18%|#8        | 88/483 [00:44<03:03,  2.15it/s]
+Ingesting EU:  18%|#8        | 89/483 [00:45<03:20,  1.97it/s]$CCH.SW: possibly delisted; no timezone found
+
+Ingesting EU:  19%|#8        | 90/483 [00:46<03:30,  1.87it/s]
+Ingesting EU:  19%|#8        | 91/483 [00:46<03:24,  1.92it/s]
+Ingesting EU:  19%|#9        | 92/483 [00:47<03:31,  1.85it/s]
+Ingesting EU:  19%|#9        | 93/483 [00:47<03:33,  1.82it/s]
+Ingesting EU:  19%|#9        | 94/483 [00:48<03:50,  1.69it/s]
+Ingesting EU:  20%|#9        | 95/483 [00:49<03:55,  1.65it/s]
+Ingesting EU:  20%|#9        | 96/483 [00:49<03:54,  1.65it/s]
+Ingesting EU:  20%|##        | 97/483 [00:50<03:56,  1.63it/s]
+Ingesting EU:  20%|##        | 98/483 [00:50<03:48,  1.68it/s]
+Ingesting EU:  20%|##        | 99/483 [00:51<04:02,  1.58it/s]
+Ingesting EU:  21%|##        | 100/483 [00:52<03:58,  1.61it/s]
+Ingesting EU:  21%|##        | 101/483 [00:52<03:46,  1.69it/s]
+Ingesting EU:  21%|##1       | 102/483 [00:53<03:54,  1.62it/s]$CTS.DE: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  21%|##1       | 103/483 [00:53<03:19,  1.90it/s]$DANO.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  22%|##1       | 104/483 [00:53<02:53,  2.18it/s]$DASH.DE: possibly delisted; no timezone found
+
+Ingesting EU:  22%|##1       | 105/483 [00:54<03:00,  2.09it/s]
+Ingesting EU:  22%|##1       | 106/483 [00:55<03:06,  2.02it/s]
+Ingesting EU:  22%|##2       | 107/483 [00:55<02:57,  2.12it/s]
+Ingesting EU:  22%|##2       | 108/483 [00:55<03:05,  2.02it/s]
+Ingesting EU:  23%|##2       | 109/483 [00:56<03:14,  1.93it/s]
+Ingesting EU:  23%|##2       | 110/483 [00:57<03:09,  1.96it/s]
+Ingesting EU:  23%|##2       | 111/483 [00:57<03:06,  1.99it/s]
+Ingesting EU:  23%|##3       | 112/483 [00:58<03:09,  1.95it/s]
+Ingesting EU:  23%|##3       | 113/483 [00:58<03:14,  1.90it/s]$DLG.L: possibly delisted; no timezone found
+
+Ingesting EU:  24%|##3       | 114/483 [00:59<03:06,  1.98it/s]
+Ingesting EU:  24%|##3       | 115/483 [00:59<03:25,  1.79it/s]
+Ingesting EU:  24%|##4       | 116/483 [01:00<03:06,  1.97it/s]
+Ingesting EU:  24%|##4       | 117/483 [01:00<03:25,  1.78it/s]$DSM.SW: possibly delisted; no timezone found
+
+Ingesting EU:  24%|##4       | 118/483 [01:01<03:13,  1.89it/s]
+Ingesting EU:  25%|##4       | 119/483 [01:01<03:15,  1.86it/s]
+Ingesting EU:  25%|##4       | 120/483 [01:02<02:55,  2.07it/s]
+Ingesting EU:  25%|##5       | 121/483 [01:02<03:02,  1.99it/s]
+Ingesting EU:  25%|##5       | 122/483 [01:03<02:58,  2.03it/s]
+Ingesting EU:  25%|##5       | 123/483 [01:03<03:01,  1.99it/s]
+Ingesting EU:  26%|##5       | 124/483 [01:04<03:06,  1.92it/s]
+Ingesting EU:  26%|##5       | 125/483 [01:04<03:05,  1.93it/s]$EFGI.PA: possibly delisted; no timezone found
+
+Ingesting EU:  26%|##6       | 126/483 [01:05<02:58,  2.00it/s]
+Ingesting EU:  26%|##6       | 127/483 [01:05<03:06,  1.91it/s]$ELUX B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  27%|##6       | 128/483 [01:06<02:57,  2.00it/s]$ELUXB.ST: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  27%|##6       | 129/483 [01:06<02:36,  2.26it/s]
+Ingesting EU:  27%|##6       | 130/483 [01:07<02:49,  2.08it/s]
+Ingesting EU:  27%|##7       | 131/483 [01:07<02:57,  1.98it/s]
+Ingesting EU:  27%|##7       | 132/483 [01:08<03:00,  1.94it/s]
+Ingesting EU:  28%|##7       | 133/483 [01:08<03:08,  1.85it/s]
+Ingesting EU:  28%|##7       | 134/483 [01:09<03:21,  1.73it/s]$ENGIE.PA: possibly delisted; no timezone found
+
+Ingesting EU:  28%|##7       | 135/483 [01:10<03:42,  1.57it/s]
+Ingesting EU:  28%|##8       | 136/483 [01:10<03:39,  1.58it/s]
+Ingesting EU:  28%|##8       | 137/483 [01:11<03:24,  1.69it/s]$ENX.AS: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  29%|##8       | 138/483 [01:11<02:53,  1.98it/s]
+Ingesting EU:  29%|##8       | 139/483 [01:12<03:02,  1.88it/s]$EPI A.ST: possibly delisted; no timezone found
+
+Ingesting EU:  29%|##8       | 140/483 [01:12<03:07,  1.83it/s]$ERICB.ST: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  29%|##9       | 141/483 [01:13<02:42,  2.10it/s]$ESLX.PA: possibly delisted; no timezone found
+
+Ingesting EU:  29%|##9       | 142/483 [01:13<03:00,  1.89it/s]
+Ingesting EU:  30%|##9       | 143/483 [01:14<02:55,  1.94it/s]$EVR.L: possibly delisted; no timezone found
+
+Ingesting EU:  30%|##9       | 144/483 [01:14<02:54,  1.95it/s]
+Ingesting EU:  30%|###       | 145/483 [01:15<02:46,  2.03it/s]
+Ingesting EU:  30%|###       | 146/483 [01:15<02:35,  2.17it/s]
+Ingesting EU:  30%|###       | 147/483 [01:16<02:43,  2.05it/s]
+Ingesting EU:  31%|###       | 148/483 [01:16<02:39,  2.09it/s]$FALK.CO: possibly delisted; no timezone found
+
+Ingesting EU:  31%|###       | 149/483 [01:17<02:39,  2.10it/s]
+Ingesting EU:  31%|###1      | 150/483 [01:17<02:39,  2.08it/s]$FERR.MI: possibly delisted; no timezone found
+
+Ingesting EU:  31%|###1      | 151/483 [01:18<02:43,  2.03it/s]
+Ingesting EU:  31%|###1      | 152/483 [01:18<02:43,  2.03it/s]$FLTR.IR: possibly delisted; no timezone found
+
+Ingesting EU:  32%|###1      | 153/483 [01:19<03:08,  1.75it/s]
+Ingesting EU:  32%|###1      | 154/483 [01:20<03:09,  1.73it/s]
+Ingesting EU:  32%|###2      | 155/483 [01:20<03:06,  1.76it/s]$FOR.MC: possibly delisted; no timezone found
+
+Ingesting EU:  32%|###2      | 156/483 [01:21<03:00,  1.81it/s]
+Ingesting EU:  33%|###2      | 157/483 [01:21<03:04,  1.77it/s]
+Ingesting EU:  33%|###2      | 158/483 [01:22<03:20,  1.62it/s]
+Ingesting EU:  33%|###2      | 159/483 [01:23<03:16,  1.65it/s]
+Ingesting EU:  33%|###3      | 160/483 [01:23<03:18,  1.63it/s]$FTI.L: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  33%|###3      | 161/483 [01:23<02:48,  1.92it/s]
+Ingesting EU:  34%|###3      | 162/483 [01:24<02:46,  1.93it/s]
+Ingesting EU:  34%|###3      | 163/483 [01:24<02:39,  2.00it/s]
+Ingesting EU:  34%|###3      | 164/483 [01:25<02:37,  2.02it/s]
+Ingesting EU:  34%|###4      | 165/483 [01:26<02:47,  1.90it/s]
+Ingesting EU:  34%|###4      | 166/483 [01:26<02:50,  1.86it/s]
+Ingesting EU:  35%|###4      | 167/483 [01:27<02:53,  1.82it/s]
+Ingesting EU:  35%|###4      | 168/483 [01:27<02:47,  1.88it/s]
+Ingesting EU:  35%|###4      | 169/483 [01:28<02:52,  1.82it/s]
+Ingesting EU:  35%|###5      | 170/483 [01:28<02:58,  1.75it/s]$GFT.IR: possibly delisted; no timezone found
+
+Ingesting EU:  35%|###5      | 171/483 [01:29<02:49,  1.84it/s]
+Ingesting EU:  36%|###5      | 172/483 [01:29<02:43,  1.90it/s]$GLB.IR: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  36%|###5      | 173/483 [01:30<02:24,  2.14it/s]
+Ingesting EU:  36%|###6      | 174/483 [01:30<02:38,  1.95it/s]
+Ingesting EU:  36%|###6      | 175/483 [01:31<02:44,  1.87it/s]
+Ingesting EU:  36%|###6      | 176/483 [01:31<02:41,  1.90it/s]$GREG.L: possibly delisted; no timezone found
+
+Ingesting EU:  37%|###6      | 177/483 [01:32<02:37,  1.94it/s]
+Ingesting EU:  37%|###6      | 178/483 [01:32<02:38,  1.92it/s]$GRLS.MC: possibly delisted; no timezone found
+
+Ingesting EU:  37%|###7      | 179/483 [01:33<02:33,  1.99it/s]
+Ingesting EU:  37%|###7      | 180/483 [01:34<02:47,  1.81it/s]$GWI.MI: possibly delisted; no timezone found
+
+Ingesting EU:  37%|###7      | 181/483 [01:34<02:42,  1.86it/s]
+Ingesting EU:  38%|###7      | 182/483 [01:35<02:43,  1.84it/s]
+Ingesting EU:  38%|###7      | 183/483 [01:35<02:40,  1.87it/s]$HELN.SW: possibly delisted; no timezone found
+
+Ingesting EU:  38%|###8      | 184/483 [01:36<02:37,  1.90it/s]
+Ingesting EU:  38%|###8      | 185/483 [01:36<02:39,  1.87it/s]
+Ingesting EU:  39%|###8      | 186/483 [01:37<02:36,  1.90it/s]$HLI.L: possibly delisted; no timezone found
+
+Ingesting EU:  39%|###8      | 187/483 [01:37<02:33,  1.93it/s]$HLM.L: possibly delisted; no timezone found
+
+Ingesting EU:  39%|###8      | 188/483 [01:38<02:34,  1.91it/s]
+Ingesting EU:  39%|###9      | 189/483 [01:38<02:38,  1.86it/s]$HMB.ST: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  39%|###9      | 190/483 [01:39<02:17,  2.13it/s]$HNR.DE: possibly delisted; no timezone found
+
+Ingesting EU:  40%|###9      | 191/483 [01:39<02:23,  2.04it/s]
+Ingesting EU:  40%|###9      | 192/483 [01:40<02:30,  1.94it/s]
+Ingesting EU:  40%|###9      | 193/483 [01:40<02:40,  1.81it/s]$HUSQ B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  40%|####      | 194/483 [01:41<03:00,  1.60it/s]
+Ingesting EU:  40%|####      | 195/483 [01:42<02:54,  1.65it/s]
+Ingesting EU:  41%|####      | 196/483 [01:42<02:42,  1.77it/s]
+Ingesting EU:  41%|####      | 197/483 [01:43<02:46,  1.72it/s]$ICP.L: possibly delisted; no timezone found
+
+Ingesting EU:  41%|####      | 198/483 [01:43<02:38,  1.80it/s]$IDP.MI: possibly delisted; no timezone found
+
+Ingesting EU:  41%|####1     | 199/483 [01:44<02:29,  1.91it/s]
+Ingesting EU:  41%|####1     | 200/483 [01:44<02:33,  1.84it/s]$IGGI.L: possibly delisted; no timezone found
+
+Ingesting EU:  42%|####1     | 201/483 [01:45<02:30,  1.87it/s]
+Ingesting EU:  42%|####1     | 202/483 [01:45<02:34,  1.82it/s]
+Ingesting EU:  42%|####2     | 203/483 [01:46<02:32,  1.84it/s]
+Ingesting EU:  42%|####2     | 204/483 [01:47<02:35,  1.79it/s]
+Ingesting EU:  42%|####2     | 205/483 [01:47<02:47,  1.66it/s]
+Ingesting EU:  43%|####2     | 206/483 [01:48<02:53,  1.60it/s]
+Ingesting EU:  43%|####2     | 207/483 [01:48<02:47,  1.65it/s]$INDV.L: possibly delisted; no timezone found
+
+Ingesting EU:  43%|####3     | 208/483 [01:49<02:51,  1.61it/s]
+Ingesting EU:  43%|####3     | 209/483 [01:50<02:43,  1.68it/s]
+Ingesting EU:  43%|####3     | 210/483 [01:50<02:41,  1.69it/s]$INP.L: possibly delisted; no timezone found
+
+Ingesting EU:  44%|####3     | 211/483 [01:51<02:29,  1.81it/s]$INPST.LU: possibly delisted; no timezone found
+
+Ingesting EU:  44%|####3     | 212/483 [01:51<02:32,  1.77it/s]
+Ingesting EU:  44%|####4     | 213/483 [01:52<02:29,  1.81it/s]$IPX.PA: possibly delisted; no timezone found
+
+Ingesting EU:  44%|####4     | 214/483 [01:52<02:35,  1.73it/s]
+Ingesting EU:  45%|####4     | 215/483 [01:53<02:41,  1.66it/s]
+Ingesting EU:  45%|####4     | 216/483 [01:54<02:36,  1.71it/s]
+Ingesting EU:  45%|####4     | 217/483 [01:54<02:28,  1.79it/s]
+Ingesting EU:  45%|####5     | 218/483 [01:55<02:29,  1.77it/s]
+Ingesting EU:  45%|####5     | 219/483 [01:55<02:32,  1.73it/s]
+Ingesting EU:  46%|####5     | 220/483 [01:56<02:26,  1.79it/s]
+Ingesting EU:  46%|####5     | 221/483 [01:56<02:17,  1.91it/s]$JUST.AS: possibly delisted; no timezone found
+
+Ingesting EU:  46%|####5     | 222/483 [01:57<02:12,  1.97it/s]
+Ingesting EU:  46%|####6     | 223/483 [01:58<02:39,  1.63it/s]
+Ingesting EU:  46%|####6     | 224/483 [01:58<02:34,  1.68it/s]
+Ingesting EU:  47%|####6     | 225/483 [01:59<02:35,  1.66it/s]
+Ingesting EU:  47%|####6     | 226/483 [01:59<02:35,  1.65it/s]
+Ingesting EU:  47%|####6     | 227/483 [02:00<02:38,  1.62it/s]
+Ingesting EU:  47%|####7     | 228/483 [02:01<02:33,  1.66it/s]
+Ingesting EU:  47%|####7     | 229/483 [02:01<02:33,  1.66it/s]$LANV.PA: possibly delisted; no timezone found
+
+Ingesting EU:  48%|####7     | 230/483 [02:02<02:24,  1.76it/s]
+Ingesting EU:  48%|####7     | 231/483 [02:02<02:21,  1.78it/s]
+Ingesting EU:  48%|####8     | 232/483 [02:03<02:19,  1.80it/s]
+Ingesting EU:  48%|####8     | 233/483 [02:04<02:37,  1.59it/s]
+Ingesting EU:  48%|####8     | 234/483 [02:04<02:33,  1.62it/s]$LIF.IR: possibly delisted; no timezone found
+
+Ingesting EU:  49%|####8     | 235/483 [02:05<02:24,  1.72it/s]
+Ingesting EU:  49%|####8     | 236/483 [02:05<02:11,  1.88it/s]$LII.L: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  49%|####9     | 237/483 [02:05<01:54,  2.15it/s]$LIN.L: possibly delisted; no timezone found
+
+Ingesting EU:  49%|####9     | 238/483 [02:06<01:56,  2.11it/s]
+Ingesting EU:  49%|####9     | 239/483 [02:07<02:17,  1.78it/s]
+Ingesting EU:  50%|####9     | 240/483 [02:07<02:21,  1.72it/s]
+Ingesting EU:  50%|####9     | 241/483 [02:08<02:27,  1.64it/s]
+Ingesting EU:  50%|#####     | 242/483 [02:09<02:34,  1.56it/s]
+Ingesting EU:  50%|#####     | 243/483 [02:10<02:51,  1.40it/s]
+Ingesting EU:  51%|#####     | 244/483 [02:10<02:45,  1.44it/s]
+Ingesting EU:  51%|#####     | 245/483 [02:11<02:36,  1.52it/s]$LUMI.PA: possibly delisted; no timezone found
+
+Ingesting EU:  51%|#####     | 246/483 [02:11<02:28,  1.59it/s]$LUN.ST: possibly delisted; no timezone found
+
+Ingesting EU:  51%|#####1    | 247/483 [02:12<02:30,  1.57it/s]
+Ingesting EU:  51%|#####1    | 248/483 [02:13<02:25,  1.61it/s]$MAERSK B.CO: possibly delisted; no timezone found
+
+Ingesting EU:  52%|#####1    | 249/483 [02:13<02:17,  1.70it/s]$MAN.DE: possibly delisted; no timezone found
+
+Ingesting EU:  52%|#####1    | 250/483 [02:14<02:14,  1.73it/s]
+Ingesting EU:  52%|#####1    | 251/483 [02:14<02:14,  1.73it/s]
+Ingesting EU:  52%|#####2    | 252/483 [02:15<02:09,  1.78it/s]
+Ingesting EU:  52%|#####2    | 253/483 [02:15<02:13,  1.72it/s]
+Ingesting EU:  53%|#####2    | 254/483 [02:16<02:12,  1.73it/s]
+Ingesting EU:  53%|#####2    | 255/483 [02:17<02:07,  1.79it/s]
+Ingesting EU:  53%|#####3    | 256/483 [02:17<02:07,  1.78it/s]
+Ingesting EU:  53%|#####3    | 257/483 [02:18<02:17,  1.64it/s]$MGG.L: possibly delisted; no timezone found
+
+Ingesting EU:  53%|#####3    | 258/483 [02:19<02:27,  1.52it/s]$MICP.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  54%|#####3    | 259/483 [02:19<02:05,  1.78it/s]
+Ingesting EU:  54%|#####3    | 260/483 [02:20<02:11,  1.69it/s]
+Ingesting EU:  54%|#####4    | 261/483 [02:20<02:07,  1.74it/s]
+Ingesting EU:  54%|#####4    | 262/483 [02:21<01:58,  1.87it/s]
+Ingesting EU:  54%|#####4    | 263/483 [02:21<01:56,  1.89it/s]
+Ingesting EU:  55%|#####4    | 264/483 [02:22<02:03,  1.77it/s]$MOR.DE: possibly delisted; no timezone found
+
+Ingesting EU:  55%|#####4    | 265/483 [02:22<01:57,  1.86it/s]
+Ingesting EU:  55%|#####5    | 266/483 [02:23<01:58,  1.84it/s]$MRW.L: possibly delisted; no timezone found
+
+Ingesting EU:  55%|#####5    | 267/483 [02:23<02:03,  1.75it/s]$MT.LU: possibly delisted; no timezone found
+
+Ingesting EU:  55%|#####5    | 268/483 [02:24<02:05,  1.72it/s]
+Ingesting EU:  56%|#####5    | 269/483 [02:25<02:01,  1.76it/s]
+Ingesting EU:  56%|#####5    | 270/483 [02:25<02:02,  1.74it/s]$NDA FI.HE: possibly delisted; no timezone found
+
+Ingesting EU:  56%|#####6    | 271/483 [02:26<02:09,  1.63it/s]$NDA SE.HE: possibly delisted; no timezone found
+
+Ingesting EU:  56%|#####6    | 272/483 [02:26<01:59,  1.76it/s]
+Ingesting EU:  57%|#####6    | 273/483 [02:27<02:03,  1.70it/s]$NEOEN.PA: possibly delisted; no timezone found
+
+Ingesting EU:  57%|#####6    | 274/483 [02:28<02:15,  1.55it/s]
+Ingesting EU:  57%|#####6    | 275/483 [02:28<02:08,  1.62it/s]
+Ingesting EU:  57%|#####7    | 276/483 [02:29<02:04,  1.67it/s]
+Ingesting EU:  57%|#####7    | 277/483 [02:29<01:51,  1.85it/s]
+Ingesting EU:  58%|#####7    | 278/483 [02:30<01:47,  1.91it/s]$NGG.L: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  58%|#####7    | 279/483 [02:30<01:40,  2.03it/s]
+Ingesting EU:  58%|#####7    | 280/483 [02:31<01:42,  1.98it/s]$NIBE B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  58%|#####8    | 281/483 [02:31<01:40,  2.01it/s]
+Ingesting EU:  58%|#####8    | 282/483 [02:32<01:40,  2.00it/s]
+Ingesting EU:  59%|#####8    | 283/483 [02:32<01:49,  1.82it/s]$NOV N.SW: possibly delisted; no timezone found
+
+Ingesting EU:  59%|#####8    | 284/483 [02:33<01:55,  1.72it/s]$NOVO B.CO: possibly delisted; no timezone found
+
+Ingesting EU:  59%|#####9    | 285/483 [02:33<01:48,  1.82it/s]$NSN.HE: possibly delisted; no timezone found
+
+Ingesting EU:  59%|#####9    | 286/483 [02:34<01:46,  1.86it/s]
+Ingesting EU:  59%|#####9    | 287/483 [02:35<02:00,  1.63it/s]
+Ingesting EU:  60%|#####9    | 288/483 [02:35<02:05,  1.56it/s]
+Ingesting EU:  60%|#####9    | 289/483 [02:36<02:01,  1.60it/s]
+Ingesting EU:  60%|######    | 290/483 [02:37<01:58,  1.63it/s]
+Ingesting EU:  60%|######    | 291/483 [02:37<01:46,  1.80it/s]
+Ingesting EU:  60%|######    | 292/483 [02:38<01:42,  1.87it/s]
+Ingesting EU:  61%|######    | 293/483 [02:38<01:45,  1.81it/s]$ONT.BR: possibly delisted; no timezone found
+
+Ingesting EU:  61%|######    | 294/483 [02:39<01:56,  1.63it/s]
+Ingesting EU:  61%|######1   | 295/483 [02:40<01:58,  1.59it/s]
+Ingesting EU:  61%|######1   | 296/483 [02:40<01:53,  1.64it/s]$ORAN.PA: possibly delisted; no timezone found
+
+Ingesting EU:  61%|######1   | 297/483 [02:41<01:55,  1.61it/s]$OREP.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  62%|######1   | 298/483 [02:41<01:38,  1.88it/s]
+Ingesting EU:  62%|######1   | 299/483 [02:42<01:42,  1.80it/s]
+Ingesting EU:  62%|######2   | 300/483 [02:42<01:36,  1.89it/s]
+Ingesting EU:  62%|######2   | 301/483 [02:43<01:31,  2.00it/s]
+Ingesting EU:  63%|######2   | 302/483 [02:43<01:31,  1.99it/s]$PANDORA.CO: possibly delisted; no timezone found
+
+Ingesting EU:  63%|######2   | 303/483 [02:44<01:28,  2.04it/s]
+Ingesting EU:  63%|######2   | 304/483 [02:44<01:29,  2.00it/s]$PERP.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  63%|######3   | 305/483 [02:44<01:19,  2.23it/s]
+Ingesting EU:  63%|######3   | 306/483 [02:45<01:25,  2.06it/s]$PHNX.L: possibly delisted; no timezone found
+
+Ingesting EU:  64%|######3   | 307/483 [02:45<01:26,  2.04it/s]
+Ingesting EU:  64%|######3   | 308/483 [02:46<01:27,  2.00it/s]$PLPH.SW: possibly delisted; no timezone found
+
+Ingesting EU:  64%|######3   | 309/483 [02:47<01:45,  1.65it/s]
+Ingesting EU:  64%|######4   | 310/483 [02:47<01:47,  1.61it/s]
+Ingesting EU:  64%|######4   | 311/483 [02:48<01:48,  1.58it/s]
+Ingesting EU:  65%|######4   | 312/483 [02:49<01:42,  1.66it/s]
+Ingesting EU:  65%|######4   | 313/483 [02:49<01:42,  1.66it/s]
+Ingesting EU:  65%|######5   | 314/483 [02:50<01:44,  1.62it/s]
+Ingesting EU:  65%|######5   | 315/483 [02:51<01:41,  1.66it/s]$PSN.PA: possibly delisted; no timezone found
+
+Ingesting EU:  65%|######5   | 316/483 [02:51<01:33,  1.78it/s]
+Ingesting EU:  66%|######5   | 317/483 [02:52<01:33,  1.77it/s]
+Ingesting EU:  66%|######5   | 318/483 [02:52<01:34,  1.75it/s]
+Ingesting EU:  66%|######6   | 319/483 [02:53<01:34,  1.73it/s]$QIA.AS: possibly delisted; no timezone found
+
+Ingesting EU:  66%|######6   | 320/483 [02:53<01:27,  1.86it/s]
+Ingesting EU:  66%|######6   | 321/483 [02:54<01:23,  1.94it/s]
+Ingesting EU:  67%|######6   | 322/483 [02:54<01:25,  1.88it/s]
+Ingesting EU:  67%|######6   | 323/483 [02:55<01:24,  1.90it/s]
+Ingesting EU:  67%|######7   | 324/483 [02:55<01:25,  1.85it/s]
+Ingesting EU:  67%|######7   | 325/483 [02:56<01:23,  1.90it/s]
+Ingesting EU:  67%|######7   | 326/483 [02:56<01:24,  1.85it/s]$RENA.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  68%|######7   | 327/483 [02:57<01:21,  1.92it/s]
+Ingesting EU:  68%|######7   | 328/483 [02:57<01:23,  1.85it/s]
+Ingesting EU:  68%|######8   | 329/483 [02:58<01:28,  1.75it/s]$RIGN.SW: possibly delisted; no timezone found
+
+Ingesting EU:  68%|######8   | 330/483 [02:59<01:31,  1.68it/s]
+Ingesting EU:  69%|######8   | 331/483 [02:59<01:32,  1.64it/s]
+Ingesting EU:  69%|######8   | 332/483 [03:00<01:30,  1.67it/s]
+Ingesting EU:  69%|######8   | 333/483 [03:00<01:27,  1.72it/s]
+Ingesting EU:  69%|######9   | 334/483 [03:01<01:22,  1.82it/s]  [skip RNL.PA: only 1 rows, need >=500]
+
+Ingesting EU:  69%|######9   | 335/483 [03:01<01:10,  2.09it/s]
+Ingesting EU:  70%|######9   | 336/483 [03:02<01:13,  1.99it/s]$ROL.L: possibly delisted; no timezone found
+
+Ingesting EU:  70%|######9   | 337/483 [03:02<01:14,  1.96it/s]$RR.: possibly delisted; no timezone found
+
+Ingesting EU:  70%|######9   | 338/483 [03:03<01:11,  2.03it/s]
+Ingesting EU:  70%|#######   | 339/483 [03:03<01:17,  1.86it/s]
+Ingesting EU:  70%|#######   | 340/483 [03:04<01:27,  1.64it/s]
+Ingesting EU:  71%|#######   | 341/483 [03:05<01:25,  1.66it/s]
+Ingesting EU:  71%|#######   | 342/483 [03:05<01:27,  1.62it/s]$S4.L: possibly delisted; no timezone found
+
+Ingesting EU:  71%|#######1  | 343/483 [03:06<01:27,  1.59it/s]
+Ingesting EU:  71%|#######1  | 344/483 [03:07<01:25,  1.62it/s]
+Ingesting EU:  71%|#######1  | 345/483 [03:07<01:24,  1.63it/s]
+Ingesting EU:  72%|#######1  | 346/483 [03:08<01:17,  1.78it/s]
+Ingesting EU:  72%|#######1  | 347/483 [03:08<01:14,  1.82it/s]
+Ingesting EU:  72%|#######2  | 348/483 [03:09<01:17,  1.75it/s]
+Ingesting EU:  72%|#######2  | 349/483 [03:09<01:15,  1.77it/s]$SANO.HE: possibly delisted; no timezone found
+
+Ingesting EU:  72%|#######2  | 350/483 [03:10<01:18,  1.70it/s]
+Ingesting EU:  73%|#######2  | 351/483 [03:11<01:19,  1.66it/s]$SASY.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  73%|#######2  | 352/483 [03:11<01:07,  1.94it/s]
+Ingesting EU:  73%|#######3  | 353/483 [03:12<01:11,  1.82it/s]$SCHA.OL: possibly delisted; no timezone found
+
+Ingesting EU:  73%|#######3  | 354/483 [03:12<01:08,  1.89it/s]$SCHN.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  73%|#######3  | 355/483 [03:12<01:00,  2.13it/s]
+Ingesting EU:  74%|#######3  | 356/483 [03:13<01:06,  1.92it/s]
+Ingesting EU:  74%|#######3  | 357/483 [03:14<01:06,  1.88it/s]
+Ingesting EU:  74%|#######4  | 358/483 [03:14<01:12,  1.72it/s]
+Ingesting EU:  74%|#######4  | 359/483 [03:15<01:09,  1.80it/s]
+Ingesting EU:  75%|#######4  | 360/483 [03:15<01:10,  1.75it/s]
+Ingesting EU:  75%|#######4  | 361/483 [03:16<01:01,  1.97it/s]$SEB.ST: possibly delisted; no timezone found
+
+Ingesting EU:  75%|#######4  | 362/483 [03:16<01:03,  1.91it/s]$SECU B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  75%|#######5  | 363/483 [03:17<01:02,  1.92it/s]
+Ingesting EU:  75%|#######5  | 364/483 [03:18<01:04,  1.85it/s]$SGEF.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  76%|#######5  | 365/483 [03:18<00:55,  2.13it/s]
+Ingesting EU:  76%|#######5  | 366/483 [03:18<00:58,  2.00it/s]$SGOB.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  76%|#######5  | 367/483 [03:19<00:51,  2.27it/s]
+Ingesting EU:  76%|#######6  | 368/483 [03:19<00:58,  1.98it/s]
+Ingesting EU:  76%|#######6  | 369/483 [03:20<01:04,  1.76it/s]$SHB B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  77%|#######6  | 370/483 [03:20<01:00,  1.88it/s]
+Ingesting EU:  77%|#######6  | 371/483 [03:21<01:00,  1.85it/s]
+Ingesting EU:  77%|#######7  | 372/483 [03:22<01:00,  1.82it/s]$SIG.SW: possibly delisted; no timezone found
+
+Ingesting EU:  77%|#######7  | 373/483 [03:22<00:58,  1.87it/s]
+Ingesting EU:  77%|#######7  | 374/483 [03:23<01:01,  1.76it/s]
+Ingesting EU:  78%|#######7  | 375/483 [03:23<01:00,  1.77it/s]$SKA B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  78%|#######7  | 376/483 [03:24<00:57,  1.87it/s]$SKF B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  78%|#######8  | 377/483 [03:24<01:00,  1.77it/s]$SKFB.ST: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  78%|#######8  | 378/483 [03:25<00:52,  1.98it/s]$SKG.IR: possibly delisted; no timezone found
+
+Ingesting EU:  78%|#######8  | 379/483 [03:25<00:52,  1.98it/s]  [skip SKY.L: only 121 rows, need >=500]
+
+Ingesting EU:  79%|#######8  | 380/483 [03:26<00:49,  2.10it/s]
+Ingesting EU:  79%|#######8  | 381/483 [03:26<00:50,  2.02it/s]$SMDS.L: possibly delisted; no timezone found
+
+Ingesting EU:  79%|#######9  | 382/483 [03:27<00:57,  1.75it/s]
+Ingesting EU:  79%|#######9  | 383/483 [03:28<00:59,  1.67it/s]
+Ingesting EU:  80%|#######9  | 384/483 [03:28<01:01,  1.61it/s]$SN.: possibly delisted; no timezone found
+
+Ingesting EU:  80%|#######9  | 385/483 [03:29<01:04,  1.53it/s]
+Ingesting EU:  80%|#######9  | 386/483 [03:30<01:03,  1.53it/s]$SNY.PA: possibly delisted; no timezone found
+
+Ingesting EU:  80%|########  | 387/483 [03:30<00:58,  1.64it/s]$SOGN.PA: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  80%|########  | 388/483 [03:31<00:49,  1.92it/s]
+Ingesting EU:  81%|########  | 389/483 [03:31<00:51,  1.83it/s]$SON.SW: possibly delisted; no timezone found
+
+Ingesting EU:  81%|########  | 390/483 [03:32<00:48,  1.92it/s]
+Ingesting EU:  81%|########  | 391/483 [03:32<00:48,  1.89it/s]$SOW.DE: possibly delisted; no timezone found
+
+Ingesting EU:  81%|########1 | 392/483 [03:33<00:56,  1.61it/s]
+Ingesting EU:  81%|########1 | 393/483 [03:34<00:54,  1.65it/s]
+Ingesting EU:  82%|########1 | 394/483 [03:34<00:51,  1.72it/s]$SRB.OL: possibly delisted; no timezone found
+
+Ingesting EU:  82%|########1 | 395/483 [03:35<00:51,  1.70it/s]$SRENH.SW: possibly delisted; no timezone found
+
+Ingesting EU:  82%|########1 | 396/483 [03:35<00:48,  1.81it/s]
+Ingesting EU:  82%|########2 | 397/483 [03:36<00:48,  1.77it/s]
+Ingesting EU:  82%|########2 | 398/483 [03:36<00:47,  1.78it/s]
+Ingesting EU:  83%|########2 | 399/483 [03:37<00:47,  1.77it/s]
+Ingesting EU:  83%|########2 | 400/483 [03:37<00:47,  1.73it/s]$STER.HE: possibly delisted; no timezone found
+
+Ingesting EU:  83%|########3 | 401/483 [03:38<00:46,  1.77it/s]
+Ingesting EU:  83%|########3 | 402/483 [03:39<00:45,  1.77it/s]$STLAM.AS: possibly delisted; no timezone found
+
+Ingesting EU:  83%|########3 | 403/483 [03:39<00:47,  1.69it/s]
+Ingesting EU:  84%|########3 | 404/483 [03:40<00:46,  1.70it/s]$STMPA.AS: possibly delisted; no timezone found
+
+Ingesting EU:  84%|########3 | 405/483 [03:40<00:42,  1.83it/s]$STMPA.SW: possibly delisted; no timezone found
+
+Ingesting EU:  84%|########4 | 406/483 [03:41<00:41,  1.87it/s]
+Ingesting EU:  84%|########4 | 407/483 [03:41<00:39,  1.91it/s]
+Ingesting EU:  84%|########4 | 408/483 [03:42<00:39,  1.91it/s]
+Ingesting EU:  85%|########4 | 409/483 [03:42<00:41,  1.79it/s]$SWECO B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  85%|########4 | 410/483 [03:43<00:40,  1.80it/s]$SWED A.ST: possibly delisted; no timezone found
+
+Ingesting EU:  85%|########5 | 411/483 [03:44<00:40,  1.77it/s]$SWMA.ST: possibly delisted; no timezone found
+
+Ingesting EU:  85%|########5 | 412/483 [03:44<00:37,  1.87it/s]$SXS.L: possibly delisted; no timezone found
+
+Ingesting EU:  86%|########5 | 413/483 [03:44<00:35,  1.96it/s]
+Ingesting EU:  86%|########5 | 414/483 [03:45<00:35,  1.94it/s]
+Ingesting EU:  86%|########5 | 415/483 [03:46<00:35,  1.91it/s]
+Ingesting EU:  86%|########6 | 416/483 [03:46<00:34,  1.95it/s]
+Ingesting EU:  86%|########6 | 417/483 [03:47<00:35,  1.87it/s]$TEL2 B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  87%|########6 | 418/483 [03:47<00:33,  1.94it/s]$TEL2B.ST: possibly delisted; no price data found  (1d 2012-01-01 -> 2026-05-13)
+
+Ingesting EU:  87%|########6 | 419/483 [03:47<00:28,  2.21it/s]
+Ingesting EU:  87%|########6 | 420/483 [03:48<00:31,  2.01it/s]  [skip TEMN.SW: only 268 rows, need >=500]
+
+Ingesting EU:  87%|########7 | 421/483 [03:48<00:28,  2.18it/s]$TEN.LU: possibly delisted; no timezone found
+
+Ingesting EU:  87%|########7 | 422/483 [03:49<00:28,  2.11it/s]
+Ingesting EU:  88%|########7 | 423/483 [03:50<00:31,  1.91it/s]
+Ingesting EU:  88%|########7 | 424/483 [03:50<00:31,  1.88it/s]$THL.PA: possibly delisted; no timezone found
+
+Ingesting EU:  88%|########7 | 425/483 [03:51<00:30,  1.89it/s]$TIGO.ST: possibly delisted; no timezone found
+
+Ingesting EU:  88%|########8 | 426/483 [03:51<00:29,  1.91it/s]
+Ingesting EU:  88%|########8 | 427/483 [03:52<00:29,  1.88it/s]$TJW.L: possibly delisted; no timezone found
+
+Ingesting EU:  89%|########8 | 428/483 [03:52<00:28,  1.90it/s]
+Ingesting EU:  89%|########8 | 429/483 [03:53<00:29,  1.82it/s]
+Ingesting EU:  89%|########9 | 430/483 [03:53<00:29,  1.81it/s]
+Ingesting EU:  89%|########9 | 431/483 [03:54<00:27,  1.90it/s]$TOM.AS: possibly delisted; no timezone found
+
+Ingesting EU:  89%|########9 | 432/483 [03:54<00:29,  1.75it/s]
+Ingesting EU:  90%|########9 | 433/483 [03:55<00:27,  1.80it/s]$TPG.L: possibly delisted; no timezone found
+
+Ingesting EU:  90%|########9 | 434/483 [03:56<00:28,  1.71it/s]
+Ingesting EU:  90%|######### | 435/483 [03:56<00:29,  1.65it/s]$TREL B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  90%|######### | 436/483 [03:57<00:27,  1.71it/s]
+Ingesting EU:  90%|######### | 437/483 [03:57<00:26,  1.72it/s]
+Ingesting EU:  91%|######### | 438/483 [03:58<00:26,  1.70it/s]
+Ingesting EU:  91%|######### | 439/483 [03:59<00:25,  1.69it/s]
+Ingesting EU:  91%|#########1| 440/483 [03:59<00:25,  1.66it/s]$TUI.DE: possibly delisted; no timezone found
+
+Ingesting EU:  91%|#########1| 441/483 [04:00<00:23,  1.80it/s]
+Ingesting EU:  92%|#########1| 442/483 [04:00<00:21,  1.92it/s]
+Ingesting EU:  92%|#########1| 443/483 [04:01<00:21,  1.90it/s]$UC.MI: possibly delisted; no timezone found
+
+Ingesting EU:  92%|#########1| 444/483 [04:01<00:20,  1.88it/s]
+Ingesting EU:  92%|#########2| 445/483 [04:02<00:21,  1.81it/s]
+Ingesting EU:  92%|#########2| 446/483 [04:02<00:21,  1.75it/s]
+Ingesting EU:  93%|#########2| 447/483 [04:03<00:19,  1.88it/s]
+Ingesting EU:  93%|#########2| 448/483 [04:04<00:20,  1.72it/s]$UN01.DE: possibly delisted; no timezone found
+
+Ingesting EU:  93%|#########2| 449/483 [04:04<00:19,  1.74it/s]
+Ingesting EU:  93%|#########3| 450/483 [04:05<00:18,  1.75it/s]$UPW.L: possibly delisted; no timezone found
+
+Ingesting EU:  93%|#########3| 451/483 [04:05<00:18,  1.69it/s]
+Ingesting EU:  94%|#########3| 452/483 [04:06<00:16,  1.82it/s]
+Ingesting EU:  94%|#########3| 453/483 [04:06<00:16,  1.79it/s]
+Ingesting EU:  94%|#########3| 454/483 [04:07<00:15,  1.87it/s]
+Ingesting EU:  94%|#########4| 455/483 [04:07<00:14,  1.92it/s]$VAR1.DE: possibly delisted; no timezone found
+
+Ingesting EU:  94%|#########4| 456/483 [04:08<00:13,  1.99it/s]
+Ingesting EU:  95%|#########4| 457/483 [04:08<00:13,  1.97it/s]
+Ingesting EU:  95%|#########4| 458/483 [04:09<00:13,  1.81it/s]$VESTAS.CO: possibly delisted; no timezone found
+
+Ingesting EU:  95%|#########5| 459/483 [04:09<00:12,  1.91it/s]
+Ingesting EU:  95%|#########5| 460/483 [04:10<00:11,  1.92it/s]
+Ingesting EU:  95%|#########5| 461/483 [04:10<00:11,  1.90it/s]
+Ingesting EU:  96%|#########5| 462/483 [04:11<00:11,  1.84it/s]
+Ingesting EU:  96%|#########5| 463/483 [04:12<00:11,  1.81it/s]
+Ingesting EU:  96%|#########6| 464/483 [04:12<00:10,  1.77it/s]
+Ingesting EU:  96%|#########6| 465/483 [04:13<00:09,  1.84it/s]
+Ingesting EU:  96%|#########6| 466/483 [04:13<00:09,  1.81it/s]
+Ingesting EU:  97%|#########6| 467/483 [04:14<00:09,  1.77it/s]$VOLV B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  97%|#########6| 468/483 [04:15<00:08,  1.69it/s]
+Ingesting EU:  97%|#########7| 469/483 [04:15<00:08,  1.68it/s]$VPLAY B.ST: possibly delisted; no timezone found
+
+Ingesting EU:  97%|#########7| 470/483 [04:16<00:07,  1.74it/s]
+Ingesting EU:  98%|#########7| 471/483 [04:16<00:07,  1.61it/s]
+Ingesting EU:  98%|#########7| 472/483 [04:17<00:06,  1.65it/s]$WEND.PA: possibly delisted; no timezone found
+
+Ingesting EU:  98%|#########7| 473/483 [04:17<00:05,  1.79it/s]
+Ingesting EU:  98%|#########8| 474/483 [04:18<00:05,  1.56it/s]
+Ingesting EU:  98%|#########8| 475/483 [04:19<00:04,  1.67it/s]
+Ingesting EU:  99%|#########8| 476/483 [04:19<00:03,  1.87it/s]
+Ingesting EU:  99%|#########8| 477/483 [04:20<00:03,  1.86it/s]
+Ingesting EU:  99%|#########8| 478/483 [04:20<00:02,  1.83it/s]
+Ingesting EU:  99%|#########9| 479/483 [04:22<00:03,  1.27it/s]
+Ingesting EU:  99%|#########9| 480/483 [04:22<00:02,  1.40it/s]
+Ingesting EU: 100%|#########9| 481/483 [04:23<00:01,  1.50it/s]
+Ingesting EU: 100%|#########9| 482/483 [04:23<00:00,  1.64it/s]
+Ingesting EU: 100%|##########| 483/483 [04:24<00:00,  1.67it/s]
+Ingesting EU: 100%|##########| 483/483 [04:24<00:00,  1.83it/s]
+
+  Succeeded: 331/483
+  Failed:    152
+  Failed tickers (first 30): ['1COV.DE', 'ADH.OL', 'AHT.L', 'AIRP.PA', 'AKERBP.OL', 'ALLFG.MC', 'AMBU B.CO', 'AMS.VI', 'ARGX.AS', 'ARND.DE', 'ASMI.AS', 'ASSA B.ST', 'ATCOa.ST', 'ATOS.PA', 'BA.', 'BALD B.ST', 'BALN.SW', 'BDEV.L', 'BEB.SW', 'BNPP.PA', 'BOUY.PA', 'BRNW.MI', 'BT.A', 'CAGR.PA', 'CAPP.PA', 'CARR.PA', 'CASP.ST', 'CCH.SW', 'CTS.DE', 'DANO.PA']
+  Total rows: 1,137,910

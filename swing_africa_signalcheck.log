@@ -1,0 +1,55 @@
+Loading features from C:\Users\nanas\Downloads\stocks\trading-system\data_africa\features.parquet
+  Loaded: 219,527 rows, 63 symbols
+
+Adding forward returns...
+
+======================================================================
+CORRELATION TABLE: feature vs forward return (Spearman rank)
+======================================================================
+(Positive = feature predicts higher future returns)
+(Magnitudes of 0.01-0.05 are REAL signals at this scale)
+
+                feature fwd_ret_5d fwd_ret_20d fwd_ret_60d
+                 ret_5d    -0.0400     -0.0340     -0.0172
+                ret_20d    -0.0378     -0.0347     -0.0155
+                ret_60d    -0.0176     -0.0210     -0.0096
+               ret_120d    -0.0001     +0.0073     +0.0462
+         ret_5d_xs_rank    -0.0280     -0.0174     -0.0094
+        ret_20d_xs_rank    -0.0186     -0.0168     -0.0080
+        ret_60d_xs_rank    -0.0048     -0.0061     +0.0125
+       ret_120d_xs_rank    +0.0084     +0.0208     +0.0525
+                vol_20d    +0.0135     +0.0317     +0.0430
+                vol_60d    +0.0086     +0.0227     +0.0357
+        vol_20d_xs_rank    -0.0075     -0.0061     +0.0060
+       kalman_deviation    -0.0495     -0.0418     -0.0207
+           vol_regime_z    +0.0141     +0.0277     +0.0160
+spectral_low_freq_ratio    +0.0031     +0.0178     +0.0435
+      volume_zscore_20d    -0.0044     +0.0033     +0.0059
+
+======================================================================
+STABILITY CHECK: top feature's correlation by year
+======================================================================
+Top feature on fwd_ret_20d: kalman_deviation (corr = -0.0418)
+
+ year    corr  n_obs
+ 2012 -0.0376  14355
+ 2013 -0.0940  14447
+ 2014 +0.0097  14877
+ 2015 +0.0162  15042
+ 2016 -0.0453  15294
+ 2017 -0.0448  15104
+ 2018 -0.0667  15009
+ 2019 -0.0695  15265
+ 2020 -0.0034  15840
+ 2021 -0.1152  15750
+ 2022 -0.0923  15750
+ 2023 -0.0851  15624
+ 2024 -0.0714  15750
+ 2025 -0.0072  15750
+ 2026 -0.1168   4410
+
+  Interpretation:
+  - If sign flips frequently year-to-year, the signal is unstable
+  - If sign is consistent (mostly +ve or -ve), the signal is durable
+
+  Correlation table saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_africa\signal_check.csv

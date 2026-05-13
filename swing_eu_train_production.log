@@ -1,0 +1,22 @@
+C:\Users\nanas\Downloads\stocks\trading-system\swing_eu\train_production.py:91: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "trained_at": datetime.utcnow().isoformat() + "Z",
+Loading training set from C:\Users\nanas\Downloads\stocks\trading-system\data_eu\training_set.parquet
+  shape: (1136255, 35)
+  date range: 2012-01-02 to 2026-05-06
+  dropped 91,448 rows with missing features/target
+  training rows: 1,044,807
+
+Training LightGBM on all data...
+
+  Model saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\model_production.txt
+  Metadata saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\model_metadata.json
+
+  Top features:
+vol_regime_z         1575
+ret_120d             1389
+ret_120d_xs_rank     1350
+ret_60d              1300
+ret_20d              1113
+kalman_deviation      860
+ret_5d                741
+volume_zscore_20d     663

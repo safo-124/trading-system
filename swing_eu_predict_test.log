@@ -1,0 +1,55 @@
+[info] EU universe source: wikipedia_stoxx600 (483 tickers)
+C:\Users\nanas\Downloads\stocks\trading-system\swing_eu\predict_live.py:43: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  end = datetime.utcnow().date()
+Universe: 20 tickers
+
+Fetching live bars:   0%|          | 0/20 [00:00<?, ?it/s]$1COV.DE: possibly delisted; no price data found  (1d 2024-10-20 -> 2026-05-13)
+
+Fetching live bars:   5%|5         | 1/20 [00:00<00:09,  2.00it/s]
+Fetching live bars:  10%|#         | 2/20 [00:00<00:06,  2.98it/s]
+Fetching live bars:  15%|#5        | 3/20 [00:00<00:04,  4.08it/s]
+Fetching live bars:  20%|##        | 4/20 [00:01<00:03,  4.60it/s]
+Fetching live bars:  25%|##5       | 5/20 [00:01<00:03,  4.55it/s]
+Fetching live bars:  30%|###       | 6/20 [00:01<00:02,  4.88it/s]
+Fetching live bars:  35%|###5      | 7/20 [00:01<00:02,  5.41it/s]
+Fetching live bars:  40%|####      | 8/20 [00:01<00:02,  4.90it/s]
+Fetching live bars:  45%|####5     | 9/20 [00:01<00:02,  5.37it/s]
+Fetching live bars:  50%|#####     | 10/20 [00:02<00:01,  5.71it/s]
+Fetching live bars:  55%|#####5    | 11/20 [00:02<00:01,  4.83it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ADH.OL"}}}
+$ADH.OL: possibly delisted; no timezone found
+
+Fetching live bars:  60%|######    | 12/20 [00:03<00:04,  1.89it/s]
+Fetching live bars:  65%|######5   | 13/20 [00:03<00:02,  2.46it/s]
+Fetching live bars:  70%|#######   | 14/20 [00:03<00:01,  3.11it/s]
+Fetching live bars:  75%|#######5  | 15/20 [00:04<00:01,  3.88it/s]
+Fetching live bars:  80%|########  | 16/20 [00:04<00:00,  4.57it/s]
+Fetching live bars:  85%|########5 | 17/20 [00:04<00:00,  5.21it/s]
+Fetching live bars:  90%|######### | 18/20 [00:04<00:00,  5.69it/s]
+Fetching live bars:  95%|#########5| 19/20 [00:04<00:00,  5.98it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AHT.L"}}}
+$AHT.L: possibly delisted; no timezone found
+
+Fetching live bars: 100%|##########| 20/20 [00:05<00:00,  2.22it/s]
+Fetching live bars: 100%|##########| 20/20 [00:05<00:00,  3.52it/s]
+Fetched: 17 symbols, 6,679 rows
+Computing features...
+As-of date: 2026-05-12 (feature-complete)
+
+============================================================
+LIVE PREDICTIONS � as of 2026-05-12
+============================================================
+
+LONG PICKS (5):
+  ACS.MC  pred=+0.5332  close=$128.90
+  8TRA.DE  pred=+0.5128  close=$32.42
+  AF.PA   pred=+0.5102  close=$10.15
+  ADEN.SW  pred=+0.5093  close=$18.30
+  ABN.AS  pred=+0.5085  close=$29.24
+
+SHORT PICKS (5):
+  AFX.DE  pred=+0.3849  close=$28.72
+  ADYEN.AS  pred=+0.4618  close=$908.70
+  ADS.DE  pred=+0.4845  close=$142.00
+  ABI.BR  pred=+0.4889  close=$68.00
+  AC.PA   pred=+0.4971  close=$43.70
+
+  Saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_eu\live_predictions.json

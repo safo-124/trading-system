@@ -1,0 +1,43 @@
+Loading predictions from C:\Users\nanas\Downloads\stocks\trading-system\data_africa\predictions.parquet
+  shape: (153610, 5)
+  date range: 2016-01-04 to 2025-12-31
+
+Strategy: top/bottom 5 by prediction
+  Hold period: 5 days
+  Cost: 3 bps per leg one-way
+
+Computing portfolio returns...
+  Filtered 28 rows with implausible returns (0.02% of total)
+  Trading days: 2515
+  Avg daily gross return: 0.79 bps
+  Avg daily cost:         2.40 bps
+  Avg daily net return:   -1.61 bps
+
+======================================================================
+PERFORMANCE METRICS
+======================================================================
+
+Loading EZA benchmark...
+          label  n_days ann_return ann_vol sharpe  max_dd hit_rate total_return
+      L/S Gross    2515     +1.98%   6.35%  +0.31 -37.12%   51.25%       +19.5%
+L/S Net (3 bps)    2515     -4.06%   6.35%  -0.64 -51.05%   47.99%       -34.7%
+            EZA    2514    +17.94%  31.43%  +0.57 -59.49%   52.63%      +264.5%
+
+======================================================================
+YEAR-BY-YEAR (Net of costs)
+======================================================================
+     ls_net_return eza_return  excess
+year                                 
+2016       -22.08%    +14.34% -36.43%
+2017       -17.55%    +36.62% -54.17%
+2018        -1.83%    -22.19% +20.36%
+2019       -14.42%    +13.60% -28.02%
+2020        -4.09%     -3.04%  -1.04%
+2021        +4.38%    +13.85%  -9.48%
+2022       +21.24%     +3.23% +18.01%
+2023       -12.11%     +3.98% -16.09%
+2024        +4.03%    +14.16% -10.13%
+2025        +9.08%    +95.15% -86.07%
+
+  Daily returns saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_africa\backtest_results.csv
+  Equity curve plot saved to: C:\Users\nanas\Downloads\stocks\trading-system\data_africa\backtest_equity.png

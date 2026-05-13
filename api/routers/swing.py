@@ -1,8 +1,8 @@
 from __future__ import annotations
 from fastapi import APIRouter, HTTPException, Query
 
-from api.schemas import SwingPredictionsResponse, BacktestSummaryResponse
-from api.services import swing_latest_predictions, backtest_summary_payload
+from api.schemas import SwingPredictionsResponse, BacktestSummaryResponse, LivePredictionResponse
+from api.services import swing_latest_predictions, backtest_summary_payload, get_live_predictions
 
 router = APIRouter(prefix="/swing", tags=["swing"])
 
@@ -29,3 +29,22 @@ def get_backtest_summary():
             detail="No backtest results. Run: python -m swing.backtest",
         )
     return payload
+
+
+@router.get("/predict_today", response_model=LivePredictionResponse)
+def predict_today(
+    n_per_side: int = Query(20, ge=1, le=100),
+    force_refresh: bool = Query(False, description="Bypass 15-min cache"),
+):
+    """
+    Run production model on FRESH market data. Returns today's picks.
+    
+    First call: 3-5 minutes (fetches from yfinance). 
+    Subsequent calls within 15 minutes: <1 second (cached).
+    """
+    try:
+        return get_live_predictions(n_per_side=n_per_side, force_refresh=force_refresh)
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=503, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Live prediction failed: {type(e).__name__}: {e}")

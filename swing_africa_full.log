@@ -1,0 +1,102 @@
+Ingesting 77 European tickers from yfinance
+Date range: 2012-01-01 to today
+Output: C:\Users\nanas\Downloads\stocks\trading-system\data_africa\bars_daily
+
+Ingesting Africa:   0%|          | 0/77 [00:00<?, ?it/s]
+Ingesting Africa:   1%|1         | 1/77 [00:01<01:26,  1.14s/it]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ABI.JO"}}}
+$ABI.JO: possibly delisted; no timezone found
+
+Ingesting Africa:   3%|2         | 2/77 [00:02<01:39,  1.32s/it]
+Ingesting Africa:   4%|3         | 3/77 [00:03<01:07,  1.10it/s]
+Ingesting Africa:   5%|5         | 4/77 [00:03<00:53,  1.37it/s]HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AIP.JO"}}}
+$AIP.JO: possibly delisted; no timezone found
+
+Ingesting Africa:   6%|6         | 5/77 [00:04<01:03,  1.13it/s]$AMS.JO: possibly delisted; no timezone found
+
+Ingesting Africa:   8%|7         | 6/77 [00:05<00:52,  1.35it/s]
+Ingesting Africa:   9%|9         | 7/77 [00:05<00:44,  1.59it/s]
+Ingesting Africa:  10%|#         | 8/77 [00:05<00:40,  1.70it/s]
+Ingesting Africa:  12%|#1        | 9/77 [00:06<00:35,  1.92it/s]
+Ingesting Africa:  13%|#2        | 10/77 [00:06<00:31,  2.14it/s]
+Ingesting Africa:  14%|#4        | 11/77 [00:07<00:30,  2.18it/s]$BAW.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  16%|#5        | 12/77 [00:07<00:32,  2.02it/s]
+Ingesting Africa:  17%|#6        | 13/77 [00:08<00:28,  2.24it/s]
+Ingesting Africa:  18%|#8        | 14/77 [00:08<00:26,  2.35it/s]
+Ingesting Africa:  19%|#9        | 15/77 [00:08<00:25,  2.40it/s]
+Ingesting Africa:  21%|##        | 16/77 [00:09<00:30,  2.02it/s]
+Ingesting Africa:  22%|##2       | 17/77 [00:09<00:25,  2.34it/s]
+Ingesting Africa:  23%|##3       | 18/77 [00:10<00:26,  2.26it/s]
+Ingesting Africa:  25%|##4       | 19/77 [00:10<00:26,  2.18it/s]
+Ingesting Africa:  26%|##5       | 20/77 [00:11<00:26,  2.16it/s]
+Ingesting Africa:  27%|##7       | 21/77 [00:11<00:26,  2.09it/s]
+Ingesting Africa:  29%|##8       | 22/77 [00:12<00:27,  2.00it/s]
+Ingesting Africa:  30%|##9       | 23/77 [00:12<00:28,  1.90it/s]$EOH.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  31%|###1      | 24/77 [00:13<00:28,  1.85it/s]
+Ingesting Africa:  32%|###2      | 25/77 [00:13<00:27,  1.87it/s]$FFA.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  34%|###3      | 26/77 [00:14<00:26,  1.91it/s]
+Ingesting Africa:  35%|###5      | 27/77 [00:14<00:25,  1.95it/s]
+Ingesting Africa:  36%|###6      | 28/77 [00:15<00:24,  2.03it/s]
+Ingesting Africa:  38%|###7      | 29/77 [00:15<00:25,  1.92it/s]
+Ingesting Africa:  39%|###8      | 30/77 [00:16<00:23,  1.97it/s]
+Ingesting Africa:  40%|####      | 31/77 [00:16<00:23,  1.96it/s]
+Ingesting Africa:  42%|####1     | 32/77 [00:17<00:24,  1.82it/s]
+Ingesting Africa:  43%|####2     | 33/77 [00:18<00:23,  1.87it/s]
+Ingesting Africa:  44%|####4     | 34/77 [00:18<00:23,  1.81it/s]
+Ingesting Africa:  45%|####5     | 35/77 [00:19<00:22,  1.84it/s]
+Ingesting Africa:  47%|####6     | 36/77 [00:19<00:22,  1.85it/s]
+Ingesting Africa:  48%|####8     | 37/77 [00:20<00:21,  1.88it/s]
+Ingesting Africa:  49%|####9     | 38/77 [00:20<00:20,  1.91it/s]$MEI.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  51%|#####     | 39/77 [00:21<00:19,  1.98it/s]$MMI.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  52%|#####1    | 40/77 [00:21<00:19,  1.88it/s]$MND.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  53%|#####3    | 41/77 [00:22<00:19,  1.87it/s]
+Ingesting Africa:  55%|#####4    | 42/77 [00:22<00:18,  1.88it/s]
+Ingesting Africa:  56%|#####5    | 43/77 [00:23<00:19,  1.77it/s]
+Ingesting Africa:  57%|#####7    | 44/77 [00:24<00:18,  1.82it/s]
+Ingesting Africa:  58%|#####8    | 45/77 [00:24<00:16,  1.98it/s]
+Ingesting Africa:  60%|#####9    | 46/77 [00:25<00:16,  1.93it/s]$NHM.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  61%|######1   | 47/77 [00:25<00:16,  1.82it/s]
+Ingesting Africa:  62%|######2   | 48/77 [00:26<00:15,  1.87it/s]
+Ingesting Africa:  64%|######3   | 49/77 [00:26<00:15,  1.77it/s]
+Ingesting Africa:  65%|######4   | 50/77 [00:27<00:14,  1.88it/s]
+Ingesting Africa:  66%|######6   | 51/77 [00:27<00:13,  1.86it/s]
+Ingesting Africa:  68%|######7   | 52/77 [00:28<00:12,  1.95it/s]
+Ingesting Africa:  69%|######8   | 53/77 [00:28<00:12,  1.94it/s]
+Ingesting Africa:  70%|#######   | 54/77 [00:29<00:11,  1.96it/s]
+Ingesting Africa:  71%|#######1  | 55/77 [00:29<00:10,  2.07it/s]
+Ingesting Africa:  73%|#######2  | 56/77 [00:30<00:09,  2.14it/s]$RBP.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  74%|#######4  | 57/77 [00:30<00:09,  2.16it/s]
+Ingesting Africa:  75%|#######5  | 58/77 [00:31<00:09,  2.01it/s]
+Ingesting Africa:  77%|#######6  | 59/77 [00:31<00:09,  1.89it/s]
+Ingesting Africa:  78%|#######7  | 60/77 [00:32<00:08,  1.89it/s]
+Ingesting Africa:  79%|#######9  | 61/77 [00:32<00:09,  1.76it/s]$RMI.JO: possibly delisted; no timezone found
+
+Ingesting Africa:  81%|########  | 62/77 [00:33<00:07,  1.88it/s]
+Ingesting Africa:  82%|########1 | 63/77 [00:33<00:07,  1.95it/s]
+Ingesting Africa:  83%|########3 | 64/77 [00:34<00:06,  2.06it/s]
+Ingesting Africa:  84%|########4 | 65/77 [00:34<00:05,  2.11it/s]
+Ingesting Africa:  86%|########5 | 66/77 [00:35<00:05,  2.01it/s]
+Ingesting Africa:  87%|########7 | 67/77 [00:35<00:05,  1.97it/s]
+Ingesting Africa:  88%|########8 | 68/77 [00:36<00:04,  2.09it/s]
+Ingesting Africa:  90%|########9 | 69/77 [00:36<00:03,  2.10it/s]
+Ingesting Africa:  91%|######### | 70/77 [00:37<00:03,  2.16it/s]
+Ingesting Africa:  92%|#########2| 71/77 [00:37<00:02,  2.02it/s]
+Ingesting Africa:  94%|#########3| 72/77 [00:38<00:02,  1.97it/s]
+Ingesting Africa:  95%|#########4| 73/77 [00:38<00:01,  2.01it/s]
+Ingesting Africa:  96%|#########6| 74/77 [00:39<00:01,  1.93it/s]
+Ingesting Africa:  97%|#########7| 75/77 [00:39<00:01,  1.92it/s]
+Ingesting Africa:  99%|#########8| 76/77 [00:40<00:00,  1.86it/s]
+Ingesting Africa: 100%|##########| 77/77 [00:40<00:00,  1.85it/s]
+Ingesting Africa: 100%|##########| 77/77 [00:40<00:00,  1.88it/s]
+
+  Succeeded: 65/77
+  Failed:    12
+  Failed tickers (first 30): ['ABI.JO', 'AIP.JO', 'AMS.JO', 'BAW.JO', 'EOH.JO', 'FFA.JO', 'MEI.JO', 'MMI.JO', 'MND.JO', 'NHM.JO', 'RBP.JO', 'RMI.JO']
+  Total rows: 221,360
