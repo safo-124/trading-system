@@ -1,0 +1,153 @@
+
+Loading training set from C:\Users\nanas\Downloads\stocks\trading-system\data\training_set.parquet
+  shape: (1937412, 35)
+
+24 walk-forward folds:
+  Fold  1: train [2010-01-04 -> 2014-01-04)  test [2014-01-04 -> 2014-07-04)
+  Fold  2: train [2010-01-04 -> 2014-07-04)  test [2014-07-04 -> 2015-01-04)
+  Fold  3: train [2010-01-04 -> 2015-01-04)  test [2015-01-04 -> 2015-07-04)
+  Fold  4: train [2010-01-04 -> 2015-07-04)  test [2015-07-04 -> 2016-01-04)
+  Fold  5: train [2010-01-04 -> 2016-01-04)  test [2016-01-04 -> 2016-07-04)
+  Fold  6: train [2010-01-04 -> 2016-07-04)  test [2016-07-04 -> 2017-01-04)
+  Fold  7: train [2010-01-04 -> 2017-01-04)  test [2017-01-04 -> 2017-07-04)
+  Fold  8: train [2010-01-04 -> 2017-07-04)  test [2017-07-04 -> 2018-01-04)
+  Fold  9: train [2010-01-04 -> 2018-01-04)  test [2018-01-04 -> 2018-07-04)
+  Fold 10: train [2010-01-04 -> 2018-07-04)  test [2018-07-04 -> 2019-01-04)
+  Fold 11: train [2010-01-04 -> 2019-01-04)  test [2019-01-04 -> 2019-07-04)
+  Fold 12: train [2010-01-04 -> 2019-07-04)  test [2019-07-04 -> 2020-01-04)
+  Fold 13: train [2010-01-04 -> 2020-01-04)  test [2020-01-04 -> 2020-07-04)
+  Fold 14: train [2010-01-04 -> 2020-07-04)  test [2020-07-04 -> 2021-01-04)
+  Fold 15: train [2010-01-04 -> 2021-01-04)  test [2021-01-04 -> 2021-07-04)
+  Fold 16: train [2010-01-04 -> 2021-07-04)  test [2021-07-04 -> 2022-01-04)
+  Fold 17: train [2010-01-04 -> 2022-01-04)  test [2022-01-04 -> 2022-07-04)
+  Fold 18: train [2010-01-04 -> 2022-07-04)  test [2022-07-04 -> 2023-01-04)
+  Fold 19: train [2010-01-04 -> 2023-01-04)  test [2023-01-04 -> 2023-07-04)
+  Fold 20: train [2010-01-04 -> 2023-07-04)  test [2023-07-04 -> 2024-01-04)
+  Fold 21: train [2010-01-04 -> 2024-01-04)  test [2024-01-04 -> 2024-07-04)
+  Fold 22: train [2010-01-04 -> 2024-07-04)  test [2024-07-04 -> 2025-01-04)
+  Fold 23: train [2010-01-04 -> 2025-01-04)  test [2025-01-04 -> 2025-07-04)
+  Fold 24: train [2010-01-04 -> 2025-07-04)  test [2025-07-04 -> 2026-01-04)
+
+Training each fold...
+Folds:   0%|          | 0/24 [00:00<?, ?it/s]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:   4%|4         | 1/24 [00:03<01:30,  3.93s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:   8%|8         | 2/24 [00:07<01:19,  3.63s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  12%|#2        | 3/24 [00:11<01:18,  3.74s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  17%|#6        | 4/24 [00:14<01:14,  3.73s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  21%|##        | 5/24 [00:19<01:15,  3.97s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  25%|##5       | 6/24 [00:24<01:17,  4.32s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  29%|##9       | 7/24 [00:29<01:17,  4.56s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  33%|###3      | 8/24 [00:34<01:17,  4.86s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  38%|###7      | 9/24 [00:40<01:17,  5.18s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  42%|####1     | 10/24 [00:47<01:18,  5.61s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  46%|####5     | 11/24 [00:54<01:19,  6.10s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  50%|#####     | 12/24 [01:03<01:22,  6.83s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  54%|#####4    | 13/24 [01:15<01:35,  8.68s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  58%|#####8    | 14/24 [01:25<01:30,  9.08s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  62%|######2   | 15/24 [01:35<01:22,  9.15s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  67%|######6   | 16/24 [01:44<01:14,  9.29s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  71%|#######   | 17/24 [01:55<01:08,  9.74s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  75%|#######5  | 18/24 [02:06<01:00, 10.07s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  79%|#######9  | 19/24 [02:17<00:52, 10.47s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  83%|########3 | 20/24 [02:29<00:42, 10.68s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  88%|########7 | 21/24 [02:41<00:33, 11.06s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  92%|#########1| 22/24 [02:53<00:22, 11.42s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds:  96%|#########5| 23/24 [03:05<00:11, 11.60s/it]C:\Users\nanas\Downloads\stocks\trading-system\swing\train.py:120: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  daily_ic = test_df.groupby("timestamp").apply(
+
+Folds: 100%|##########| 24/24 [03:18<00:00, 11.98s/it]
+Folds: 100%|##########| 24/24 [03:18<00:00,  8.26s/it]
+
+===========================================================================
+WALK-FORWARD RESULTS
+===========================================================================
+ fold test_start   test_end  n_test ic_daily_mean ic_daily_t
+    1 2014-01-04 2014-07-04   55928       +0.0115      +1.82
+    2 2014-07-04 2015-01-04   56950       -0.0095      -1.18
+    3 2015-01-04 2015-07-04   56865       +0.0301      +3.83
+    4 2015-07-04 2016-01-04   57729       -0.0051      -0.46
+    5 2016-01-04 2016-07-04   58000       +0.0190      +1.89
+    6 2016-07-04 2017-01-04   58854       -0.0120      -1.69
+    7 2017-01-04 2017-07-04   58215       +0.0146      +2.28
+    8 2017-07-04 2018-01-04   59480       +0.0301      +4.51
+    9 2018-01-04 2018-07-04   59006       +0.0069      +0.85
+   10 2018-07-04 2019-01-04   59724       +0.0400      +2.98
+   11 2019-01-04 2019-07-04   59357       +0.0212      +2.35
+   12 2019-07-04 2020-01-04   60412       +0.0130      +1.42
+   13 2020-01-04 2020-07-04   59828       +0.0468      +2.06
+   14 2020-07-04 2021-01-04   60909       +0.0325      +3.25
+   15 2021-01-04 2021-07-04   61094       +0.0137      +0.92
+   16 2021-07-04 2022-01-04   61769       -0.0084      -0.98
+   17 2022-01-04 2022-07-04   60784       -0.0094      -0.63
+   18 2022-07-04 2023-01-04   62574       +0.0460      +3.59
+   19 2023-01-04 2023-07-04   61226       +0.0248      +2.31
+   20 2023-07-04 2024-01-04   62738       +0.0106      +1.16
+   21 2024-01-04 2024-07-04   61889       +0.0140      +1.68
+   22 2024-07-04 2025-01-04   63036       +0.0272      +2.82
+   23 2025-01-04 2025-07-04   61226       +0.0078      +0.55
+   24 2025-07-04 2026-01-04   62873       +0.0220      +2.21
+
+--- AGGREGATE ---
+  Mean daily IC: +0.0161
+  Std daily IC:  0.0171
+  Fraction of folds with positive IC: 79.17%
+
+--- AVERAGE FEATURE IMPORTANCE (across folds) ---
+vol_regime_z         1723.916667
+ret_120d             1428.458333
+vol_20d_xs_rank      1376.916667
+ret_60d              1223.875000
+ret_5d                924.375000
+ret_20d               921.166667
+kalman_deviation      746.791667
+volume_zscore_20d     594.166667
+logret_20d              0.708333
+logret_5d               0.291667
+
+  Predictions saved to: C:\Users\nanas\Downloads\stocks\trading-system\data\predictions.parquet (1,440,466 rows)

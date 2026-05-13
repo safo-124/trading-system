@@ -1,0 +1,57 @@
+Loaded predictions: (1440466, 5)
+Columns: ['timestamp', 'symbol', 'pred', 'fwd_ret_5d_xs_rank', 'fwd_ret_5d']
+
+Null counts:
+timestamp             0
+symbol                0
+pred                  0
+fwd_ret_5d_xs_rank    0
+fwd_ret_5d            0
+dtype: int64
+
+Clean rows: 1,440,466
+
+Overall Spearman(pred, fwd_ret_5d): +0.0102 (p=1.58e-34)
+
+Overall Spearman(pred, fwd_ret_5d_xs_rank): +0.0167 (p=5.50e-89)
+
+============================================================
+Quintile analysis: bin predictions, look at avg fwd_ret_5d per bin
+============================================================
+                  mean   median   count
+pred_quintile                          
+Q1_low        +0.2998% +0.4061%  288094
+Q2            +0.2686% +0.3511%  288093
+Q3            +0.2658% +0.3227%  288093
+Q4            +0.2751% +0.3167%  288093
+Q5_high       +0.5725% +0.4604%  288093
+
+Interpretation:
+  - If Q1_low has the LOWEST mean fwd_ret_5d -> model predicts correctly
+    -> low pred = bad future return -> SHORT low-pred (current code is WRONG)
+  - If Q1_low has the HIGHEST mean fwd_ret_5d -> model is inverted
+    -> low pred = good future return -> LONG low-pred (current code is RIGHT)
+
+============================================================
+Concrete example: one trading day
+============================================================
+Date: 2020-01-02
+Stocks that day: 476
+
+Bottom 5 by prediction (current LONG leg):
+symbol   pred fwd_ret_5d
+    ON 0.4558     -0.80%
+  TSLA 0.4648    +11.87%
+  AXON 0.4685     -8.32%
+   EOG 0.4696     +4.88%
+   IVZ 0.4718     +0.11%
+  Avg fwd_ret_5d of bottom 5: +1.55%
+
+Top 5 by prediction (current SHORT leg):
+symbol   pred fwd_ret_5d
+  ERIE 0.5372     +1.36%
+   WDC 0.5410     +4.57%
+  HUBB 0.5558     -2.00%
+   APA 0.5604    +28.55%
+   PCG 0.5674     -5.44%
+  Avg fwd_ret_5d of top 5: +5.41%

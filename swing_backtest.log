@@ -1,0 +1,45 @@
+Loading predictions from C:\Users\nanas\Downloads\stocks\trading-system\data\predictions.parquet
+  shape: (1440466, 5)
+  date range: 2014-01-06 to 2026-01-02
+
+Strategy: top/bottom 20 by prediction
+  Hold period: 5 days
+  Cost: 3 bps per leg one-way
+
+Computing portfolio returns...
+  Trading days: 3017
+  Avg daily gross return: 3.28 bps
+  Avg daily cost:         2.40 bps
+  Avg daily net return:   0.88 bps
+
+======================================================================
+PERFORMANCE METRICS
+======================================================================
+
+Loading SPY benchmark...
+          label  n_days ann_return ann_vol sharpe  max_dd hit_rate total_return
+      L/S Gross    3017     +8.25%   4.35%  +1.90 -17.64%   54.09%      +165.6%
+L/S Net (3 bps)    3017     +2.21%   4.35%  +0.51 -23.53%   48.59%       +28.8%
+            SPY    3016    +14.18%  17.34%  +0.82 -33.72%   55.21%      +355.7%
+
+======================================================================
+YEAR-BY-YEAR (Net of costs)
+======================================================================
+     ls_net_return spy_return  excess
+year                                 
+2014        -3.01%    +14.91% -17.92%
+2015        -4.66%     +1.23%  -5.90%
+2016        +1.31%    +12.00% -10.69%
+2017        +2.89%    +21.71% -18.81%
+2018        +2.58%     -4.57%  +7.15%
+2019        +7.04%    +31.22% -24.18%
+2020       +25.58%    +18.33%  +7.25%
+2021       -12.37%    +28.73% -41.10%
+2022        -1.57%    -18.18% +16.60%
+2023        +5.57%    +26.18% -20.61%
+2024        -3.71%    +24.89% -28.60%
+2025       +10.37%    +17.72%  -7.35%
+2026        +0.13%     -0.74%  +0.87%
+
+  Daily returns saved to: C:\Users\nanas\Downloads\stocks\trading-system\data\backtest_results.csv
+  Equity curve plot saved to: C:\Users\nanas\Downloads\stocks\trading-system\data\backtest_equity.png
