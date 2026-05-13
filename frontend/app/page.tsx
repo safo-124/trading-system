@@ -1,14 +1,13 @@
 import { Suspense } from "react";
 import Loading from "@/app/loading";
-import { ReturnsChart } from "@/components/backtest/returns-chart";
-import { PredictionTable } from "@/components/swing/prediction-table";
+import { StockIdentity } from "@/components/stocks/stock-identity";
+import { MarketBookGrid, MarketMoveView } from "@/components/swing/market-overview";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  getBacktestSummary,
+  getAllMarketSnapshots,
   getDividendPicks,
   getHealth,
-  getSwingLatestPredictions,
   topDividendPicks,
 } from "@/lib/api/client";
 import { formatDate, formatNumber, formatSignedPercent } from "@/lib/utils";
@@ -22,21 +21,27 @@ export default function DashboardPage() {
 }
 
 async function DashboardContent() {
-  const [health, dividendPicks, swingPredictions, backtest] = await Promise.all([
+  const [health, dividendPicks, marketSnapshots] = await Promise.all([
     getHealth(),
     getDividendPicks(),
-    getSwingLatestPredictions(5),
-    getBacktestSummary(),
+    getAllMarketSnapshots(5),
   ]);
   const bestDividendPicks = topDividendPicks(dividendPicks.picks, 5);
+  const totalRanked = marketSnapshots.reduce(
+    (sum, snapshot) => sum + snapshot.predictions.n_stocks,
+    0,
+  );
+  const strongestMarket = [...marketSnapshots].sort(
+    (left, right) => right.backtest.summary.sharpe_net - left.backtest.summary.sharpe_net,
+  )[0];
 
   return (
     <div className="space-y-6">
       <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
         <div>
-          <h1 className="font-semibold text-2xl tracking-tight">Trading System</h1>
+          <h1 className="font-semibold text-2xl tracking-tight">Global Strategy Desk</h1>
           <p className="text-muted-foreground text-sm">
-            Dividend safety picks and the cross-sectional swing model.
+            Dividend safety plus live cross-market swing books for the US, Europe, and JSE.
           </p>
         </div>
         <Badge className="w-fit bg-emerald-500/15 text-emerald-300" variant="secondary">
@@ -45,119 +50,89 @@ async function DashboardContent() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-4">
+        <MetricCard label="Markets Online" value={formatNumber(marketSnapshots.length)} />
+        <MetricCard label="Stocks Ranked" value={formatNumber(totalRanked)} />
         <MetricCard label="Dividend Picks" value={formatNumber(dividendPicks.n_picks)} />
-        <MetricCard label="Swing Universe" value={formatNumber(swingPredictions.n_stocks)} />
         <MetricCard
-          label="Net Sharpe"
-          value={formatNumber(backtest.summary.sharpe_net, { maximumFractionDigits: 2 })}
-        />
-        <MetricCard
-          label="Net Total Return"
-          tone="positive"
-          value={formatSignedPercent(backtest.summary.total_return_net, 1)}
+          label="Best Net Sharpe"
+          value={`${strongestMarket.market.label} ${formatNumber(strongestMarket.backtest.summary.sharpe_net, { maximumFractionDigits: 2 })}`}
         />
       </div>
 
-      <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <Card>
-          <CardHeader>
-            <CardTitle>Dividend Screener</CardTitle>
-            <CardDescription>
-              Latest run from {formatDate(dividendPicks.generated_at ?? null)}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-3">
-              {bestDividendPicks.map((pick) => (
-                <div
-                  className="grid grid-cols-[1fr_auto_auto] items-center gap-3 rounded-lg border border-border/70 px-3 py-2"
-                  key={pick.ticker}
-                >
-                  <div>
-                    <div className="font-semibold">{pick.ticker}</div>
-                    <div className="text-muted-foreground text-xs">
-                      {pick.consec_increases} yearly increases
-                    </div>
-                  </div>
-                  <div className="text-right font-mono text-emerald-400">
-                    {formatNumber(pick.yield, { style: "percent" })}
-                  </div>
-                  <div className="text-right font-mono">
-                    {formatNumber(pick.composite_score, { maximumFractionDigits: 3 })}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+      <section className="space-y-3">
+        <div>
+          <h2 className="font-semibold text-lg">Move View</h2>
+          <p className="text-muted-foreground text-sm">
+            Top long versus top short in each market, with model spread and live benchmark context.
+          </p>
+        </div>
+        <MarketMoveView snapshots={marketSnapshots} />
+      </section>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Swing Model</CardTitle>
-            <CardDescription>
-              Latest predictions as of {formatDate(swingPredictions.as_of)}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 lg:grid-cols-2">
-              <div>
-                <div className="mb-2 text-muted-foreground text-xs uppercase tracking-wide">
-                  Long
-                </div>
-                <PredictionTable picks={swingPredictions.long_picks.slice(0, 5)} side="long" />
-              </div>
-              <div>
-                <div className="mb-2 text-muted-foreground text-xs uppercase tracking-wide">
-                  Short
-                </div>
-                <PredictionTable picks={swingPredictions.short_picks.slice(0, 5)} side="short" />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <section className="space-y-3">
+        <div>
+          <h2 className="font-semibold text-lg">Market Books</h2>
+          <p className="text-muted-foreground text-sm">
+            Company names and logos are shown next to the latest historical picks from each region.
+          </p>
+        </div>
+        <MarketBookGrid snapshots={marketSnapshots} />
+      </section>
 
       <Card>
         <CardHeader>
-          <CardTitle>Backtest: Last 30 Trading Days</CardTitle>
-          <CardDescription>
-            Net annual return {formatSignedPercent(backtest.summary.ann_return_net, 2)} across{" "}
-            {formatDate(backtest.summary.start_date)} to {formatDate(backtest.summary.end_date)}
-          </CardDescription>
+          <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
+            <div>
+              <CardTitle>Dividend Quality Picks</CardTitle>
+              <CardDescription>
+                Latest run from {formatDate(dividendPicks.generated_at ?? null)}
+              </CardDescription>
+            </div>
+            <Badge variant="secondary">{dividendPicks.n_picks} names</Badge>
+          </div>
         </CardHeader>
         <CardContent>
-          <ReturnsChart days={backtest.last_30_days} />
+          <div className="grid gap-3 lg:grid-cols-5">
+            {bestDividendPicks.map((pick) => (
+              <div className="rounded-lg border border-border/70 px-3 py-3" key={pick.ticker}>
+                <StockIdentity symbol={pick.ticker} />
+                <div className="mt-3 grid grid-cols-2 gap-2 border-border/70 border-t pt-3 text-sm">
+                  <Metric label="Yield" value={formatNumber(pick.yield, { style: "percent" })} />
+                  <Metric
+                    label="Score"
+                    value={formatNumber(pick.composite_score, { maximumFractionDigits: 3 })}
+                  />
+                  <Metric
+                    label="Safety"
+                    value={formatNumber(pick.safety_score, { maximumFractionDigits: 2 })}
+                  />
+                  <Metric label="Growth" value={formatSignedPercent(pick.div_cagr_5y, 1)} />
+                </div>
+              </div>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>
   );
 }
 
-function MetricCard({
-  label,
-  value,
-  tone,
-}: {
-  label: string;
-  value: string;
-  tone?: "positive" | "risk";
-}) {
+function MetricCard({ label, value }: { label: string; value: string }) {
   return (
     <Card>
       <CardHeader>
         <CardDescription>{label}</CardDescription>
-        <CardTitle
-          className={
-            tone === "positive"
-              ? "font-mono text-2xl text-emerald-400"
-              : tone === "risk"
-                ? "font-mono text-2xl text-red-400"
-                : "font-mono text-2xl"
-          }
-        >
-          {value}
-        </CardTitle>
+        <CardTitle className="font-mono text-2xl">{value}</CardTitle>
       </CardHeader>
     </Card>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-muted-foreground text-xs">{label}</div>
+      <div className="font-mono text-sm">{value}</div>
+    </div>
   );
 }

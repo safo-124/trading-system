@@ -1,0 +1,9 @@
+INFO:     127.0.0.1:49891 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53158 - "GET /dividend/picks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53159 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53161 - "GET /swing/backtest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53165 - "GET /swing_africa/backtest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "GET /swing_eu/backtest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53164 - "GET /swing_africa/predictions/latest?n_per_side=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53162 - "GET /swing_eu/predictions/latest?n_per_side=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53160 - "GET /swing/predictions/latest?n_per_side=5 HTTP/1.1" 200 OK

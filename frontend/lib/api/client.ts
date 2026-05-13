@@ -11,6 +11,21 @@ export type BacktestDayRecord = components["schemas"]["BacktestDayRecord"];
 export type BacktestSummary = components["schemas"]["BacktestSummary"];
 export type BacktestSummaryResponse = components["schemas"]["BacktestSummaryResponse"];
 
+export type MarketKey = "us" | "eu" | "africa";
+export type MarketInfo = {
+  key: MarketKey;
+  label: string;
+  region: string;
+  endpointPrefix: "/swing" | "/swing_eu" | "/swing_africa";
+  defaultNPerSide: number;
+  benchmark: string;
+};
+
+export type MarketBacktestSummaryResponse = {
+  summary: BacktestSummary;
+  last_30_days?: BacktestDayRecord[];
+};
+
 type ApiResult<T> = {
   data?: T;
   error?: unknown;
@@ -94,7 +109,39 @@ const backtestSummaryResponseSchema = z.object({
   last_30_days: z.array(backtestDayRecordSchema),
 }) satisfies z.ZodType<BacktestSummaryResponse>;
 
+const marketBacktestSummaryResponseSchema = z.object({
+  summary: backtestSummarySchema,
+  last_30_days: z.array(backtestDayRecordSchema).optional(),
+}) satisfies z.ZodType<MarketBacktestSummaryResponse>;
+
 const liveFetch = createNextFetch({ cache: "no-store" });
+
+export const markets: MarketInfo[] = [
+  {
+    key: "us",
+    label: "United States",
+    region: "S&P 500",
+    endpointPrefix: "/swing",
+    defaultNPerSide: 20,
+    benchmark: "SPY",
+  },
+  {
+    key: "eu",
+    label: "Europe",
+    region: "STOXX Europe 600",
+    endpointPrefix: "/swing_eu",
+    defaultNPerSide: 20,
+    benchmark: "FEZ",
+  },
+  {
+    key: "africa",
+    label: "Africa",
+    region: "JSE liquid universe",
+    endpointPrefix: "/swing_africa",
+    defaultNPerSide: 5,
+    benchmark: "EZA",
+  },
+];
 
 function createNextFetch(options: NextFetchOptions) {
   return (request: Request) => fetch(request, options);
@@ -110,6 +157,14 @@ async function readApiResponse<T>(result: ApiResult<T>, schema: z.ZodType<T>): P
   }
 
   return schema.parse(result.data);
+}
+
+async function fetchJson<T>(path: string, schema: z.ZodType<T>): Promise<T> {
+  const response = await fetch(`${apiBaseUrl}${path}`, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`API request failed with status ${response.status}`);
+  }
+  return schema.parse(await response.json());
 }
 
 export async function getHealth(): Promise<HealthResponse> {
@@ -139,6 +194,43 @@ export async function getBacktestSummary(): Promise<BacktestSummaryResponse> {
     fetch: liveFetch,
   });
   return readApiResponse(result, backtestSummaryResponseSchema);
+}
+
+export async function getMarketLatestPredictions(
+  market: MarketInfo,
+  nPerSide = market.defaultNPerSide,
+): Promise<SwingPredictionsResponse> {
+  if (market.key === "us") {
+    return getSwingLatestPredictions(nPerSide);
+  }
+
+  return fetchJson(
+    `${market.endpointPrefix}/predictions/latest?n_per_side=${nPerSide}`,
+    swingPredictionsResponseSchema,
+  );
+}
+
+export async function getMarketBacktestSummary(
+  market: MarketInfo,
+): Promise<MarketBacktestSummaryResponse> {
+  if (market.key === "us") {
+    return getBacktestSummary();
+  }
+
+  return fetchJson(`${market.endpointPrefix}/backtest`, marketBacktestSummaryResponseSchema);
+}
+
+export async function getAllMarketSnapshots(nPerSide = 5) {
+  return Promise.all(
+    markets.map(async (market) => {
+      const [predictions, backtest] = await Promise.all([
+        getMarketLatestPredictions(market, Math.min(nPerSide, market.defaultNPerSide)),
+        getMarketBacktestSummary(market),
+      ]);
+
+      return { market, predictions, backtest };
+    }),
+  );
 }
 
 export function topDividendPicks(picks: DividendPick[], count: number): DividendPick[] {

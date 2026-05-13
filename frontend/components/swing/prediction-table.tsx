@@ -1,3 +1,4 @@
+import { StockIdentity } from "@/components/stocks/stock-identity";
 import { Badge } from "@/components/ui/badge";
 import {
   Table,
@@ -21,7 +22,7 @@ export function PredictionTable({
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Symbol</TableHead>
+          <TableHead>Company</TableHead>
           <TableHead className="text-right">Pred</TableHead>
           <TableHead className="text-right">Forward 5D</TableHead>
         </TableRow>
@@ -31,7 +32,7 @@ export function PredictionTable({
           <TableRow key={`${side}-${pick.symbol}`}>
             <TableCell>
               <div className="flex items-center gap-2">
-                <span className="font-semibold">{pick.symbol}</span>
+                <StockIdentity dense symbol={pick.symbol} />
                 <Badge
                   className={
                     side === "long"

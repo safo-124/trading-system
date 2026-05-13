@@ -4,7 +4,7 @@ import Link from "next/link";
 const navItems = [
   { href: "/" as const, label: "Dashboard", icon: Activity },
   { href: "/dividend" as const, label: "Dividend", icon: ShieldCheck },
-  { href: "/swing" as const, label: "Swing", icon: Landmark },
+  { href: "/swing" as const, label: "Global Swing", icon: Landmark },
   { href: "/backtest" as const, label: "Backtest", icon: BarChart3 },
 ];
 

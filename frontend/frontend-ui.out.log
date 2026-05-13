@@ -1,0 +1,14 @@
+
+> frontend@0.1.0 dev
+> next dev --turbopack --port 3001
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.101.21:3001
+✓ Ready in 1097ms
+Creating turbopack project {
+  dir: 'C:\\Users\\nanas\\Downloads\\stocks\\trading-system\\frontend',
+  testMode: true
+}
+
+ GET / 200 in 1659ms (next.js: 258ms, application-code: 1401ms)

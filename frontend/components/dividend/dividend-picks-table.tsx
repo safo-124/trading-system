@@ -2,6 +2,7 @@
 
 import { ArrowDown, ArrowUp, ChevronsUpDown } from "lucide-react";
 import { useMemo, useState } from "react";
+import { StockIdentity } from "@/components/stocks/stock-identity";
 import {
   Table,
   TableBody,
@@ -23,7 +24,7 @@ type SortKey =
 type SortDirection = "asc" | "desc";
 
 const columns: { key: SortKey; label: string; align?: "right" }[] = [
-  { key: "ticker", label: "Ticker" },
+  { key: "ticker", label: "Company" },
   { key: "yield", label: "Yield", align: "right" },
   { key: "payout_ratio", label: "Payout", align: "right" },
   { key: "div_cagr_5y", label: "5Y CAGR", align: "right" },
@@ -92,9 +93,9 @@ export function DividendPicksTable({ picks }: { picks: DividendPick[] }) {
         {sortedPicks.map((pick) => (
           <TableRow key={pick.ticker}>
             <TableCell>
-              <div className="font-semibold">{pick.ticker}</div>
-              <div className="text-muted-foreground text-xs">
-                {pick.consec_increases} consecutive increases
+              <StockIdentity symbol={pick.ticker} />
+              <div className="mt-1 text-muted-foreground text-xs">
+                {pick.consec_increases} consecutive dividend increases
               </div>
             </TableCell>
             <NumericCell>{formatNumber(pick.yield, { style: "percent" })}</NumericCell>

@@ -1,4 +1,5 @@
 import { DividendPicksTable } from "@/components/dividend/dividend-picks-table";
+import { StockIdentity } from "@/components/stocks/stock-identity";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getDividendPicks, topDividendPicks } from "@/lib/api/client";
 import { formatDate, formatNumber } from "@/lib/utils";
@@ -27,8 +28,8 @@ export default async function DividendPage() {
           <Card key={pick.ticker}>
             <CardHeader>
               <CardDescription>Top Pick</CardDescription>
-              <CardTitle className="flex items-baseline justify-between gap-3">
-                <span>{pick.ticker}</span>
+              <CardTitle className="flex items-start justify-between gap-3">
+                <StockIdentity symbol={pick.ticker} />
                 <span className="font-mono text-emerald-400 text-xl">
                   {formatNumber(pick.composite_score, { maximumFractionDigits: 3 })}
                 </span>
