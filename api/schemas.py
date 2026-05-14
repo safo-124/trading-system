@@ -93,6 +93,25 @@ class LivePredictionResponse(BaseModel):
     short_picks: list[LivePick]
 
 
+class DatedBestPick(BaseModel):
+    market_key: str
+    market_label: str
+    region: str
+    benchmark: str
+    timestamp: date
+    symbol: str
+    pred: float
+    fwd_ret_5d: Optional[float] = None
+
+
+class BestPickByDateResponse(BaseModel):
+    requested_date: date
+    global_best: Optional[DatedBestPick] = None
+    market_picks: list[DatedBestPick]
+    n_markets: int
+    n_candidates: int
+
+
 # ---------- European swing strategy ----------
 
 class SwingEUPrediction(BaseModel):

@@ -1,8 +1,19 @@
 from __future__ import annotations
+from datetime import date
 from fastapi import APIRouter, HTTPException, Query
 
-from api.schemas import SwingPredictionsResponse, BacktestSummaryResponse, LivePredictionResponse
-from api.services import swing_latest_predictions, backtest_summary_payload, get_live_predictions
+from api.schemas import (
+    BestPickByDateResponse,
+    SwingPredictionsResponse,
+    BacktestSummaryResponse,
+    LivePredictionResponse,
+)
+from api.services import (
+    swing_latest_predictions,
+    backtest_summary_payload,
+    get_live_predictions,
+    best_pick_by_date_payload,
+)
 
 router = APIRouter(prefix="/swing", tags=["swing"])
 
@@ -27,6 +38,23 @@ def get_backtest_summary():
         raise HTTPException(
             status_code=404,
             detail="No backtest results. Run: python -m swing.backtest",
+        )
+    return payload
+
+
+@router.get("/best_by_date", response_model=BestPickByDateResponse)
+def get_best_pick_by_date(date_: date = Query(..., alias="date")):
+    """
+    Best cross-market long candidate for a selected calendar date.
+    
+    Uses the latest available trading date on or before the requested date
+    in each market, then picks the highest model prediction globally.
+    """
+    payload = best_pick_by_date_payload(date_)
+    if payload["global_best"] is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No predictions available on or before requested date.",
         )
     return payload
 

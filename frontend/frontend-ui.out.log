@@ -5,12 +5,19 @@
 ▲ Next.js 16.2.6 (Turbopack)
 - Local:         http://localhost:3001
 - Network:       http://192.168.101.21:3001
-✓ Ready in 1097ms
+✓ Ready in 1073ms
 Creating turbopack project {
   dir: 'C:\\Users\\nanas\\Downloads\\stocks\\trading-system\\frontend',
   testMode: true
 }
 
- GET / 200 in 1659ms (next.js: 258ms, application-code: 1401ms)
- GET / 200 in 978ms (next.js: 10ms, application-code: 968ms)
- GET / 200 in 3.8s (next.js: 438ms, application-code: 3.4s)
+ GET /api/trading/best-by-date?date=2025-12-31 200 in 1947ms (next.js: 1485ms, application-code: 462ms)
+○ Compiling / ...
+ GET /swing 200 in 6.9s (next.js: 5.1s, application-code: 1869ms)
+ GET / 200 in 7.0s (next.js: 4.4s, application-code: 2.5s)
+ GET / 200 in 866ms (next.js: 15ms, application-code: 851ms)
+ GET /api/trading/best-by-date?date=2026-01-02 200 in 288ms (next.js: 5ms, application-code: 283ms)
+ GET / 200 in 21ms (next.js: 5ms, application-code: 16ms)
+ GET / 200 in 416ms (next.js: 14ms, application-code: 402ms)
+ GET / 200 in 21ms (next.js: 8ms, application-code: 13ms)
+ GET / 200 in 507ms (next.js: 8ms, application-code: 499ms)

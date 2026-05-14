@@ -2,6 +2,7 @@ export type StockMetadata = {
   symbol: string;
   name: string;
   exchange: string;
+  country?: string;
   logoDomain?: string;
 };
 
@@ -461,22 +462,25 @@ const STOCK_METADATA: Record<string, StockMetadata> = {
 };
 
 export function getStockMetadata(symbol: string): StockMetadata {
-  return (
-    STOCK_METADATA[symbol] ?? {
-      symbol,
-      name: inferCompanyName(symbol),
-      exchange: inferExchange(symbol),
-    }
-  );
+  const metadata = STOCK_METADATA[symbol] ?? {
+    symbol,
+    name: inferCompanyName(symbol),
+    exchange: inferExchange(symbol),
+  };
+
+  return {
+    ...metadata,
+    country: metadata.country ?? inferCountry(symbol),
+  };
 }
 
 export function getLogoUrl(symbol: string): string | null {
   const domain = getStockMetadata(symbol).logoDomain;
-  return domain ? `https://logo.clearbit.com/${domain}` : null;
+  return domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=64` : null;
 }
 
 function inferCompanyName(symbol: string): string {
-  const root = symbol.replace(/\.(JO|L|PA|AS|MC|BR|LS)$/u, "");
+  const root = symbol.replace(/\.(JO|L|PA|AS|MC|BR|LS|DE|SW|CO|MI|ST|HE|VI|OL|WA)$/u, "");
   return `${root} listed company`;
 }
 
@@ -488,5 +492,34 @@ function inferExchange(symbol: string): string {
   if (symbol.endsWith(".MC")) return "BME";
   if (symbol.endsWith(".BR")) return "Euronext Brussels";
   if (symbol.endsWith(".LS")) return "Euronext Lisbon";
+  if (symbol.endsWith(".DE")) return "Xetra";
+  if (symbol.endsWith(".SW")) return "SIX Swiss Exchange";
+  if (symbol.endsWith(".CO")) return "Nasdaq Copenhagen";
+  if (symbol.endsWith(".MI")) return "Borsa Italiana";
+  if (symbol.endsWith(".ST")) return "Nasdaq Stockholm";
+  if (symbol.endsWith(".HE")) return "Nasdaq Helsinki";
+  if (symbol.endsWith(".VI")) return "Vienna Stock Exchange";
+  if (symbol.endsWith(".OL")) return "Oslo Stock Exchange";
+  if (symbol.endsWith(".WA")) return "Warsaw Stock Exchange";
   return "US listed";
+}
+
+function inferCountry(symbol: string): string {
+  if (symbol.endsWith(".JO")) return "South Africa";
+  if (symbol.endsWith(".L")) return "United Kingdom";
+  if (symbol.endsWith(".PA")) return "France";
+  if (symbol.endsWith(".AS")) return "Netherlands";
+  if (symbol.endsWith(".MC")) return "Spain";
+  if (symbol.endsWith(".BR")) return "Belgium";
+  if (symbol.endsWith(".LS")) return "Portugal";
+  if (symbol.endsWith(".DE")) return "Germany";
+  if (symbol.endsWith(".SW")) return "Switzerland";
+  if (symbol.endsWith(".CO")) return "Denmark";
+  if (symbol.endsWith(".MI")) return "Italy";
+  if (symbol.endsWith(".ST")) return "Sweden";
+  if (symbol.endsWith(".HE")) return "Finland";
+  if (symbol.endsWith(".VI")) return "Austria";
+  if (symbol.endsWith(".OL")) return "Norway";
+  if (symbol.endsWith(".WA")) return "Poland";
+  return "United States";
 }

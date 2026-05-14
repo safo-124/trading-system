@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Loading from "@/app/loading";
+import { BestBuyCalendar } from "@/components/dashboard/best-buy-calendar";
 import { StockIdentity } from "@/components/stocks/stock-identity";
 import { MarketBookGrid, MarketMoveView } from "@/components/swing/market-overview";
 import { Badge } from "@/components/ui/badge";
@@ -24,7 +25,7 @@ async function DashboardContent() {
   const [health, dividendPicks, marketSnapshots] = await Promise.all([
     getHealth(),
     getDividendPicks(),
-    getAllMarketSnapshots(5),
+    getAllMarketSnapshots(30),
   ]);
   const bestDividendPicks = topDividendPicks(dividendPicks.picks, 5);
   const totalRanked = marketSnapshots.reduce(
@@ -58,6 +59,8 @@ async function DashboardContent() {
           value={`${strongestMarket.market.label} ${formatNumber(strongestMarket.backtest.summary.sharpe_net, { maximumFractionDigits: 2 })}`}
         />
       </div>
+
+      <BestBuyCalendar snapshots={marketSnapshots} />
 
       <section className="space-y-3">
         <div>

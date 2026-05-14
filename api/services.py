@@ -91,6 +91,86 @@ def swing_latest_predictions(n_per_side: int = 20) -> dict:
     }
 
 
+def _best_pick_for_date(
+    df: pd.DataFrame,
+    requested_date,
+    market_key: str,
+    market_label: str,
+    region: str,
+    benchmark: str,
+) -> dict | None:
+    """Return the highest-prediction stock on or before requested_date."""
+    if df.empty:
+        return None
+    
+    requested_ts = pd.Timestamp(requested_date).normalize()
+    dates = pd.to_datetime(df["timestamp"]).dt.normalize()
+    eligible_dates = dates[dates <= requested_ts]
+    if eligible_dates.empty:
+        return None
+    
+    as_of = eligible_dates.max()
+    day_df = df[dates == as_of].copy()
+    if day_df.empty:
+        return None
+    
+    row = day_df.nlargest(1, "pred").iloc[0]
+    return {
+        "market_key": market_key,
+        "market_label": market_label,
+        "region": region,
+        "benchmark": benchmark,
+        "timestamp": row["timestamp"].date(),
+        "symbol": row["symbol"],
+        "pred": float(row["pred"]),
+        "fwd_ret_5d": float(row["fwd_ret_5d"]) if pd.notna(row["fwd_ret_5d"]) else None,
+    }
+
+
+def best_pick_by_date_payload(requested_date) -> dict:
+    """Best long candidate across US, Europe, and Africa for a selected date."""
+    candidates = [
+        _best_pick_for_date(
+            _load_predictions_cached(),
+            requested_date,
+            "us",
+            "United States",
+            "S&P 500",
+            "SPY",
+        ),
+        _best_pick_for_date(
+            _load_eu_predictions_cached(),
+            requested_date,
+            "eu",
+            "Europe",
+            "STOXX Europe 600",
+            "FEZ",
+        ),
+        _best_pick_for_date(
+            _load_africa_predictions_cached(),
+            requested_date,
+            "africa",
+            "Africa",
+            "JSE liquid universe",
+            "EZA",
+        ),
+    ]
+    market_picks = [candidate for candidate in candidates if candidate is not None]
+    global_best = (
+        sorted(market_picks, key=lambda item: item["pred"], reverse=True)[0]
+        if market_picks
+        else None
+    )
+    
+    return {
+        "requested_date": pd.Timestamp(requested_date).date(),
+        "global_best": global_best,
+        "market_picks": sorted(market_picks, key=lambda item: item["pred"], reverse=True),
+        "n_markets": len(market_picks),
+        "n_candidates": len(market_picks),
+    }
+
+
 # ---------- Backtest ----------
 
 @lru_cache(maxsize=1)

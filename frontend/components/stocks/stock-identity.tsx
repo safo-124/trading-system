@@ -1,5 +1,8 @@
+"use client";
+
 import { Building2 } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 import { getLogoUrl, getStockMetadata } from "@/lib/stock-metadata";
 import { cn } from "@/lib/utils";
 
@@ -33,6 +36,7 @@ export function StockIdentity({
 }
 
 export function StockLogo({ symbol, className }: { symbol: string; className?: string }) {
+  const [failed, setFailed] = useState(false);
   const logoUrl = getLogoUrl(symbol);
   const metadata = getStockMetadata(symbol);
   const initials = metadata.name
@@ -50,7 +54,7 @@ export function StockLogo({ symbol, className }: { symbol: string; className?: s
         className,
       )}
     >
-      {logoUrl ? (
+      {logoUrl && !failed ? (
         <Image
           alt={`${metadata.name} logo`}
           className="size-full object-contain p-1.5"
@@ -58,6 +62,7 @@ export function StockLogo({ symbol, className }: { symbol: string; className?: s
           src={logoUrl}
           unoptimized
           width={36}
+          onError={() => setFailed(true)}
         />
       ) : (
         <span className="font-semibold text-xs">
