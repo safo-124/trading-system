@@ -1,0 +1,54 @@
+Attempting to scrape GSE listings from https://afx.kwayisi.org/gse/
+
+Scraped 40 GSE listings.
+
+   ticker                                name  price_ghs
+     AADS AngloGold Ashanti Depositary Shares        NaN
+   ACCESS                   Access Bank Ghana       90.0
+      ADB       Agricultural Development Bank        6.0
+      AGA           AngloGold Ashanti Limited        NaN
+    ALLGH                Atlantic Lithium Ltd    11954.0
+      ALW                    Aluworks Limited        NaN
+      ASG                    Asante Gold Corp        NaN
+     BOPP   Benso Oil Palm Plantation Limited     1490.0
+      CAL                         CalBank Plc   142557.0
+     CLYD            Clydestone Ghana Limited     5000.0
+     CMLT               Camelot Ghana Limited        NaN
+      CPC    Cocoa Processing Company Limited        NaN
+DASPHARMA           Dannex Ayrton Starwin Plc      571.0
+  DIGICUT    Digicut Production & Advertising        NaN
+      EGH               Ecobank Ghana Limited      285.0
+      EGL            Enterprise Group Limited     2168.0
+      ETI  Ecobank Transnational Incorporated   230686.0
+      FAB                 First Atlantic Bank        NaN
+      FML                        Fan Milk Plc     1549.0
+      GCB                    GCB Bank Limited     1972.0
+     GGBL    Guinness Ghana Breweries Limited      950.0
+      GLD                         NewGold ETF       49.0
+     GOIL           Ghana Oil Company Limited    33460.0
+    HORDS                       Hords Limited        NaN
+      IIL       Intravenous Infusions Limited     2000.0
+      MAC        Mega African Capital Limited        NaN
+      MMH          Meridian-Marshall Holdings        NaN
+    MTNGH                           MTN Ghana   515689.0
+      PBC      Produce Buying Company Limited        NaN
+     RBGH         Republic Bank Ghana Limited      438.0
+    SAMBA                 Samba Foods Limited        NaN
+      SCB     Standard Chartered Bank Limited       33.0
+  SCBPREF       Stanchart Preferential Shares        NaN
+      SIC       SIC Insurance Company Limited     9058.0
+   SOGEGH      Societe Generale Ghana Limited     8881.0
+      TBL           Trust Bank Gambia Limited        NaN
+      TLW                      Tullow Oil Plc      266.0
+    TOTAL       TotalEnergies Marketing Ghana     9614.0
+     UNIL              Unilever Ghana Limited      628.0
+      ZEN              ZEN Petroleum Holdings        NaN
+
+Saved raw scrape to: C:\Users\nanas\Downloads\stocks\trading-system\data_ghana\gse_scraped_raw.csv
+
+Quality check:
+  Total rows: 40
+  Rows with a parseable price: 24
+  Rows missing price: 16
+
+  Scrape looks usable.

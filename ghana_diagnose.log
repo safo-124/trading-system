@@ -1,0 +1,38 @@
+Found 4 HTML tables on the page.
+
+=== TABLE 0 - shape (1, 3) ===
+Columns: ['GSE-CI Index', 'Year-to-Date', 'Market Cap.']
+First 5 rows:
+         GSE-CI Index        Year-to-Date   Market Cap.
+0  14,332.97 (-19.11)  +5,562.72 (63.43%)  GHS 265.13Bn
+
+=== TABLE 1 - shape (4, 3) ===
+Columns: ['Top Gainers (4)', 'Top Gainers (4).1', 'Top Gainers (4).2']
+First 5 rows:
+  Top Gainers (4)  Top Gainers (4).1 Top Gainers (4).2
+0             IIL               0.06           +20.00%
+1            CLYD               1.97            +9.44%
+2             ETI               1.53            +3.38%
+3          SOGEGH               6.46            +1.10%
+
+=== TABLE 2 - shape (4, 3) ===
+Columns: ['Bottom Losers (4)', 'Bottom Losers (4).1', 'Bottom Losers (4).2']
+First 5 rows:
+  Bottom Losers (4)  Bottom Losers (4).1 Bottom Losers (4).2
+0             TOTAL                32.99              -5.45%
+1               CAL                 0.76              -5.00%
+2               SIC                 5.77              -3.03%
+3             MTNGH                 6.50              -0.31%
+
+=== TABLE 3 - shape (40, 5) ===
+Columns: ['Ticker', 'Name', 'Volume', 'Price', 'Change']
+First 5 rows:
+   Ticker                                 Name   Volume  Price  Change
+0    AADS  AngloGold Ashanti Depositary Shares      NaN   0.42     NaN
+1  ACCESS                    Access Bank Ghana     90.0  27.60     0.0
+2     ADB        Agricultural Development Bank      6.0   5.30     0.0
+3     AGA            AngloGold Ashanti Limited      NaN  37.00     NaN
+4   ALLGH                 Atlantic Lithium Ltd  11954.0   8.46     0.0
+
+=== RAW HTML SNIPPET (first table, 2000 chars) ===
+<table style=margin-top:.125em><thead class=c><tr><th style=width:33%>GSE-CI Index<th>Year-to-Date<th style=width:33% title="Market Capitalization">Market Cap.<tbody class=c><tr><td>14,332.97 <span class=lo>(-19.11)</span><td class=hi>+5,562.72 (63.43%)<td>GHS 265.13Bn</table><p>The <strong>Ghana Stock Exchange</strong> (GSE) is the principal stock exchange of the country located in the capital Accra. Through its automated trading system, the GSE opens for continuous trading every working day from 10:00 to 15:00 GMT. Settlement of trades, handled by Bank of Ghana&#039;s Central Securities Depositary, is done on a T+3 basis (business days). Backed by the <abbr title="Securities and Exchange Commission">SEC</abbr>, the regulatory body for the securities market in the country, the GSE has various investor protection provisions such as rules against insider trading as well as a fidelity fund to compensate investors for losses incurred as a result of malpractice by a licensed dealing member of the bourse.<p>In January 2011, the GSE began publishing two indices, namely, the <em>GSE Composite Index</em> (GSE-CI) and the <em>GSE Financial Stocks Index</em> (GSE-FSI). The GSE-CI is a market capitalization weighted index comprising all listed ordinary shares with the exception of those of listed companies that have shares listed on other markets. Calculation of the index is based on the volume-weighted average closing price of the constituent stocks. The GSE-FSI is exactly like the GSE-CI but has as its constituents stocks from the financials sector, including those in the banking and insurance industries. The GSE-CI is regarded as the benchmark index of the Ghana stock market.<style>tr>:nth-child(n+4){text-align:right}td:empty:after{content:"\2014"}td:nth-child(2) a{color:inherit}td[colspan]{display:none}[data-stat]>*{margin-top:0}.ss *{color:#777}.t tr>:nth-child(3){text-align:center}@media(min-width:600px){td[colspan]{display:table-cell}[data-stat]{columns:2}}</style><div 

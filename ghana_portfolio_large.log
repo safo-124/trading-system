@@ -1,0 +1,35 @@
+Loading scored stocks...
+Fetching FX rate...
+  GHS per USD: 11.4000 (source: yfinance:GHS=X)
+
+========================================================================
+GSE PORTFOLIO RECOMMENDATION
+========================================================================
+  Budget:         GHS 227,999.99  /  USD 20,000.00
+  FX rate:        11.4000 GHS per USD (yfinance:GHS=X)
+  Horizon:        3 years
+  Risk tolerance: high
+  Target stocks:  8
+
+RECOMMENDED POSITIONS
+------------------------------------------------------------------------
+  Ticker    Shares    Price     Cost GHS   Cost USD   Weight  Notes
+  GCB          927    36.00    33,372.00   2,927.37    14.6%  
+  UNIL        1100    30.00    33,000.00   2,894.74    14.5%  
+  EGL         2760    10.64    29,366.40   2,576.00    12.9%  
+  FAB         3602     7.97    28,707.94   2,518.24    12.6%  
+  ACCESS       992    27.60    27,379.20   2,401.68    12.0%  
+  EGH          560    48.85    27,356.00   2,399.65    12.0%  
+  MTNGH       3781     6.50    24,576.50   2,155.83    10.8%  
+  SCB          337    71.38    24,055.06   2,110.09    10.6%  
+------------------------------------------------------------------------
+  TOTAL INVESTED:  GHS 227,813.10  /  USD 19,983.61
+  CASH RESIDUAL:   GHS 186.89  /  USD 16.39
+
+IMPORTANT CAVEATS:
+  - This is a fundamental-quality-driven allocation, NOT a return prediction.
+  - GSE 1-year returns are partly cedi inflation, not real value creation.
+  - Liquidity on the GSE is limited -- actual fills may differ from quoted prices.
+  - Do your own research before investing. This is not investment advice.
+
+Saved JSON to: C:\Users\nanas\Downloads\stocks\trading-system\data_ghana\latest_recommendation.json

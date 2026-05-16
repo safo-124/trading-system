@@ -1,0 +1,104 @@
+{
+  "budget_ghs": 227999.99237060547,
+  "budget_usd": 20000.0,
+  "fx_rate_ghs_per_usd": 11.399999618530273,
+  "fx_source": "yfinance:GHS=X",
+  "horizon_years": 3,
+  "risk_tolerance": "high",
+  "target_n_stocks": 8,
+  "positions": [
+    {
+      "ticker": "GCB",
+      "name": "GCB Bank Limited",
+      "price_ghs": 36.0,
+      "shares": 927,
+      "cost_ghs": 33372.0,
+      "cost_usd": 2927.3685190089886,
+      "weight_pct": 14.636842595044941,
+      "quality_score": 0.8899999999999999,
+      "notes": []
+    },
+    {
+      "ticker": "UNIL",
+      "name": "Unilever Ghana Limited",
+      "price_ghs": 30.0,
+      "shares": 1100,
+      "cost_ghs": 33000.0,
+      "cost_usd": 2894.7369389696937,
+      "weight_pct": 14.473684694848469,
+      "quality_score": 0.88,
+      "notes": []
+    },
+    {
+      "ticker": "EGL",
+      "name": "Enterprise Group Limited",
+      "price_ghs": 10.64,
+      "shares": 2760,
+      "cost_ghs": 29366.4,
+      "cost_usd": 2576.0000861987764,
+      "weight_pct": 12.880000430993881,
+      "quality_score": 0.7825,
+      "notes": []
+    },
+    {
+      "ticker": "FAB",
+      "name": "First Atlantic Bank",
+      "price_ghs": 7.97,
+      "shares": 3602,
+      "cost_ghs": 28707.94,
+      "cost_usd": 2518.2404351432006,
+      "weight_pct": 12.591202175716004,
+      "quality_score": 0.7649999999999999,
+      "notes": []
+    },
+    {
+      "ticker": "ACCESS",
+      "name": "Access Bank Ghana",
+      "price_ghs": 27.6,
+      "shares": 992,
+      "cost_ghs": 27379.2,
+      "cost_usd": 2401.684290892092,
+      "weight_pct": 12.00842145446046,
+      "quality_score": 0.73,
+      "notes": []
+    },
+    {
+      "ticker": "EGH",
+      "name": "Ecobank Ghana Limited",
+      "price_ghs": 48.85,
+      "shares": 560,
+      "cost_ghs": 27356.0,
+      "cost_usd": 2399.649203104695,
+      "weight_pct": 11.998246015523476,
+      "quality_score": 0.73,
+      "notes": []
+    },
+    {
+      "ticker": "MTNGH",
+      "name": "MTN Ghana",
+      "price_ghs": 6.5,
+      "shares": 3781,
+      "cost_ghs": 24576.5,
+      "cost_usd": 2155.833405472384,
+      "weight_pct": 10.77916702736192,
+      "quality_score": 0.655,
+      "notes": []
+    },
+    {
+      "ticker": "SCB",
+      "name": "Standard Chartered Bank Limited",
+      "price_ghs": 71.38,
+      "shares": 337,
+      "cost_ghs": 24055.059999999998,
+      "cost_usd": 2110.0930530646156,
+      "weight_pct": 10.550465265323078,
+      "quality_score": 0.6425000000000001,
+      "notes": []
+    }
+  ],
+  "total_invested_ghs": 227813.1,
+  "total_invested_usd": 19983.605931854447,
+  "cash_residual_ghs": 186.89237060546293,
+  "cash_residual_usd": 16.39406814555295,
+  "excluded_reasons": []
+}

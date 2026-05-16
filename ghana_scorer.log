@@ -1,0 +1,62 @@
+Loading fundamentals from C:\Users\nanas\Downloads\stocks\trading-system\data_ghana\gse_fundamentals.csv
+  40 stocks loaded
+  Saved scored data to: C:\Users\nanas\Downloads\stocks\trading-system\data_ghana\gse_scored.csv
+
+======================================================================
+ELIGIBILITY SUMMARY
+======================================================================
+  Total stocks:                    40
+  Passed liquidity gate:           40
+  Passed P/E data-integrity gate:  37
+  ELIGIBLE (passed both):          37
+
+INELIGIBLE STOCKS (and reason):
+  AADS       AngloGold Ashanti Depositary Shares - P/E=0.33 (currency mismatch?)
+  AGA        AngloGold Ashanti Limited           - P/E=0.29 (currency mismatch?)
+  CMLT       Camelot Ghana Limited               - P/E=0.29 (currency mismatch?)
+
+======================================================================
+RANKED ELIGIBLE STOCKS (by quality score)
+======================================================================
+   ticker                               name price_ghs pe_ratio    eps div_per_share ret_1yr score_value score_profitability score_income score_momentum quality_score
+      GCB                   GCB Bank Limited     36.00     4.11  8.762         1.000 +374.0%        1.00                1.00         0.45           1.00         0.890
+     UNIL             Unilever Ghana Limited     30.00     7.99  3.753         1.000  +53.5%        1.00                1.00         0.65           0.75         0.880
+      EGL           Enterprise Group Limited     10.64     8.58  1.239         0.164 +300.0%        0.80                0.85         0.45           1.00         0.782
+      FAB                First Atlantic Bank      7.97     7.99  0.998         0.290   +3.5%        1.00                0.70         0.65           0.55         0.765
+   ACCESS                  Access Bank Ghana     27.60    10.53  2.620           NaN +200.0%        0.80                1.00         0.00           1.00         0.730
+      EGH              Ecobank Ghana Limited     48.85     8.97  5.448           NaN +628.0%        0.80                1.00         0.00           1.00         0.730
+    MTNGH                          MTN Ghana      6.50     8.67  0.749         0.030  +97.0%        0.80                0.70         0.25           0.75         0.655
+      SCB    Standard Chartered Bank Limited     71.38    13.71  5.205           NaN +172.0%        0.55                1.00         0.00           1.00         0.643
+      ETI Ecobank Transnational Incorporated      1.53     5.95  0.257           NaN  +70.0%        1.00                0.55         0.00           0.75         0.637
+      TBL          Trust Bank Gambia Limited      1.20     4.33  0.277           NaN  +31.9%        1.00                0.55         0.00           0.75         0.637
+      FML                       Fan Milk Plc     13.34    14.03  0.951         0.110 +251.0%        0.55                0.70         0.25           1.00         0.617
+     GOIL          Ghana Oil Company Limited      7.94    14.89  0.533         0.060 +349.0%        0.55                0.70         0.25           1.00         0.617
+      CAL                        CalBank Plc      0.76     7.53  0.101           NaN  +16.9%        1.00                0.55         0.00           0.55         0.598
+    TOTAL      TotalEnergies Marketing Ghana     32.99    15.28  2.159           NaN  +32.0%        0.55                1.00         0.00           0.75         0.593
+DASPHARMA          Dannex Ayrton Starwin Plc      0.41     4.47  0.092           NaN   +7.9%        1.00                0.40         0.00           0.55         0.560
+     BOPP  Benso Oil Palm Plantation Limited     85.50    38.96  2.194         0.242 +187.0%        0.15                1.00         0.25           1.00         0.552
+      SIC      SIC Insurance Company Limited      5.77    16.24  0.355           NaN +649.0%        0.55                0.55         0.00           1.00         0.530
+     RBGH        Republic Bank Ghana Limited      5.50    24.03  0.229         0.050 +733.0%        0.35                0.55         0.25           1.00         0.510
+     GGBL   Guinness Ghana Breweries Limited     14.96    18.67  0.801           NaN +158.0%        0.35                0.70         0.00           1.00         0.497
+   SOGEGH     Societe Generale Ghana Limited      6.46    22.16  0.291           NaN +267.0%        0.35                0.55         0.00           1.00         0.460
+    SAMBA                Samba Foods Limited      0.55    12.42  0.044           NaN     NaN        0.55                0.40         0.00           0.50         0.392
+      ADB      Agricultural Development Bank      5.30    21.58  0.246           NaN   +4.7%        0.35                0.55         0.00           0.55         0.370
+  DIGICUT   Digicut Production & Advertising      0.09    19.15  0.005           NaN     NaN        0.35                0.40         0.00           0.50         0.323
+     CLYD           Clydestone Ghana Limited      1.97    30.64  0.064           NaN     NaN        0.15                0.40         0.00           0.50         0.253
+      CPC   Cocoa Processing Company Limited      0.12    -1.60 -0.075           NaN +500.0%        0.00                0.00         0.00           1.00         0.200
+    HORDS                      Hords Limited      0.10    71.43  0.001           NaN     NaN        0.00                0.40         0.00           0.50         0.200
+      ZEN             ZEN Petroleum Holdings      7.55      NaN    NaN           NaN  +49.5%        0.00                0.00         0.00           0.75         0.150
+    ALLGH               Atlantic Lithium Ltd      8.46      NaN    NaN           NaN  +38.2%        0.00                0.00         0.00           0.75         0.150
+      GLD                        NewGold ETF    497.01      NaN    NaN           NaN  +14.7%        0.00                0.00         0.00           0.55         0.110
+      IIL      Intravenous Infusions Limited      0.06    -3.55 -0.017           NaN  +20.0%        0.00                0.00         0.00           0.55         0.110
+      ALW                   Aluworks Limited      0.10    -0.32 -0.317           NaN     NaN        0.00                0.00         0.00           0.50         0.100
+      ASG                   Asante Gold Corp      8.89    -1.96 -4.540           NaN     NaN        0.00                0.00         0.00           0.50         0.100
+      MMH         Meridian-Marshall Holdings      0.10   -31.25 -0.003           NaN     NaN        0.00                0.00         0.00           0.50         0.100
+  SCBPREF      Stanchart Preferential Shares      0.90      NaN    NaN           NaN     NaN        0.00                0.00         0.00           0.50         0.100
+      PBC     Produce Buying Company Limited      0.02    -0.14 -0.146           NaN     NaN        0.00                0.00         0.00           0.50         0.100
+      TLW                     Tullow Oil Plc     11.92   -12.53 -0.951           NaN     NaN        0.00                0.00         0.00           0.50         0.100
+      MAC       Mega African Capital Limited      5.20    -3.25 -1.599           NaN   -3.4%        0.00                0.00         0.00           0.25         0.050
+
+CAVEAT: quality_score is a relative ranking of fundamental quality,
+NOT a prediction of returns. GSE 1-year returns are inflated by cedi
+devaluation. Do your own research before investing.

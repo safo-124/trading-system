@@ -1,0 +1,109 @@
+GSE Full Fundamental Scraper
+============================================================
+
+Step 1: scraping the listings snapshot...
+  Got 40 listings.
+
+Step 2: scraping 40 per-stock detail pages...
+  (1 second between requests -- this takes ~40 seconds)
+  [ 1/40] AADS       OK
+  [ 2/40] ACCESS     OK
+  [ 3/40] ADB        OK
+  [ 4/40] AGA        OK
+  [ 5/40] ALLGH      OK
+  [ 6/40] ALW        OK
+  [ 7/40] ASG        OK
+  [ 8/40] BOPP       OK
+  [ 9/40] CAL        OK
+  [10/40] CLYD       OK
+  [11/40] CMLT       OK
+  [12/40] CPC        OK
+  [13/40] DASPHARMA  OK
+  [14/40] DIGICUT    OK
+  [15/40] EGH        OK
+  [16/40] EGL        OK
+  [17/40] ETI        OK
+  [18/40] FAB        OK
+  [19/40] FML        OK
+  [20/40] GCB        OK
+  [21/40] GGBL       OK
+  [22/40] GLD        OK
+  [23/40] GOIL       OK
+  [24/40] HORDS      OK
+  [25/40] IIL        OK
+  [26/40] MAC        OK
+  [27/40] MMH        OK
+  [28/40] MTNGH      OK
+  [29/40] PBC        OK
+  [30/40] RBGH       OK
+  [31/40] SAMBA      OK
+  [32/40] SCB        OK
+  [33/40] SCBPREF    OK
+  [34/40] SIC        OK
+  [35/40] SOGEGH     OK
+  [36/40] TBL        OK
+  [37/40] TLW        OK
+  [38/40] TOTAL      OK
+  [39/40] UNIL       OK
+  [40/40] ZEN        OK
+
+Saved merged fundamentals to: C:\Users\nanas\Downloads\stocks\trading-system\data_ghana\gse_fundamentals.csv
+
+============================================================
+QUALITY REPORT
+============================================================
+Total stocks: 40
+Detail-page errors: 0
+  eps                 : 36/40 populated
+  pe_ratio            : 36/40 populated
+  div_per_share       : 12/40 populated
+  ret_1yr             : 28/40 populated
+  ret_ytd             : 26/40 populated
+  recent_close        : 40/40 populated
+  avg_volume_10d      : 40/40 populated
+  vol_proxy_10d       : 17/40 populated
+
+============================================================
+FULL MERGED DATA
+============================================================
+   ticker                                name  price_ghs   volume      eps  pe_ratio  div_per_share  ret_1yr  ret_ytd
+     AADS AngloGold Ashanti Depositary Shares       0.42      NaN   1.2614      0.33         0.1308   0.0244      NaN
+   ACCESS                   Access Bank Ghana      27.60     90.0   2.6203     10.53            NaN   2.0000   0.7040
+      ADB       Agricultural Development Bank       5.30      6.0   0.2456     21.58            NaN   0.0474   0.0474
+      AGA           AngloGold Ashanti Limited      37.00      NaN 126.1380      0.29        13.0788      NaN      NaN
+    ALLGH                Atlantic Lithium Ltd       8.46  11954.0      NaN       NaN            NaN   0.3820   0.3820
+      ALW                    Aluworks Limited       0.10      NaN  -0.3166     -0.32            NaN      NaN      NaN
+      ASG                    Asante Gold Corp       8.89      NaN  -4.5399     -1.96            NaN      NaN      NaN
+     BOPP   Benso Oil Palm Plantation Limited      85.50   1490.0   2.1943     38.96         0.2420   1.8700   0.5320
+      CAL                         CalBank Plc       0.76 142557.0   0.1009      7.53            NaN   0.1690   0.1880
+     CLYD            Clydestone Ghana Limited       1.97   5000.0   0.0643     30.64            NaN      NaN   3.2800
+     CMLT               Camelot Ghana Limited       0.14      NaN   0.4768      0.29         0.0860      NaN      NaN
+      CPC    Cocoa Processing Company Limited       0.12      NaN  -0.0752     -1.60            NaN   5.0000   1.4000
+DASPHARMA           Dannex Ayrton Starwin Plc       0.41    571.0   0.0917      4.47            NaN   0.0789   0.0789
+  DIGICUT    Digicut Production & Advertising       0.09      NaN   0.0047     19.15            NaN      NaN      NaN
+      EGH               Ecobank Ghana Limited      48.85    285.0   5.4482      8.97            NaN   6.2800   0.9540
+      EGL            Enterprise Group Limited      10.64   2168.0   1.2394      8.58         0.1640   3.0000   2.0600
+      ETI  Ecobank Transnational Incorporated       1.53 230686.0   0.2571      5.95            NaN   0.7000   0.9870
+      FAB                 First Atlantic Bank       7.97      NaN   0.9979      7.99         0.2900   0.0351   0.0337
+      FML                        Fan Milk Plc      13.34   1549.0   0.9507     14.03         0.1100   2.5100   0.6680
+      GCB                    GCB Bank Limited      36.00   1972.0   8.7625      4.11         1.0000   3.7400   0.7900
+     GGBL    Guinness Ghana Breweries Limited      14.96    950.0   0.8013     18.67            NaN   1.5800   1.2700
+      GLD                         NewGold ETF     497.01     49.0      NaN       NaN            NaN   0.1470   0.0354
+     GOIL           Ghana Oil Company Limited       7.94  33460.0   0.5331     14.89         0.0600   3.4900   1.6800
+    HORDS                       Hords Limited       0.10      NaN   0.0014     71.43            NaN      NaN      NaN
+      IIL       Intravenous Infusions Limited       0.06   2000.0  -0.0169     -3.55            NaN   0.2000   0.2000
+      MAC        Mega African Capital Limited       5.20      NaN  -1.5986     -3.25            NaN  -0.0335      NaN
+      MMH          Meridian-Marshall Holdings       0.10      NaN  -0.0032    -31.25            NaN      NaN      NaN
+    MTNGH                           MTN Ghana       6.50 515689.0   0.7493      8.67         0.0300   0.9700   0.5480
+      PBC      Produce Buying Company Limited       0.02      NaN  -0.1457     -0.14            NaN      NaN      NaN
+     RBGH         Republic Bank Ghana Limited       5.50    438.0   0.2289     24.03         0.0500   7.3300   3.2300
+    SAMBA                 Samba Foods Limited       0.55      NaN   0.0443     12.42            NaN      NaN      NaN
+      SCB     Standard Chartered Bank Limited      71.38     33.0   5.2052     13.71            NaN   1.7200   1.4400
+  SCBPREF       Stanchart Preferential Shares       0.90      NaN      NaN       NaN            NaN      NaN      NaN
+      SIC       SIC Insurance Company Limited       5.77   9058.0   0.3554     16.24            NaN   6.4900   3.8100
+   SOGEGH      Societe Generale Ghana Limited       6.46   8881.0   0.2915     22.16            NaN   2.6700   0.4390
+      TBL           Trust Bank Gambia Limited       1.20      NaN   0.2774      4.33            NaN   0.3190      NaN
+      TLW                      Tullow Oil Plc      11.92    266.0  -0.9514    -12.53            NaN      NaN      NaN
+    TOTAL       TotalEnergies Marketing Ghana      32.99   9614.0   2.1595     15.28            NaN   0.3200  -0.1810
+     UNIL              Unilever Ghana Limited      30.00    628.0   3.7531      7.99         1.0000   0.5350   0.5160
+      ZEN              ZEN Petroleum Holdings       7.55      NaN      NaN       NaN            NaN   0.4950   0.4950

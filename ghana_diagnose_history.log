@@ -1,0 +1,312 @@
+RISK GATE: Testing afx.kwayisi.org per-stock history availability
+
+=================================================================
+TICKER: MTNGH  ->  https://afx.kwayisi.org/gse/MTNGH
+=================================================================
+HTTP status: 200
+Tables found: 5
+
+  --- Table 0: shape (6, 2) ---
+  Columns: ['Last Trading Results', 'Last Trading Results.1']
+  First 3 rows:
+      Last Trading Results Last Trading Results.1
+    0        Opening Price                    NaN
+    1      Day�s Low Price                    NaN
+    2     Day�s High Price                    NaN
+
+  --- Table 1: shape (6, 2) ---
+  Columns: ['Growth & Valuation', 'Growth & Valuation.1']
+  First 3 rows:
+        Growth & Valuation Growth & Valuation.1
+    0   Earnings Per Share               0.7493
+    1  Price/Earning Ratio                 8.67
+    2   Dividend Per Share                 0.03
+
+  --- Table 2: shape (1, 3) ---
+  Columns: ['1WK', '4WK', '3MO']
+  First 3 rows:
+          1WK     4WK   3MO
+    0  -3.99%  +12.3%  +54%
+
+  --- Table 3: shape (1, 3) ---
+  Columns: ['6MO', '1YR', 'YTD']
+  First 3 rows:
+          6MO   1YR     YTD
+    0  +60.5%  +97%  +54.8%
+
+  --- Table 4: shape (10, 5) ---
+  Columns: ['Date', 'Volume', 'Close', 'Change', 'Change%']
+  First 3 rows:
+             Date  Volume  Close  Change Change%
+    0  2026-05-14  515689   6.50   -0.02  -0.31%
+    1  2026-05-13  788826   6.52   -0.19  -2.83%
+    2  2026-05-12  252217   6.71    0.07  +1.05%
+  Last 3 rows:
+             Date   Volume  Close  Change Change%
+    7  2026-05-05   479619    6.8     NaN     NaN
+    8  2026-05-04   705610    6.8     NaN     NaN
+    9  2026-04-30  3059292    6.8     NaN     NaN
+
+  Raw HTML length: 25,513 chars
+  'historical' appears 2 times in HTML
+  'chart' appears 2 times in HTML
+  '2025' appears 22 times in HTML
+
+=================================================================
+TICKER: GCB  ->  https://afx.kwayisi.org/gse/GCB
+=================================================================
+HTTP status: 200
+Tables found: 6
+
+  --- Table 0: shape (6, 2) ---
+  Columns: ['Last Trading Results', 'Last Trading Results.1']
+  First 3 rows:
+      Last Trading Results  Last Trading Results.1
+    0        Opening Price                     NaN
+    1      Day�s Low Price                     NaN
+    2     Day�s High Price                     NaN
+
+  --- Table 1: shape (6, 2) ---
+  Columns: ['Growth & Valuation', 'Growth & Valuation.1']
+  First 3 rows:
+        Growth & Valuation Growth & Valuation.1
+    0   Earnings Per Share               8.7625
+    1  Price/Earning Ratio                 4.11
+    2   Dividend Per Share                 1.00
+
+  --- Table 2: shape (1, 3) ---
+  Columns: ['1WK', '4WK', '3MO']
+  First 3 rows:
+        1WK     4WK     3MO
+    0  -10%  +34.2%  +60.4%
+
+  --- Table 3: shape (1, 3) ---
+  Columns: ['6MO', '1YR', 'YTD']
+  First 3 rows:
+         6MO    1YR   YTD
+    0  +102%  +374%  +79%
+
+  --- Table 4: shape (10, 5) ---
+  Columns: ['Date', 'Volume', 'Close', 'Change', 'Change%']
+  First 3 rows:
+             Date  Volume  Close  Change  Change%
+    0  2026-05-14    1972   36.0     NaN      NaN
+    1  2026-05-13    4438   36.0     NaN      NaN
+    2  2026-05-12    6544   36.0    -4.0  -10.00%
+  Last 3 rows:
+             Date  Volume  Close  Change Change%
+    7  2026-05-05    4053  41.55     NaN     NaN
+    8  2026-05-04   13939  41.55     NaN     NaN
+    9  2026-04-30  434660  41.55     NaN     NaN
+
+  --- Table 5: shape (10, 5) ---
+  Columns: ['Code', 'Name', 'M. Cap.', 'Close', 'YTD']
+  First 3 rows:
+       Code                                Name M. Cap.  Close     YTD
+    0  RBGH         Republic Bank Ghana Limited   4.69B   5.50   +323%
+    1   SCB     Standard Chartered Bank Limited   9.62B  71.38   +144%
+    2   ETI  Ecobank Transnational Incorporated   36.8B   1.53  +98.7%
+  Last 3 rows:
+          Code                           Name M. Cap.  Close     YTD
+    7      FAB            First Atlantic Bank   3.01B   7.97  +3.37%
+    8      TBL      Trust Bank Gambia Limited    240M   1.20     NaN
+    9  SCBPREF  Stanchart Preferential Shares   15.7M   0.90     NaN
+
+  Raw HTML length: 22,013 chars
+  'historical' appears 2 times in HTML
+  'chart' appears 7 times in HTML
+  '2025' appears 6 times in HTML
+  '2024' appears 4 times in HTML
+
+=================================================================
+TICKER: TOTAL  ->  https://afx.kwayisi.org/gse/TOTAL
+=================================================================
+HTTP status: 200
+Tables found: 6
+
+  --- Table 0: shape (6, 2) ---
+  Columns: ['Last Trading Results', 'Last Trading Results.1']
+  First 3 rows:
+      Last Trading Results  Last Trading Results.1
+    0        Opening Price                     NaN
+    1      Day�s Low Price                     NaN
+    2     Day�s High Price                     NaN
+
+  --- Table 1: shape (6, 2) ---
+  Columns: ['Growth & Valuation', 'Growth & Valuation.1']
+  First 3 rows:
+        Growth & Valuation Growth & Valuation.1
+    0   Earnings Per Share               2.1595
+    1  Price/Earning Ratio                15.28
+    2   Dividend Per Share                  NaN
+
+  --- Table 2: shape (1, 3) ---
+  Columns: ['1WK', '4WK', '3MO']
+  First 3 rows:
+          1WK     4WK     3MO
+    0  -9.59%  -14.1%  -17.9%
+
+  --- Table 3: shape (1, 3) ---
+  Columns: ['6MO', '1YR', 'YTD']
+  First 3 rows:
+          6MO   1YR     YTD
+    0  -18.5%  +32%  -18.1%
+
+  --- Table 4: shape (10, 5) ---
+  Columns: ['Date', 'Volume', 'Close', 'Change', 'Change%']
+  First 3 rows:
+             Date  Volume  Close  Change Change%
+    0  2026-05-14    9614  32.99    -1.9  -5.45%
+    1  2026-05-13    1234  34.89     NaN     NaN
+    2  2026-05-12    2620  34.89     NaN     NaN
+  Last 3 rows:
+             Date  Volume  Close  Change Change%
+    7  2026-05-05    1795  36.49    2.26  +6.60%
+    8  2026-05-04     113  34.23     NaN     NaN
+    9  2026-04-30    4155  34.23     NaN     NaN
+
+  --- Table 5: shape (3, 5) ---
+  Columns: ['Code', 'Name', 'M. Cap.', 'Close', 'YTD']
+  First 3 rows:
+       Code                       Name M. Cap.  Close     YTD
+    0  GOIL  Ghana Oil Company Limited   3.11B   7.94   +168%
+    1   ZEN     ZEN Petroleum Holdings   4.83B   7.55  +49.5%
+    2   TLW             Tullow Oil Plc   17.7B  11.92     NaN
+
+  Raw HTML length: 21,695 chars
+  'historical' appears 2 times in HTML
+  'chart' appears 1 times in HTML
+  '2025' appears 4 times in HTML
+  '2024' appears 2 times in HTML
+
+=================================================================
+TICKER: EGH  ->  https://afx.kwayisi.org/gse/EGH
+=================================================================
+HTTP status: 200
+Tables found: 6
+
+  --- Table 0: shape (6, 2) ---
+  Columns: ['Last Trading Results', 'Last Trading Results.1']
+  First 3 rows:
+      Last Trading Results  Last Trading Results.1
+    0        Opening Price                     NaN
+    1      Day�s Low Price                     NaN
+    2     Day�s High Price                     NaN
+
+  --- Table 1: shape (6, 2) ---
+  Columns: ['Growth & Valuation', 'Growth & Valuation.1']
+  First 3 rows:
+        Growth & Valuation Growth & Valuation.1
+    0   Earnings Per Share               5.4482
+    1  Price/Earning Ratio                 8.97
+    2   Dividend Per Share                  NaN
+
+  --- Table 2: shape (1, 3) ---
+  Columns: ['1WK', '4WK', '3MO']
+  First 3 rows:
+       1WK    4WK     3MO
+    0  NaN  -0.1%  +68.6%
+
+  --- Table 3: shape (1, 3) ---
+  Columns: ['6MO', '1YR', 'YTD']
+  First 3 rows:
+         6MO    1YR     YTD
+    0  +216%  +628%  +95.4%
+
+  --- Table 4: shape (10, 5) ---
+  Columns: ['Date', 'Volume', 'Close', 'Change', 'Change%']
+  First 3 rows:
+             Date  Volume  Close  Change Change%
+    0  2026-05-14     285  48.85     NaN     NaN
+    1  2026-05-12     200  48.85     NaN     NaN
+    2  2026-05-08      99  48.85     NaN     NaN
+  Last 3 rows:
+             Date  Volume  Close  Change Change%
+    7  2026-04-30     613  48.87     NaN     NaN
+    8  2026-04-29    1594  48.87     NaN     NaN
+    9  2026-04-28    1250  48.87     NaN     NaN
+
+  --- Table 5: shape (10, 5) ---
+  Columns: ['Code', 'Name', 'M. Cap.', 'Close', 'YTD']
+  First 3 rows:
+       Code                                Name M. Cap.  Close     YTD
+    0  RBGH         Republic Bank Ghana Limited   4.69B   5.50   +323%
+    1   SCB     Standard Chartered Bank Limited   9.62B  71.38   +144%
+    2   ETI  Ecobank Transnational Incorporated   36.8B   1.53  +98.7%
+  Last 3 rows:
+          Code                           Name M. Cap.  Close     YTD
+    7      FAB            First Atlantic Bank   3.01B   7.97  +3.37%
+    8      TBL      Trust Bank Gambia Limited    240M   1.20     NaN
+    9  SCBPREF  Stanchart Preferential Shares   15.7M   0.90     NaN
+
+  Raw HTML length: 20,506 chars
+  'historical' appears 2 times in HTML
+  'chart' appears 7 times in HTML
+
+=================================================================
+TICKER: FML  ->  https://afx.kwayisi.org/gse/FML
+=================================================================
+HTTP status: 200
+Tables found: 6
+
+  --- Table 0: shape (6, 2) ---
+  Columns: ['Last Trading Results', 'Last Trading Results.1']
+  First 3 rows:
+      Last Trading Results  Last Trading Results.1
+    0        Opening Price                     NaN
+    1      Day�s Low Price                     NaN
+    2     Day�s High Price                     NaN
+
+  --- Table 1: shape (6, 2) ---
+  Columns: ['Growth & Valuation', 'Growth & Valuation.1']
+  First 3 rows:
+        Growth & Valuation Growth & Valuation.1
+    0   Earnings Per Share               0.9507
+    1  Price/Earning Ratio                14.03
+    2   Dividend Per Share                 0.11
+
+  --- Table 2: shape (1, 3) ---
+  Columns: ['1WK', '4WK', '3MO']
+  First 3 rows:
+          1WK     4WK     3MO
+    0  +5.29%  +6.29%  +62.7%
+
+  --- Table 3: shape (1, 3) ---
+  Columns: ['6MO', '1YR', 'YTD']
+  First 3 rows:
+          6MO    1YR     YTD
+    0  +66.8%  +251%  +66.8%
+
+  --- Table 4: shape (10, 5) ---
+  Columns: ['Date', 'Volume', 'Close', 'Change', 'Change%']
+  First 3 rows:
+             Date  Volume  Close  Change Change%
+    0  2026-05-14    1549  13.34     NaN     NaN
+    1  2026-05-13    1168  13.34     NaN     NaN
+    2  2026-05-12    3456  13.34   -0.59  -4.24%
+  Last 3 rows:
+             Date  Volume  Close  Change Change%
+    7  2026-05-05    2383  12.67    0.61  +5.06%
+    8  2026-05-04   25197  12.06    0.56  +4.87%
+    9  2026-04-30    1411  11.50     NaN     NaN
+
+  --- Table 5: shape (6, 5) ---
+  Columns: ['Code', 'Name', 'M. Cap.', 'Close', 'YTD']
+  First 3 rows:
+       Code                               Name M. Cap.  Close     YTD
+    0   CPC   Cocoa Processing Company Limited    245M   0.12   +140%
+    1  GGBL   Guinness Ghana Breweries Limited    4.6B  14.96   +127%
+    2  BOPP  Benso Oil Palm Plantation Limited   2.98B  85.50  +53.2%
+
+  Raw HTML length: 15,724 chars
+  'historical' appears 2 times in HTML
+  'chart' appears 1 times in HTML
+  '2024' appears 1 times in HTML
+  '2023' appears 1 times in HTML
+
+=================================================================
+ASSESSMENT GUIDANCE:
+  - If a table has 50+ rows with dates and prices -> usable history
+  - If only 1-5 rows -> just current quote, no history
+  - If 'chart' keyword appears a lot -> history may be in JS, harder
+=================================================================
