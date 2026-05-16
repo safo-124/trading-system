@@ -1,8 +1,10 @@
 """Service layer — loads parquet/CSV and produces Pydantic models."""
 from __future__ import annotations
+import time as _time
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
+from pathlib import Path as _Path
 
 import numpy as np
 import pandas as pd
@@ -506,3 +508,120 @@ def get_africa_live_predictions(n_per_side: int = 5, force_refresh: bool = False
     _AFRICA_LIVE_CACHE["timestamp"] = now
     _AFRICA_LIVE_CACHE["payload"] = result
     return result
+
+
+# ---------- Ghana services ----------
+
+_GHANA_DATA_DIR = _Path(__file__).resolve().parent.parent / "data_ghana"
+_GHANA_SCORED_PATH = _GHANA_DATA_DIR / "gse_scored.csv"
+_GHANA_FUNDAMENTALS_PATH = _GHANA_DATA_DIR / "gse_fundamentals.csv"
+
+
+@lru_cache(maxsize=1)
+def _load_ghana_scored_cached() -> pd.DataFrame:
+    if not _GHANA_SCORED_PATH.exists():
+        return pd.DataFrame()
+    return pd.read_csv(_GHANA_SCORED_PATH)
+
+
+@lru_cache(maxsize=1)
+def _load_ghana_fundamentals_cached() -> pd.DataFrame:
+    if not _GHANA_FUNDAMENTALS_PATH.exists():
+        return pd.DataFrame()
+    return pd.read_csv(_GHANA_FUNDAMENTALS_PATH)
+
+
+def ghana_score_payload() -> dict:
+    df = _load_ghana_scored_cached()
+    if df.empty:
+        return {"n_stocks": 0, "n_eligible": 0, "scored": []}
+    df = df.sort_values("quality_score", ascending=False)
+    rows = []
+    for _, r in df.iterrows():
+        rows.append({
+            "ticker": str(r["ticker"]),
+            "name": str(r["name"]),
+            "price_ghs": float(r["price_ghs"]) if pd.notna(r.get("price_ghs")) else None,
+            "pe_ratio": float(r["pe_ratio"]) if pd.notna(r.get("pe_ratio")) else None,
+            "eps": float(r["eps"]) if pd.notna(r.get("eps")) else None,
+            "div_per_share": float(r["div_per_share"]) if pd.notna(r.get("div_per_share")) else None,
+            "ret_1yr": float(r["ret_1yr"]) if pd.notna(r.get("ret_1yr")) else None,
+            "eligible": bool(r["eligible"]),
+            "quality_score": float(r["quality_score"]),
+        })
+    return {
+        "n_stocks": len(df),
+        "n_eligible": int(df["eligible"].sum()),
+        "scored": rows,
+    }
+
+
+def ghana_fundamentals_payload() -> dict:
+    df = _load_ghana_fundamentals_cached()
+    if df.empty:
+        return {"n_stocks": 0, "fundamentals": []}
+    cols_we_expose = [
+        "ticker", "name", "price_ghs", "volume", "eps", "pe_ratio",
+        "div_per_share", "ret_1yr", "ret_ytd", "avg_volume_10d",
+    ]
+    rows = []
+    for _, r in df.iterrows():
+        row = {}
+        for c in cols_we_expose:
+            v = r.get(c)
+            if c in ("ticker", "name"):
+                row[c] = str(v) if pd.notna(v) else ""
+            else:
+                row[c] = float(v) if pd.notna(v) else None
+        rows.append(row)
+    return {"n_stocks": len(rows), "fundamentals": rows}
+
+
+# Cache portfolio recommendations briefly (1 min) -- the inputs change
+# per-request but the underlying data + FX rate don't.
+_GHANA_REC_CACHE: dict = {}
+_GHANA_REC_TTL_SEC = 60
+
+
+def ghana_recommend_payload(
+    budget_usd: float | None,
+    budget_ghs: float | None,
+    horizon_years: int,
+    risk_tolerance: str,
+) -> dict:
+    from dataclasses import asdict as _asdict
+    from ghana.portfolio import (
+        fetch_fx_rate, build_portfolio,
+    )
+
+    if budget_usd is None and budget_ghs is None:
+        raise ValueError("Must provide budget_usd or budget_ghs")
+
+    key = (budget_usd, budget_ghs, horizon_years, risk_tolerance)
+    now = _time.time()
+    cached = _GHANA_REC_CACHE.get(key)
+    if cached is not None and (now - cached["t"]) < _GHANA_REC_TTL_SEC:
+        return cached["payload"]
+
+    scored = _load_ghana_scored_cached()
+    if scored.empty:
+        raise FileNotFoundError(
+            "gse_scored.csv missing. Run: python -m ghana.scorer"
+        )
+
+    fx_rate, fx_source = fetch_fx_rate()
+    if budget_ghs is None:
+        budget_ghs = float(budget_usd) * fx_rate
+
+    rec = build_portfolio(
+        scored_df=scored,
+        budget_ghs=float(budget_ghs),
+        horizon_years=int(horizon_years),
+        risk_tolerance=risk_tolerance,
+        fx_rate=fx_rate,
+        fx_source=fx_source,
+    )
+
+    payload = _asdict(rec)
+    _GHANA_REC_CACHE[key] = {"t": now, "payload": payload}
+    return payload

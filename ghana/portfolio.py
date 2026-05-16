@@ -180,11 +180,12 @@ def build_portfolio(
     avg_vol = candidates["avg_volume_10d"].fillna(0).to_numpy()
     prices = candidates["price_ghs"].to_numpy()
     daily_turnover_ghs = avg_vol * prices
-    max_position_ghs = daily_turnover_ghs * LIQUIDITY_TURNOVER_MULTIPLE
-    # If turnover is zero or missing, allow a tiny default (1000 GHS) -- better
-    # than letting the position get fully capped to zero on data noise
+    max_position_ghs = daily_turnover_ghs * LIQUIDITY_TURNOVER_FRACTION
+    # If turnover is missing/zero, allow a small token allocation rather
+    # than zero (avoids dropping the position entirely on noisy data),
+    # but keep it conservative.
     max_position_ghs = np.where(
-        max_position_ghs > 0, max_position_ghs, 1000.0
+        max_position_ghs > 0, max_position_ghs, 500.0
     )
 
     capped_ghs = np.minimum(desired_ghs, max_position_ghs)
@@ -222,7 +223,14 @@ def build_portfolio(
         weight_pct = (cost_ghs / budget_ghs) * 100.0
         notes = []
         if liquidity_cap_hit[i]:
-            notes.append("liquidity-capped")
+            # Tell the user what the cap actually means in days-of-volume
+            if daily_turnover_ghs[i] > 0:
+                days_to_fill = capped_ghs[i] / daily_turnover_ghs[i]
+                notes.append(
+                    f"liquidity-capped (~{days_to_fill:.1f} days to fill at avg vol)"
+                )
+            else:
+                notes.append("liquidity-capped (low/no recent volume)")
         positions.append(Position(
             ticker=row["ticker"],
             name=str(row["name"]),

@@ -12,14 +12,18 @@
     "gen:api": "openapi-typescript http://localhost:8000/openapi.json -o lib/api/schema.d.ts"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
     "@tanstack/react-query": "^5.100.10",
     "@tanstack/react-query-devtools": "^5.100.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.4.2",
     "lightweight-charts": "^5.2.0",
     "lucide-react": "^1.14.0",
     "next": "16.2.6",
     "openapi-fetch": "^0.17.0",
+    "pg": "^8.20.0",
     "radix-ui": "^1.4.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -31,11 +35,14 @@
   "devDependencies": {
     "@biomejs/biome": "^2.4.15",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^20.19.41",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "openapi-typescript": "^7.13.0",
+    "prisma": "^7.8.0",
     "tailwindcss": "^4",
+    "tsx": "^4.22.0",
     "typescript": "^5"
   }
 }

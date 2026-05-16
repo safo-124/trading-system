@@ -22,23 +22,27 @@
       "ticker": "UNIL",
       "name": "Unilever Ghana Limited",
       "price_ghs": 30.0,
-      "shares": 1100,
-      "cost_ghs": 33000.0,
-      "cost_usd": 2894.7369389696937,
-      "weight_pct": 14.473684694848469,
+      "shares": 301,
+      "cost_ghs": 9030.0,
+      "cost_usd": 792.1052896635252,
+      "weight_pct": 3.9605264483176263,
       "quality_score": 0.88,
-      "notes": []
+      "notes": [
+        "liquidity-capped (~0.2 days to fill at avg vol)"
+      ]
     },
     {
       "ticker": "EGL",
       "name": "Enterprise Group Limited",
       "price_ghs": 10.64,
-      "shares": 2760,
-      "cost_ghs": 29366.4,
-      "cost_usd": 2576.0000861987764,
-      "weight_pct": 12.880000430993881,
+      "shares": 1168,
+      "cost_ghs": 12427.52,
+      "cost_usd": 1090.133369811656,
+      "weight_pct": 5.450666849058281,
       "quality_score": 0.7825,
-      "notes": []
+      "notes": [
+        "liquidity-capped (~0.2 days to fill at avg vol)"
+      ]
     },
     {
       "ticker": "FAB",
@@ -55,23 +59,27 @@
       "ticker": "ACCESS",
       "name": "Access Bank Ghana",
       "price_ghs": 27.6,
-      "shares": 992,
-      "cost_ghs": 27379.2,
-      "cost_usd": 2401.684290892092,
-      "weight_pct": 12.00842145446046,
+      "shares": 145,
+      "cost_ghs": 4002.0,
+      "cost_usd": 351.052643325961,
+      "weight_pct": 1.755263216629805,
       "quality_score": 0.73,
-      "notes": []
+      "notes": [
+        "liquidity-capped (~0.2 days to fill at avg vol)"
+      ]
     },
     {
       "ticker": "EGH",
       "name": "Ecobank Ghana Limited",
       "price_ghs": 48.85,
-      "shares": 560,
-      "cost_ghs": 27356.0,
-      "cost_usd": 2399.649203104695,
-      "weight_pct": 11.998246015523476,
+      "shares": 248,
+      "cost_ghs": 12114.800000000001,
+      "cost_usd": 1062.7017899463651,
+      "weight_pct": 5.313508949731825,
       "quality_score": 0.73,
-      "notes": []
+      "notes": [
+        "liquidity-capped (~0.2 days to fill at avg vol)"
+      ]
     },
     {
       "ticker": "MTNGH",
@@ -88,17 +96,21 @@
       "ticker": "SCB",
       "name": "Standard Chartered Bank Limited",
       "price_ghs": 71.38,
-      "shares": 337,
-      "cost_ghs": 24055.059999999998,
-      "cost_usd": 2110.0930530646156,
-      "weight_pct": 10.550465265323078,
+      "shares": 79,
+      "cost_ghs": 5639.0199999999995,
+      "cost_usd": 494.6508937451176,
+      "weight_pct": 2.473254468725588,
       "quality_score": 0.6425000000000001,
-      "notes": []
+      "notes": [
+        "liquidity-capped (~0.2 days to fill at avg vol)"
+      ]
     }
   ],
-  "total_invested_ghs": 227813.1,
-  "total_invested_usd": 19983.605931854447,
-  "cash_residual_ghs": 186.89237060546293,
-  "cash_residual_usd": 16.39406814555295,
-  "excluded_reasons": []
+  "total_invested_ghs": 129869.78000000001,
+  "total_invested_usd": 11392.0863461172,
+  "cash_residual_ghs": 98130.21237060546,
+  "cash_residual_usd": 8607.9136538828,
+  "excluded_reasons": [
+    "Liquidity cap applied to: ['UNIL', 'EGL', 'ACCESS', 'EGH', 'SCB']. Residual unallocated because we don't push into less liquid names that would also be capped."
+  ]
 }

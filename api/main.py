@@ -9,7 +9,7 @@ from api.config import (
     DIVIDEND_PICKS_PATH, PREDICTIONS_PATH, BACKTEST_RESULTS_PATH,
 )
 from api.schemas import HealthResponse
-from api.routers import dividend, swing, swing_eu, swing_africa
+from api.routers import dividend, swing, swing_eu, swing_africa, ghana
 
 
 app = FastAPI(
@@ -44,6 +44,8 @@ def health():
             "swing_africa_predictions": (_Path(__file__).resolve().parent.parent / "data_africa" / "predictions.parquet").exists(),
             "swing_africa_backtest": (_Path(__file__).resolve().parent.parent / "data_africa" / "backtest_results.csv").exists(),
             "swing_africa_model": (_Path(__file__).resolve().parent.parent / "data_africa" / "model_production.txt").exists(),
+            "ghana_scored": (_Path(__file__).resolve().parent.parent / "data_ghana" / "gse_scored.csv").exists(),
+            "ghana_fundamentals": (_Path(__file__).resolve().parent.parent / "data_ghana" / "gse_fundamentals.csv").exists(),
         },
     }
 
@@ -52,3 +54,4 @@ app.include_router(dividend.router)
 app.include_router(swing.router)
 app.include_router(swing_eu.router)
 app.include_router(swing_africa.router)
+app.include_router(ghana.router)

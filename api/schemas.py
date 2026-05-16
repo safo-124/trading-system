@@ -210,3 +210,69 @@ class SwingAfricaLivePredictionResponse(BaseModel):
     universe_size: int
     long_picks: list[SwingAfricaLivePick]
     short_picks: list[SwingAfricaLivePick]
+
+
+# ---------- Ghana Stock Exchange ----------
+
+class GhanaStockScore(BaseModel):
+    ticker: str
+    name: str
+    price_ghs: Optional[float] = None
+    pe_ratio: Optional[float] = None
+    eps: Optional[float] = None
+    div_per_share: Optional[float] = None
+    ret_1yr: Optional[float] = None
+    eligible: bool
+    quality_score: float
+
+
+class GhanaScoreResponse(BaseModel):
+    n_stocks: int
+    n_eligible: int
+    scored: list[GhanaStockScore]
+
+
+class GhanaPosition(BaseModel):
+    ticker: str
+    name: str
+    price_ghs: float
+    shares: int
+    cost_ghs: float
+    cost_usd: float
+    weight_pct: float
+    quality_score: float
+    notes: list[str]
+
+
+class GhanaRecommendationResponse(BaseModel):
+    budget_ghs: float
+    budget_usd: float
+    fx_rate_ghs_per_usd: float
+    fx_source: str
+    horizon_years: int
+    risk_tolerance: str
+    target_n_stocks: int
+    positions: list[GhanaPosition]
+    total_invested_ghs: float
+    total_invested_usd: float
+    cash_residual_ghs: float
+    cash_residual_usd: float
+    excluded_reasons: list[str]
+
+
+class GhanaFundamentalRow(BaseModel):
+    ticker: str
+    name: str
+    price_ghs: Optional[float] = None
+    volume: Optional[float] = None
+    eps: Optional[float] = None
+    pe_ratio: Optional[float] = None
+    div_per_share: Optional[float] = None
+    ret_1yr: Optional[float] = None
+    ret_ytd: Optional[float] = None
+    avg_volume_10d: Optional[float] = None
+
+
+class GhanaFundamentalsResponse(BaseModel):
+    n_stocks: int
+    fundamentals: list[GhanaFundamentalRow]
